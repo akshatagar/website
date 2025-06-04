@@ -1,0 +1,17 @@
+@import "bootstrap";
+@import "homepage.css";
+@import "partnerspage.css";
+
+.navbar-nav {
+    margin-left: 70%;
+}
+
+.logo {
+    width: 40px;
+    margin-right: 10px;
+}
+
+body {
+    background-color: rgb(33, 33, 161);
+    color: white;
+}
