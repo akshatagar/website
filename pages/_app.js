@@ -1,12 +1,17 @@
-import "@/styles/globals.css"
-import MainLayout from "@/layout/main-layout"
+import "@/styles/globals.css";
+import MainLayout from "@/layout/main-layout";
+import { useEffect } from "react";
 
 export default function MyApp({ Component, pageProps }) {
-    return (
-        <body>
-            <MainLayout>
-                <Component {...pageProps} />
-            </MainLayout>
-        </body>
-    )
+  useEffect(() => {
+    import("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
+
+  return (
+    <body>
+      <MainLayout>
+        <Component {...pageProps} />
+      </MainLayout>
+    </body>
+  );
 }
