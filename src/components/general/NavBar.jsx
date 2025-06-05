@@ -3,7 +3,7 @@ export default function NavBar() {
     <nav className="navbar navbar-expand-lg sticky-top bg-dark">
       <div className="container-fluid">
         <img src="../../logo.png" alt="" className="logo"/>
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="../../">
           OMiNTEL
         </a>
         <button
