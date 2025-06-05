@@ -1,6 +1,6 @@
 export default function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg sticky-top bg-light">
+    <nav className="navbar navbar-expand-lg sticky-top bg-dark">
       <div className="container-fluid">
         <img src="../../logo.png" alt="" className="logo"/>
         <a className="navbar-brand" href="#">
@@ -18,7 +18,7 @@ export default function NavBar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <a className="nav-link" href="../../#about">
                 <button type="button" className="btn btn-dark btn-lg px-4 me-md-2">
@@ -28,8 +28,8 @@ export default function NavBar() {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="../../#contact-us">
-                <button type="button" className="btn btn-dark btn-lg px-4 me-md-2">
-              Contact Us
+                <button type="button" className="btn btn-dark btn-lg px-2 me-md-2">
+              Contact us
             </button>
               </a>
             </li>

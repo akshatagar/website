@@ -2,6 +2,20 @@
 @import "homepage.css";
 @import "partnerspage.css";
 
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    color: black;
+}
+
+.navbar-brand {
+    color: white;
+}
+
 .navbar-nav {
     margin-left: 70%;
 }
@@ -12,6 +26,7 @@
 }
 
 body {
-    background-color: rgb(33, 33, 161);
+    background-color: rgba(40, 27, 113, 0.942);
     color: white;
 }
+
