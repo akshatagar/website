@@ -17,7 +17,10 @@ export default function Footer() {
         <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
           <li className="ms-3">
             <a className="feedback-link" href="feedback">
-              Feedback
+                <button type="button"
+                  className="btn custom-btn btn-lg px-4 me-md-2">
+                  Feedback
+                </button>
             </a>
           </li>
           <li className="ms-3">
