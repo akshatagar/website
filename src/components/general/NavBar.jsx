@@ -2,7 +2,7 @@ export default function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg sticky-top bg-dark">
       <div className="container-fluid">
-        <img src="../../logo.png" alt="" className="logo"/>
+        <img src="../../logo.png" alt="" className="logo" />
         <a className="navbar-brand" href="../../">
           OMiNTEL
         </a>
@@ -21,23 +21,32 @@ export default function NavBar() {
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <a className="nav-link" href="../../#about">
-                <button type="button" className="btn btn-dark btn-lg px-4 me-md-2">
-              About
-            </button>
+                <button
+                  type="button"
+                  className="btn btn-dark btn-lg px-4 me-md-2"
+                >
+                  About
+                </button>
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="../../#contact-us">
-                <button type="button" className="btn btn-dark btn-lg px-2 me-md-2">
-              Contact us
-            </button>
+                <button
+                  type="button"
+                  className="btn btn-dark btn-lg px-2 me-md-2"
+                >
+                  Contact us
+                </button>
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="partners">
-                <button type="button" className="btn btn-dark btn-lg px-4 me-md-2">
-              Partners
-            </button>
+                <button
+                  type="button"
+                  className="btn btn-dark btn-lg px-4 me-md-2"
+                >
+                  Partners
+                </button>
               </a>
             </li>
           </ul>

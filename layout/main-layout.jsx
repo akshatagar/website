@@ -3,7 +3,7 @@ import Footer from "@/src/components/general/Footer";
 
 export default function MainLayout({ children }) {
     return (
-        <main className="page">
+        <main>
             <NavBar />
                 {children}
             <Footer />
