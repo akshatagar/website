@@ -1,35 +1,20 @@
 export default function Footer() {
   return (
-    <div className="container">
-      <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <div className="col-md-4 d-flex align-items-center">
-          <a
-            href="/"
-            className="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
-            aria-label="Bootstrap"
-          >
-            <svg className="bi" width="30" height="24" aria-hidden="true"></svg>
-          </a>
-          <span className="mb-3 mb-md-0 text-body-light">
-            © 2025 Company, Inc
-          </span>
-        </div>
-        <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
-          <li className="ms-3">
-            <a className="feedback-link" href="feedback">
-                <button type="button"
-                  className="btn custom-btn btn-lg px-4 me-md-2">
-                  Feedback
-                </button>
-            </a>
-          </li>
-          <li className="ms-3">
-            <a className="text-body-secondary" href="#" aria-label="Facebook">
-              <svg className="bi" width="24" height="24"></svg>
-            </a>
-          </li>
-        </ul>
-      </footer>
-    </div>
+    <footer className="d-flex justify-content-between align-items-center py-3 px-4 border-top text-white">
+      <div className="d-flex align-items-center">
+        <span>© 2025 Company, Inc</span>
+      </div>
+
+      <div className="d-flex align-items-center">
+        <a href="feedback" className="me-3">
+          <button type="button" className="btn custom-btn btn-lg">
+            Feedback
+          </button>
+        </a>
+        <a href="#" className="text-white" aria-label="Facebook">
+          <svg className="bi" width="24" height="24"></svg>
+        </a>
+      </div>
+    </footer>
   );
 }

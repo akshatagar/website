@@ -1,8 +1,4 @@
-.about-title {
-    margin-left: 10%;
+#contact-us {
+    display: flex;
+    justify-content: center;
 }
-
-.Contactus-title {
-    margin-left: 10%
-}
-
