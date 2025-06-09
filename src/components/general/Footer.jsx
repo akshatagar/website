@@ -6,7 +6,7 @@ export default function Footer() {
       </div>
 
       <div className="d-flex align-items-center">
-        <a href="feedback" className="me-3">
+        <a href="/feedback" className="me-3">
           <button type="button" className="btn custom-btn btn-lg">
             Feedback
           </button>
