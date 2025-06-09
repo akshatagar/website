@@ -2,7 +2,7 @@ export default function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg sticky-top bg-dark">
       <div className="container-fluid">
-        <img src="../../white-logo.png" alt="" className="logo" />
+        <img src="white-logo.png" alt="" className="logo" />
         <a className="navbar-brand" href="/">
           OMiNTEL
         </a>
