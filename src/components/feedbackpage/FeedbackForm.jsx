@@ -1,6 +1,6 @@
 export default function FeedbackForm() {
   return (
-    <div className="container mt-5">
+    /*<div className="container mt-5">
       <h2 className="mb-4">Website Feedback Survey</h2>
       <form>
         <div className="mb-3">
@@ -81,6 +81,15 @@ export default function FeedbackForm() {
           Submit Survey
         </button>
       </form>
-    </div>
+    </div>*/
+
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfrrtud2jwhMHWSj8EMc4vwv350aWMOPj06BRDTQ1g7LHFG_Q/viewform?embedded=true"   style={{
+      border: 'none',
+      display: 'block',
+      margin: 'auto',
+      width: '100%',
+      height: '1400px'
+    }}>Loading…</iframe>
   );
+  
 }
