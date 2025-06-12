@@ -4,8 +4,12 @@ export default function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg sticky-top bg-dark">
       <div className="container-fluid">
-        <img src="white-logo.png" alt="omintel-logo" className="logo" />
-        <Link className="navbar-brand" href="/">OMiNTEL</Link>
+        <Link href="/">
+          <img src="white-logo.png" alt="omintel-logo" className="logo" />
+        </Link>
+        <Link className="navbar-brand" href="/">
+          OMiNTEL
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
