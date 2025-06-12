@@ -1,7 +1,6 @@
 import "@/styles/globals.css";
 import MainLayout from "@/layout/main-layout";
 import { useEffect } from "react";
-import Link from "next/link";
 
 export default function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -12,7 +11,7 @@ export default function MyApp({ Component, pageProps }) {
     <>
       <head>
         <title>OMiNTEL</title>
-        <Link rel="icon" href="/favicon.ico"></Link>
+        <link rel="icon" href="/favicon.ico"></link>
       </head>
       <body>
         <MainLayout>
