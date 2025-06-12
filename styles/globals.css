@@ -52,3 +52,31 @@ body {
   #homeDropdown {
     margin-top: 7.5px;
   }
+
+/* Hide dropdown by default */
+.nav-item.dropdown .dropdown-menu {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transform: translateY(-10px); /* Optional: subtle slide-in effect */
+}
+
+/* Show on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0); /* Reset slide effect */
+    margin-top: 0;
+}
+
+/* Keep dropdown open when hovering over menu */
+.dropdown-menu:hover {
+    display: block;
+    opacity: 1;
+}
+
+/* Button styling (optional) */
+.navbar .nav-item.dropdown .dropdown-toggle {
+    cursor: pointer;
+}
+

@@ -29,22 +29,22 @@ export default function NavBar() {
                 className="btn btn-dark btn-lg dropdown-toggle me-md-2"
                 type="button"
                 id="homeDropdown"
-                data-bs-toggle="dropdown"
               >
                 Home
               </button>
               <ul className="dropdown-menu dropdown-menu-dark">
                 <li>
-                  <Link className="dropdown-item" href="/#about">
+                  <a className="dropdown-item" href="/#about">
                     About Us
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link className="dropdown-item" href="/#contact-us">
+                  <a className="dropdown-item" href="/#contact-us">
                     Contact Us
-                  </Link>
+                  </a>
                 </li>
-              </ul>
+              </ul>            
+
             </li>
 
             <li className="nav-item">
