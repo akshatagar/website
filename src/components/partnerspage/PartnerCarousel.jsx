@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function PartnersCarousel({ partners }) {
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const total = partners.length;
 
