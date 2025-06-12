@@ -6,7 +6,7 @@ export default function NavBar() {
     <nav className="navbar navbar-expand-lg sticky-top bg-dark">
       <div className="container-fluid">
         <Link href="/">
-          <Image width={400} height={40} src="/white-logo.png" alt="omintel-logo" className="logo" />
+          <img src="/white-logo.png" alt="omintel-logo" className="logo" />
         </Link>
         <Link className="navbar-brand" href="/">
           OMiNTEL
