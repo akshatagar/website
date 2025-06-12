@@ -1,11 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg sticky-top bg-dark">
       <div className="container-fluid">
         <Link href="/">
-          <img src="/white-logo.png" alt="omintel-logo" className="logo" />
+          <Image width={400} height={40} src="/white-logo.png" alt="omintel-logo" className="logo" />
         </Link>
         <Link className="navbar-brand" href="/">
           OMiNTEL
