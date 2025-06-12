@@ -1,0 +1,50 @@
+.partners-carousel {
+  color: white;
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.carousel-cards {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.carousel-main {
+  transform: scale(1);
+  flex: 0 0 32%;
+}
+
+.carousel-side {
+  transform: scale(0.8);
+  opacity: 0.6;
+  flex: 0 0 26%;
+}
+
+.partner-card {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.partner-card img {
+  object-fit: contain;
+  max-height: 150px;
+  padding: 10px;
+}
+
+.carousel-btn {
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}

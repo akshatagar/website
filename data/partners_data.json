@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Partner1",
+    "solution": "Type",
+    "summary": "Short Summary",
+    "logo": ""
+  },
+  {
+    "id": 2,
+    "name": "Partner2",
+    "solution": "Type",
+    "summary": "Short Summary",
+    "logo": ""
+  },
+  {
+    "id": 3,
+    "name": "Partner3",
+    "solution": "Type",
+    "summary": "Short Summary",
+    "logo": ""
+  },
+  {
+    "id": 4,
+    "name": "Partner4",
+    "solution": "Type",
+    "summary": "Short Summary",
+    "logo": ""
+  }
+]

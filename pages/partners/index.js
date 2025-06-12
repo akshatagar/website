@@ -1,7 +1,8 @@
-export default function Partners() {
-    return (
-        <>
-            <h1>Partners Page</h1>
-        </>
-    )
+import PartnersCarousel from "@/src/components/partnerspage/PartnerCarousel";
+import partners from "@/data/partners_data.json";
+
+export default function PartnersPage() {
+  return (
+      <PartnersCarousel partners={partners} />
+  );
 }
