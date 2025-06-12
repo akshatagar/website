@@ -3,15 +3,10 @@ import Footer from "@/src/components/general/Footer";
 
 export default function MainLayout({ children }) {
   return (
-    <html>
-      <head>
-        <title>OMiNTEL</title>
-      </head>
-      <body>
-        <NavBar />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <main>
+      <NavBar />
+      {children}
+      <Footer />
+    </main>
   );
 }
