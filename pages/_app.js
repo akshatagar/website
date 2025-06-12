@@ -11,7 +11,7 @@ export default function MyApp({ Component, pageProps }) {
     <>
       <head>
         <title>OMiNTEL</title>
-        <link rel="icon" href="/favicon.ico"></link>
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
         <MainLayout>

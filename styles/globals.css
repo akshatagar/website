@@ -36,12 +36,12 @@ body {
 
 .custom-btn {
     background-color: rgba(40, 27, 113, 0.942);
-    color: white; /* optional: sets text color */
-    border: none; /* optional: remove border */
+    color: white; 
+    border: none; 
   }
 
   .custom-btn:hover {
-    background-color: rgb(30, 21, 86); /* darker on hover */
+    background-color: rgb(30, 21, 86); 
     color: black;
   }
 
