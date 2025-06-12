@@ -32,12 +32,10 @@ export default function NavBar() {
               >
                 Home
               </button>
-              <ul
-                className="dropdown-menu dropdown-menu-dark"
-              >
+              <ul className="dropdown-menu dropdown-menu-dark">
                 <li>
                   <Link className="dropdown-item" href="/#about">
-                    About
+                    About Us
                   </Link>
                 </li>
                 <li>
@@ -55,6 +53,14 @@ export default function NavBar() {
                   className="btn btn-dark btn-lg px-4 me-md-2"
                 >
                   Partners
+                </button>
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" href="/learn-more">
+                <button type="button" className="btn btn-dark btn-lg me-md-2">
+                  Learn More
                 </button>
               </Link>
             </li>
