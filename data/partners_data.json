@@ -4,6 +4,7 @@
     "name": "Partner1",
     "solution": "Type",
     "summary": "Short Summary",
+    "description" : "Long description",
     "logo": ""
   },
   {
@@ -11,6 +12,7 @@
     "name": "Partner2",
     "solution": "Type",
     "summary": "Short Summary",
+    "description" : "Long description",
     "logo": ""
   },
   {
@@ -18,6 +20,7 @@
     "name": "Partner3",
     "solution": "Type",
     "summary": "Short Summary",
+    "description" : "Long description",
     "logo": ""
   },
   {
@@ -25,6 +28,7 @@
     "name": "Partner4",
     "solution": "Type",
     "summary": "Short Summary",
+    "description" : "Long description",
     "logo": ""
   }
 ]
