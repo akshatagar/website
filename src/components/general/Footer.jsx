@@ -7,7 +7,7 @@ export default function Footer() {
         <span>© 2025 Company, Inc</span>
       </div>
       
-      <div className="d-flex align-items-center text-end ms-auto flex-column pe-5">
+      <div className="d-flex align-items-center text-end ms-auto flex-column pe-5" id="contact-us">
         <span>Contact us</span>
         <span className= "mt-2">email : email@website.com</span>
         <span>phone : 666 666 6666</span>

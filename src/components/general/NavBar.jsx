@@ -23,26 +23,31 @@ export default function NavBar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <Link className="nav-link" href="/#about">
-                <button
-                  type="button"
-                  className="btn btn-dark btn-lg px-4 me-md-2"
-                >
-                  About
-                </button>
-              </Link>
+            <li className="nav-item dropdown">
+              <button
+                className="btn btn-dark btn-lg dropdown-toggle me-md-2"
+                type="button"
+                id="homeDropdown"
+                data-bs-toggle="dropdown"
+              >
+                Home
+              </button>
+              <ul
+                className="dropdown-menu dropdown-menu-dark"
+              >
+                <li>
+                  <Link className="dropdown-item" href="/#about">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" href="/#contact-us">
+                    Contact Us
+                  </Link>
+                </li>
+              </ul>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="/#contact-us">
-                <button
-                  type="button"
-                  className="btn btn-dark btn-lg px-2 me-md-2"
-                >
-                  Contact us
-                </button>
-              </Link>
-            </li>
+
             <li className="nav-item">
               <Link className="nav-link" href="/partners">
                 <button
