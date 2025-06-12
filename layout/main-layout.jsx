@@ -2,11 +2,16 @@ import NavBar from "@/src/components/general/NavBar";
 import Footer from "@/src/components/general/Footer";
 
 export default function MainLayout({ children }) {
-    return (
-        <main>
-            <NavBar />
-                {children}
-            <Footer />
-        </main>
-    )
+  return (
+    <html>
+      <head>
+        <title>OMiNTEL</title>
+      </head>
+      <body>
+        <NavBar />
+        {children}
+        <Footer />
+      </body>
+    </html>
+  );
 }
