@@ -12,6 +12,7 @@ export default function PartnerCarousel({ partners }) {
     speed: 500,
     centerMode: true,
     centerPadding: "0px",
+    focusOnSelect: true,
     afterChange: (current) => setCenterSlideIndex(current),
   };
 
