@@ -1,28 +1,19 @@
-import Link from "next/link";
 import { useState } from "react";
+import Slider from "react-slick";
+import Link from "next/link";
 
-export default function PartnersCarousel({ partners }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+export default function PartnerCarousel({ partners }) {
+  const [centerSlideIndex, setCenterSlideIndex] = useState(0);
 
-  const total = partners.length;
-
-  const showCards = () => {
-    const left = (currentIndex - 1 + total) % total;
-    const center = currentIndex;
-    const right = (currentIndex + 1) % total;
-
-    return [partners[left], partners[center], partners[right]];
+  const settings = {
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    speed: 500,
+    centerMode: true,
+    centerPadding: "0px",
+    afterChange: (current) => setCenterSlideIndex(current),
   };
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + total) % total);
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % total);
-  };
-
-  const [leftCard, centerCard, rightCard] = showCards();
 
   const renderCard = (partner, isCenter) => {
     const cardContent = (
@@ -41,10 +32,7 @@ export default function PartnersCarousel({ partners }) {
     );
 
     return isCenter ? (
-      <Link
-        href={`/partners/${partner.name}`}
-        className="text-decoration-none"
-      >
+      <Link href={`/partners/${partner.name}`} className="text-decoration-none">
         {cardContent}
       </Link>
     ) : (
@@ -55,33 +43,19 @@ export default function PartnersCarousel({ partners }) {
   return (
     <div className="partners-carousel container text-center my-5">
       <h2 className="mb-4">Our Partners</h2>
-      <div className="carousel-wrapper d-flex align-items-center justify-content-center">
-        <button
-          className="carousel-btn btn btn-outline-light me-3 pb-3"
-          onClick={handlePrev}
-        >
-          ‹
-        </button>
-
-        <div className="carousel-cards d-flex align-items-center justify-content-center gap-3">
-          {[leftCard, centerCard, rightCard].map((partner, idx) => (
+      <div className="slider-container">
+        <Slider {...settings}>
+          {partners.map((partner, idx) => (
             <div
               key={partner.name}
               className={`carousel-card ${
-                idx === 1 ? "carousel-main" : "carousel-side"
+                idx === centerSlideIndex ? "carousel-main" : "carousel-side"
               }`}
             >
-              {renderCard(partner, idx === 1)}
+              {renderCard(partner, idx === centerSlideIndex)}
             </div>
           ))}
-        </div>
-
-        <button
-          className="carousel-btn btn btn-outline-light ms-3 pb-3"
-          onClick={handleNext}
-        >
-          ›
-        </button>
+        </Slider>
       </div>
     </div>
   );

@@ -1,3 +1,6 @@
+@import url("https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css");
+@import url("https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css");
+
 .partners-carousel {
   color: white;
 }
@@ -32,6 +35,7 @@
   transform: scale(0.8);
   opacity: 0.6;
   flex: 0 0 26%;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .partner-card {
