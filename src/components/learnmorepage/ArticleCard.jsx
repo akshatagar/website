@@ -1,8 +1,7 @@
-import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const ArticleCard = ({ title, description, imageUrl, articleUrl }) => {
+export default function ArticleCard({ title, description, imageUrl, articleUrl }) {
   return (
     <div className="article-card">
       <div className="article-card__image-container">
@@ -24,5 +23,3 @@ const ArticleCard = ({ title, description, imageUrl, articleUrl }) => {
     </div>
   );
 };
-
-export default ArticleCard; 
