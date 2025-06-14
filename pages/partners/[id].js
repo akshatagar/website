@@ -8,7 +8,7 @@ export default function PartnerPage({ partner }) {
       <h1 className="mb-4">{partner.name} Page</h1>
       <div className="card p-4">
         <Image
-          src={partner.logo}
+          src={partner.logo || "/white-logo.png"}
           alt={`${partner.name}-logo`}
           width={200}
           height={100}
@@ -30,7 +30,12 @@ export async function getStaticPaths() {
     params: { id: partner.name },
   }));
 
-  return { paths, fallback: false };
+  return { 
+    paths, 
+    // Set fallback to 'blocking' to generate new pages on-demand
+    // This is useful if you add new partners later
+    fallback: 'blocking' 
+  };
 }
 
 export async function getStaticProps({ params }) {
@@ -40,9 +45,18 @@ export async function getStaticProps({ params }) {
 
   const partner = partners.find((p) => p.name === params.id) || null;
 
+  // If partner not found, return 404
+  if (!partner) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       partner,
     },
+    // Re-generate the page at most once per hour (in seconds)
+    revalidate: 3600,
   };
 }

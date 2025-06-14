@@ -1,17 +1,19 @@
 import React from 'react';
-export default function Hero() {
+
+export default function Hero({ imageData = {} }) {
+    const { centralLogo = '/blue-gold-logo.png', whiteLogo = '/white-logo.png' } = imageData;
 
     const nodes = [
-    { id: 1, name: 'Attention', img: '/white-logo.png', top: '15%', left: '75%', size: '50px' },
-    { id: 2, name: 'Analysis', img: '/white-logo.png', top: '60%', left: '12%', size: '45px' },
-    { id: 3, name: 'Options', img: '/white-logo.png', top: '80%', left: '37%', size: '55px' },
-    { id: 4, name: 'Problems', img: '/white-logo.png', top: '20%', left: '10%', size: '40px' },
-    { id: 5, name: 'Learning', img: '/white-logo.png', top: '40%', left: '68%', size: '55px' },
-    { id: 6, name: 'Patterns', img: '/white-logo.png', top: '70%', left: '75%', size: '50px' },
-    { id: 7, name: 'Decisions', img: '/white-logo.png', top: '10%', left: '40%', size: '45px' },
-    { id: 8, name: 'Flatulance', img: '/white-logo.png', top: '40%', left: '25%', size: '45px' },
-    { id: 9, name: 'Inductance', img: '/white-logo.png', top: '25%', left: '55%', size: '45px' },
-    { id: 10, name: 'Lorentz', img: '/white-logo.png', top: '63%', left: '48%', size: '45px' }
+    { id: 1, name: 'Attention', img: whiteLogo, top: '15%', left: '75%', size: '50px' },
+    { id: 2, name: 'Analysis', img: whiteLogo, top: '60%', left: '12%', size: '45px' },
+    { id: 3, name: 'Options', img: whiteLogo, top: '80%', left: '37%', size: '55px' },
+    { id: 4, name: 'Problems', img: whiteLogo, top: '20%', left: '10%', size: '40px' },
+    { id: 5, name: 'Learning', img: whiteLogo, top: '40%', left: '68%', size: '55px' },
+    { id: 6, name: 'Patterns', img: whiteLogo, top: '70%', left: '75%', size: '50px' },
+    { id: 7, name: 'Decisions', img: whiteLogo, top: '10%', left: '40%', size: '45px' },
+    { id: 8, name: 'Flatulance', img: whiteLogo, top: '40%', left: '25%', size: '45px' },
+    { id: 9, name: 'Inductance', img: whiteLogo, top: '25%', left: '55%', size: '45px' },
+    { id: 10, name: 'Lorentz', img: whiteLogo, top: '63%', left: '48%', size: '45px' }
     
   ];
 
@@ -32,7 +34,7 @@ export default function Hero() {
               {/* Central Logo */}
               <div className="central-logo">
                 <img 
-                  src="/blue-gold-logo.png" 
+                  src={centralLogo} 
                   alt="AI Core" 
                   className="img-fluid"
                 />
