@@ -1,0 +1,101 @@
+/* InteractiveDiagram.css */
+
+/* Diagram Container */
+.diagram-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.interactive-diagram {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Central Logo */
+.central-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  z-index: 10;
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0) scale(1.3); 
+  }
+  50% { 
+    transform:  translateY(-8px) scale(1.3); 
+  }
+}
+
+.central-logo:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.central-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+.satellite-logo {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.satellite-img {
+  object-fit: contain;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+  will-change: transform;
+}
+
+.satellite-logo:hover .satellite-img {
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
+  transform: scale(1.3);
+}
+
+.satellite-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+  padding: 3px 8px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .diagram-container {
+    height: 400px;
+  }
+  
+  .central-logo {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .diagram-container {
+    height: 350px;
+    margin-top: 30px;
+  }
+  
+  .satellite-label {
+    font-size: 0.7rem;
+  }
+}
