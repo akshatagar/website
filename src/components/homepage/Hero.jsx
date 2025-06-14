@@ -6,7 +6,7 @@ export default function Hero() {
     { id: 2, name: 'Analysis', img: '/white-logo.png', top: '60%', left: '12%', size: '45px' },
     { id: 3, name: 'Options', img: '/white-logo.png', top: '80%', left: '40%', size: '55px' },
     { id: 4, name: 'Problems', img: '/white-logo.png', top: '20%', left: '10%', size: '40px' },
-    { id: 5, name: 'Learning', img: '/white-logo.png', top: '35%', left: '85%', size: '60px' },
+    { id: 5, name: 'Learning', img: '/white-logo.png', top: '40%', left: '82%', size: '55px' },
     { id: 6, name: 'Patterns', img: '/white-logo.png', top: '70%', left: '75%', size: '50px' },
     { id: 7, name: 'Decisions', img: '/white-logo.png', top: '10%', left: '40%', size: '45px' }
     
