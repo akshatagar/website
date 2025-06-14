@@ -14,6 +14,16 @@ export default function PartnerCarousel({ partners }) {
     centerPadding: "0px",
     focusOnSelect: true,
     afterChange: (current) => setCenterSlideIndex(current),
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+          centerPadding: "20px",
+        }
+      }
+    ]
   };
 
   const renderCard = (partner, isCenter) => {
