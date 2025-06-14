@@ -34,14 +34,14 @@ export default function NavBar() {
               </button>
               <ul className="dropdown-menu dropdown-menu-dark">
                 <li>
-                  <a className="dropdown-item" href="/#about">
+                  <Link className="dropdown-item" href="/#about">
                     About Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/#contact-us">
+                  <Link className="dropdown-item" href="/#contact-us">
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
               </ul>            
 

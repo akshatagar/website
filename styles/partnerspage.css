@@ -1,3 +1,6 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
 .partners-carousel {
   color: white;
 }
@@ -7,6 +10,8 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .carousel-cards {
@@ -18,12 +23,19 @@
 .carousel-main {
   transform: scale(1);
   flex: 0 0 32%;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-main:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
 .carousel-side {
   transform: scale(0.8);
   opacity: 0.6;
   flex: 0 0 26%;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);  
 }
 
 .partner-card {
@@ -47,4 +59,11 @@
   border: none;
   color: white;
   cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.7;
+}
+
+.carousel-btn:hover {
+  transform: scale(1.1);
+  opacity: 1;
 }

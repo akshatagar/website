@@ -3,27 +3,21 @@
     "id": 1,
     "title": "Understanding AI in Modern Technology",
     "description": "Explore how artificial intelligence is transforming industries and shaping our future with innovative solutions.",
-    "imageUrl": "/images/ai-technology.jpg",
-    "articleUrl": "/learn-more/articles/understanding-ai",
-    "category": "Technology",
-    "publishDate": "2023-10-15"
+    "imageUrl": null,
+    "articleUrl": ""
   },
   {
     "id": 2,
     "title": "The Future of Web Development",
     "description": "Discover emerging trends and technologies that are revolutionizing how we build and experience the web.",
-    "imageUrl": "/images/web-dev-future.jpg",
-    "articleUrl": "/learn-more/articles/future-web-development",
-    "category": "Web Development",
-    "publishDate": "2023-11-02"
+    "imageUrl": null,
+    "articleUrl": ""
   },
   {
     "id": 3,
     "title": "Sustainable Technology Practices",
     "description": "Learn about eco-friendly approaches to technology development and how companies are reducing their carbon footprint.",
-    "imageUrl": "/images/sustainable-tech.jpg",
-    "articleUrl": "/learn-more/articles/sustainable-technology",
-    "category": "Sustainability",
-    "publishDate": "2023-09-28"
+    "imageUrl": null,
+    "articleUrl": ""
   }
 ] 
