@@ -1,95 +1,165 @@
-export default function FeedbackForm() {
+'use client'; // Must be first line
+import React from 'react';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+
+const FeedbackForm = () => {
+  const initialValues = {
+    name: '',
+    email: '',
+    age: '',
+    satisfaction: '',
+    improvements: [],
+    feedback: '',
+    recommendation: ''
+  };
+
+  const validationSchema = Yup.object({
+    age: Yup.string().required('Age group is required'),
+    satisfaction: Yup.number().required('Satisfaction rating is required'),
+    recommendation: Yup.string().required('Recommendation is required'),
+    email: Yup.string().email('Invalid email format')
+  });
+
+  const improvementOptions = [
+    'Design', 'Navigation', 'Content', 
+    'Speed', 'Mobile Experience', 'Features'
+  ];
+
+  const handleSubmit = (values, { setSubmitting, resetForm }) => {
+    console.log('Form data:', values);
+    setSubmitting(false);
+    resetForm();
+  };
+
   return (
-    /*<div className="container mt-5">
-      <h2 className="mb-4">Website Feedback Survey</h2>
-      <form>
-        <div className="mb-3">
-          <label htmlFor="name" className="form-label">
-            Full Name
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="name"
-            placeholder="Enter your name"
-          />
+    <div className="feedback-container">
+      <div className="feedback-card">
+        <div className="feedback-header">
+          <h2>Website Feedback Survey</h2>
         </div>
+        
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
+        >
+          {({ isSubmitting, values }) => (
+            <Form 
+              action="https://formsubmit.co/your@email.com" 
+              method="POST"
+              className="feedback-form"
+            >
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
 
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">
-            Email address
-          </label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            placeholder="name@example.com"
-          />
-        </div>
+              <div className="form-group">
+                <label>Name (optional)</label>
+                <Field 
+                  type="text" 
+                  name="name" 
+                  placeholder="Your name" 
+                />
+              </div>
 
-        <div className="mb-3">
-          <label className="form-label">
-            How satisfied are you with the website?
-          </label>
-          <select className="form-select" defaultValue="none">
-            <option value="none" disabled>
-              Choose one
-            </option>
-            <option value="1">Very Satisfied</option>
-            <option value="2">Satisfied</option>
-            <option value="3">Neutral</option>
-            <option value="4">Unsatisfied</option>
-            <option value="5">Very Unsatisfied</option>
-          </select>
-        </div>
+              <div className="form-group">
+                <label>Email (optional)</label>
+                <Field 
+                  type="email" 
+                  name="email" 
+                  placeholder="your@email.com" 
+                />
+                <ErrorMessage name="email" component="div" className="error-message" />
+              </div>
 
-        <div className="mb-3">
-          <label className="form-label">
-            Which features have you used? (Check all that apply)
-          </label>
-          <div className="form-check">
-            <input className="form-check-input" type="checkbox" id="feature1" />
-            <label className="form-check-label" htmlFor="feature1">
-              Live Chat
-            </label>
-          </div>
-          <div className="form-check">
-            <input className="form-check-input" type="checkbox" id="feature2" />
-            <label className="form-check-label" htmlFor="feature2">
-              Search
-            </label>
-          </div>
-          <div className="form-check">
-            <input className="form-check-input" type="checkbox" id="feature3" />
-            <label className="form-check-label" htmlFor="feature3">
-              Account Settings
-            </label>
-          </div>
-        </div>
-        <div className="mb-3">
-          <label htmlFor="comments" className="form-label">
-            Additional Comments
-          </label>
-          <textarea
-            className="form-control"
-            id="comments"
-            rows="4"
-            placeholder="Your thoughts..."
-          ></textarea>
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Submit Survey
-        </button>
-      </form>
-    </div>*/
+              <div className="form-group">
+                <label>Age Group *</label>
+                <Field as="select" name="age">
+                  <option value="">Select your age group</option>
+                  <option value="under-18">Under 18</option>
+                  <option value="18-25">18-25</option>
+                  <option value="26-35">26-35</option>
+                  <option value="36-45">36-45</option>
+                  <option value="46-55">46-55</option>
+                  <option value="56-65">56-65</option>
+                  <option value="over-65">Over 65</option>
+                </Field>
+                <ErrorMessage name="age" component="div" className="error-message" />
+              </div>
 
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfrrtud2jwhMHWSj8EMc4vwv350aWMOPj06BRDTQ1g7LHFG_Q/viewform?embedded=true"   style={{
-      border: 'none',
-      display: 'block',
-      margin: 'auto',
-      width: '100%',
-      height: '1400px'
-    }}>Loading…</iframe>
+              <div className="form-group">
+                <label>Satisfaction Rating *</label>
+                <div className="rating-options">
+                  {[1, 2, 3, 4, 5].map(num => (
+                    <label key={num} className="rating-option">
+                      <Field 
+                        type="radio" 
+                        name="satisfaction" 
+                        value={num} 
+                      />
+                      <span>
+                        {num} {num === 1 ? '(Very Dissatisfied)' : num === 5 ? '(Very Satisfied)' : ''}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+                <ErrorMessage name="satisfaction" component="div" className="error-message" />
+              </div>
+
+              <div className="form-group">
+                <label>Improvement Areas (check all that apply)</label>
+                <div className="improvement-options">
+                  {improvementOptions.map((option, index) => (
+                    <label key={option} className="improvement-option">
+                      <Field 
+                        type="checkbox" 
+                        name="improvements" 
+                        value={option} 
+                      />
+                      {option}
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label>Additional Feedback</label>
+                <Field 
+                  as="textarea" 
+                  name="feedback" 
+                  rows="3" 
+                  placeholder="Your suggestions..." 
+                />
+              </div>
+
+              <div className="form-group">
+                <label>Would you recommend us? *</label>
+                <div className="recommendation-options">
+                  <label>
+                    <Field type="radio" name="recommendation" value="yes" />
+                    Yes
+                  </label>
+                  <label>
+                    <Field type="radio" name="recommendation" value="no" />
+                    No
+                  </label>
+                  <label>
+                    <Field type="radio" name="recommendation" value="maybe" />
+                    Maybe
+                  </label>
+                </div>
+                <ErrorMessage name="recommendation" component="div" className="error-message" />
+              </div>
+
+              <button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? 'Submitting...' : 'Submit Survey'}
+              </button>
+            </Form>
+          )}
+        </Formik>
+      </div>
+    </div>
   );
-  
-}
+};
+
+export default FeedbackForm;
