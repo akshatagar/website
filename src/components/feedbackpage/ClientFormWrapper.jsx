@@ -1,19 +1,19 @@
-'use client';
+// 'use client';
 
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 
-const FeedbackForm = dynamic(
-  () => import('./FeedbackForm'),
-  { 
-    ssr: false,
-    loading: () => <p>Loading form...</p>
-  }
-);
+// const FeedbackForm = dynamic(
+//   () => import('./FeedbackForm'),
+//   { 
+//     ssr: false,
+//     loading: () => <p>Loading form...</p>
+//   }
+// );
 
-export default function ClientFormWrapper() {
-  return (
-    <div className="container my-5">
-      <FeedbackForm />
-    </div>
-  );
-}
+// export default function ClientFormWrapper() {
+//   return (
+//     <div className="container my-5">
+//       <FeedbackForm />
+//     </div>
+//   );
+// }

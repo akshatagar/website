@@ -9,7 +9,7 @@ export default function Hero() {
     { id: 5, name: 'Learning', img: '/white-logo.png', top: '40%', left: '68%', size: '55px' },
     { id: 6, name: 'Patterns', img: '/white-logo.png', top: '70%', left: '75%', size: '50px' },
     { id: 7, name: 'Decisions', img: '/white-logo.png', top: '10%', left: '40%', size: '45px' },
-    { id: 8, name: 'Flatulance', img: '/white-logo.png', top: '40%', left: '25%', size: '45px' },
+    { id: 8, name: 'Ambience', img: '/white-logo.png', top: '40%', left: '25%', size: '45px' },
     { id: 9, name: 'Inductance', img: '/white-logo.png', top: '25%', left: '55%', size: '45px' },
     { id: 10, name: 'Lorentz', img: '/white-logo.png', top: '63%', left: '48%', size: '45px' }
     
