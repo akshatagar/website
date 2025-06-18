@@ -1,8 +1,10 @@
-// import ClientFormWrapper from "@/src/components/feedbackpage/ClientFormWrapper"
+import FeedbackForm from "@/src/components/feedbackpage/FeedbackForm"
 
 export default function Feedback() {
     return (
-        // <ClientFormWrapper />
-        <h1>Feedback Page</h1>
+        <>
+            <h1> Feedback Page</h1>
+            <FeedbackForm/>
+        </>
     )
 }
