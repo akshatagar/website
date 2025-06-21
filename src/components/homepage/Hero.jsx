@@ -19,10 +19,10 @@ export default function Hero() {
     <div className="container col-xxl-8 py-5 hero">
       <div className="row align-items-center g-5 py-5">
         {/* Text Column - Left Side */}
-        <div className="col-lg-6">
-          <h1 className="display-5 fw-bold lh-1 mb-3 hero-header" id="headline">
-            AI Based Solutions
-          </h1>
+          <div className="text-container col-lg-6">
+              <h1 className="display-5 fw-bold lh-1 mb-3 hero-header" id="headline">
+                AI Based Solutions
+              </h1>
         </div>
 
         {/* Diagram Column - Right Side */}
