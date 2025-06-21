@@ -65,11 +65,12 @@ export default function EmailForm() {
         <label htmlFor="phoneInput" className="form-label">Phone Number</label>
         <input
           className="form-control"
+          type='tel'
           id="phoneInput"
           name="phone"
           value={formData.phone}
           onChange={handleChange}
-          placeholder="000-000 0000"
+          placeholder="000 000-0000"
           required
         />
       </div>
