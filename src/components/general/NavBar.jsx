@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg sticky-top bg-dark">
-      <div className="container-fluid">
+    <nav className="navbar navbar-expand-lg sticky-top bg-dark w-100">
+      <div className="container-fluid px-3">
         <Link href="/">
           <Image width={40} height={40} src="/white-logo.png" alt="omintel-logo" className="logo" />
         </Link>
@@ -51,7 +51,7 @@ export default function NavBar() {
               <Link className="nav-link" href="/partners">
                 <button
                   type="button"
-                  className="btn btn-dark btn-lg px-4 me-md-2"
+                  className="btn btn-dark btn-lg me-md-2"
                 >
                   Partners
                 </button>
