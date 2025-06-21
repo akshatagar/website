@@ -51,7 +51,7 @@ export default function NavBar() {
               <Link className="nav-link" href="/partners">
                 <button
                   type="button"
-                  className="btn btn-dark btn-lg px-4 me-md-2"
+                  className="btn btn-dark btn-lg me-md-2"
                 >
                   Partners
                 </button>

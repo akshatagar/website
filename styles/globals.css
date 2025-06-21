@@ -119,3 +119,7 @@ footer .row {
     cursor: pointer;
 }
 
+.navbar-toggler {
+    background-color: grey;
+}
+
