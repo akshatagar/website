@@ -21,8 +21,9 @@ export default function Hero() {
         {/* Text Column - Left Side */}
           <div className="text-container col-lg-6">
               <h1 className="display-5 fw-bold lh-1 mb-3 hero-header" id="headline">
-                AI Based Solutions
+                AI First Solutions
               </h1>
+              <p>Empowering decisions with intelligent automation and contextual AI systems. </p>
         </div>
 
         {/* Diagram Column - Right Side */}
