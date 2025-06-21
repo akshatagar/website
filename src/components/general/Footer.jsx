@@ -26,7 +26,7 @@ export default function Footer() {
                 Feedback
               </button>
             </Link>
-            <div className="social-links">
+            {/* <div className="social-links">
               <Link href="#" className="text-white me-2" aria-label="Facebook">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-facebook" viewBox="0 0 16 16">
                 </svg>
@@ -35,7 +35,7 @@ export default function Footer() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-twitter-x" viewBox="0 0 16 16">
                 </svg>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
