@@ -14,11 +14,9 @@ export default function MyApp({ Component, pageProps }) {
         <title>OMiNTEL</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body>
-        <MainLayout>
-          <Component {...pageProps} />
-        </MainLayout>
-      </body>
+      <MainLayout>
+        <Component {...pageProps} />
+      </MainLayout>
     </>
   );
 }
