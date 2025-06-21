@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="container-fluid py-3 border-top text-white">
-      <div className="row gy-3 align-items-center">
-        <div className="col-12 col-md-4 col-lg-4 text-center text-md-start">
+    <footer className="container-fluid py-3 border-top text-white w-100">
+      <div className="row gy-3 align-items-center mx-0">
+        <div className="col-12 col-md-4 col-lg-4 text-center text-md-start px-3">
           <span>© 2025 Omintel</span>
         </div>
         
@@ -19,7 +19,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="col-12 col-md-4 col-lg-4 text-center text-md-end">
+        <div className="col-12 col-md-4 col-lg-4 text-center text-md-end px-3">
           <div className="d-flex justify-content-center justify-content-md-end align-items-center">
             <Link href="/feedback" className="me-3">
               <button type="button" className="btn custom-btn">

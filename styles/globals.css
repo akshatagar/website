@@ -8,10 +8,33 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+body {
+    background-color: rgba(40, 27, 113, 0.942);
+    color: white;
+    position: relative;
 }
 
 .navbar {
     color: black;
+    width: 100vw;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
 }
 
 .navbar-brand {
@@ -22,13 +45,14 @@
     margin-left: 70%;
 }
 
-.logo {
-    margin-right: 10px;
+@media (max-width: 992px) {
+    .navbar-nav {
+        margin-left: 0;
+    }
 }
 
-body {
-    background-color: rgba(40, 27, 113, 0.942);
-    color: white;
+.logo {
+    margin-right: 10px;
 }
 
 .feedback-link {
@@ -40,20 +64,33 @@ body {
     background-color: rgba(40, 27, 113, 0.942);
     color: white; 
     border: none; 
-  }
+}
 
-  .custom-btn:hover {
+.custom-btn:hover {
     background-color: rgb(30, 21, 86); 
     color: black;
-  }
+}
 
-  footer {
+footer {
     margin-top: 20px;
-  }
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
-  #homeDropdown {
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+footer .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#homeDropdown {
     margin-top: 7.5px;
-  }
+}
 
 /* Hide dropdown by default */
 .nav-item.dropdown .dropdown-menu {
