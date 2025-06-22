@@ -25,12 +25,12 @@
 
 
 /*Acc diagram and content stuff*/
-
+/* 
 #headline:hover {
   cursor: unset;
   animation: float 3s ease-in-out infinite;
   filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
-}
+} */
 
 .text-container {
   position: relative;
