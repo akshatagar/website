@@ -17,6 +17,9 @@
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .article-card:hover {
@@ -32,6 +35,8 @@
 
 .article-card__content {
   padding: 1.5rem;
+  padding-bottom: 0.5rem;
+  flex-grow: 1;
 }
 
 .article-card__title {
@@ -44,8 +49,13 @@
 .article-card__description {
   font-size: 0.95rem;
   color: #666;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
   line-height: 1.5;
+}
+
+.article-card__footer {
+  padding: 0 1.5rem 1.5rem;
+  margin-top: auto;
 }
 
 .article-card__link {

@@ -17,6 +17,8 @@ export default function ArticleCard({ article }) {
       <div className="article-card__content">
         <h3 className="article-card__title">{article.title}</h3>
         <p className="article-card__description">{article.description}</p>
+      </div>
+      <div className="article-card__footer">
         <Link href={article.articleUrl} className="article-card__link">
           Read More
         </Link>
