@@ -27,7 +27,7 @@ export default function LearnMore({ articles }) {
 
       <div className="article-cards">
         {articles.map((article) => (
-          <ArticleCard article={article} />
+          <ArticleCard key={article.title} article={article} />
         ))}
       </div>
     </div>
