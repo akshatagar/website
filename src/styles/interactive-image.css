@@ -32,6 +32,12 @@
   filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
 }
 
+.text-container {
+  position: relative;
+  padding-left: 0;
+  margin-right: 40px;
+}
+
 /* InteractiveDiagram.css */
 
 /* Diagram Container */
@@ -41,6 +47,7 @@
   height: 500px;
   border-radius: 20px;
   overflow: hidden;
+  margin-left: 80px;
 }
 
 .interactive-diagram {

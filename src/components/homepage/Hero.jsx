@@ -16,14 +16,14 @@ export default function Hero() {
 
   return (
     <div className="container col-xxl-8 py-5 hero">
-      <div className="row align-items-center g-5 py-5">
+      <div className="row align-items-center gx-5 py-5">
         {/* Text Column - Left Side */}
-          <div className="text-container col-lg-6">
+          <div className="text-container col-lg-5">
               <h1 className="display-5 fw-bold lh-1 mb-3 hero-header" id="headline">
                 AI First Solutions
               </h1>
               <p>Empowering decisions with intelligent automation and contextual AI systems. </p>
-        </div>
+          </div>
 
         {/* Diagram Column - Right Side */}
         <div className="col-lg-6">
