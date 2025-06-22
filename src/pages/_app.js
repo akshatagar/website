@@ -1,5 +1,5 @@
-import "@/styles/globals.css";
-import MainLayout from "@/layout/main-layout";
+import "../styles/globals.css";
+import MainLayout from "../layout/main-layout";
 import { useEffect } from "react";
 import Head from "next/head";
 
