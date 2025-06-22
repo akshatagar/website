@@ -52,7 +52,7 @@ export default function EmailForm() {
       //onSubmit={handleSubmit}
       action="https://formsubmit.co/ved_rb@rediffmail.com" 
       //action="mailto:ved_rb@rediffmail.com"
-      enctype="text/plain"
+      encType="text/plain"
       method="POST"
       className="feedback-form"
     >
