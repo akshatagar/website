@@ -32,7 +32,7 @@ export default function Hero() {
               {/* Central Logo */}
               <div className="central-logo">
                 <img 
-                  src="/blue-gold-logo.png" 
+                  src="/Logo_with_white.png" 
                   alt="AI Core" 
                   className="img-fluid"
                 />
