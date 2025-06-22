@@ -1,5 +1,5 @@
-import ArticleCard from '@/src/components/learnmorepage/ArticleCard';
-import articlesData from '@/data/articles_data.json';
+import ArticleCard from '../../components/learnmorepage/ArticleCard';
+import articlesData from '../../data/articles_data.json';
 
 export default function LearnMore() {
     return (

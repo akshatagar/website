@@ -22,7 +22,7 @@ export default function PartnerPage({ partner }) {
 }
 
 export async function getStaticPaths() {
-  const filePath = path.join(process.cwd(), "data", "partners_data.json");
+  const filePath = path.join(process.cwd(), "src", "data", "partners_data.json");
   const fileContents = fs.readFileSync(filePath, "utf8");
   const partners = JSON.parse(fileContents);
 
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const filePath = path.join(process.cwd(), "data", "partners_data.json");
+  const filePath = path.join(process.cwd(), "src", "data", "partners_data.json");
   const fileContents = fs.readFileSync(filePath, "utf8");
   const partners = JSON.parse(fileContents);
 
