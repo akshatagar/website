@@ -30,7 +30,7 @@ export default function PartnerCarousel({ partners }) {
     const cardContent = (
       <div className="card partner-card h-100 text-start">
         <img
-          src={partner.logo}
+          src={partner.logoUrl}
           className="card-img-top"
           alt={`${partner.name} logo`}
         />

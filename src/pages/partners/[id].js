@@ -1,6 +1,4 @@
-import path from "path";
-import fs from "fs";
-import Image from "next/image";
+import { client } from '@/lib/sanity'
 
 export default function PartnerPage({ partner }) {
   return (
@@ -8,7 +6,7 @@ export default function PartnerPage({ partner }) {
       <h1 className="mb-4">{partner.name}</h1>
       <div className="card p-4">
         <img
-          src={partner.logo}
+          src={partner.logoUrl}
           alt={`${partner.name}-logo`}
           objectFit="contain"
           style={{ maxHeight: "100px", maxWidth: "100px" }}
@@ -21,9 +19,11 @@ export default function PartnerPage({ partner }) {
 }
 
 export async function getStaticPaths() {
-  const filePath = path.join(process.cwd(), "src", "data", "partners_data.json");
-  const fileContents = fs.readFileSync(filePath, "utf8");
-  const partners = JSON.parse(fileContents);
+  const partners = await client.fetch(`
+    *[_type == "partner"] | order(name asc) {
+      name
+    }
+  `)
 
   const paths = partners.map((partner) => ({
     params: { id: partner.name },
@@ -33,15 +33,21 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const filePath = path.join(process.cwd(), "src", "data", "partners_data.json");
-  const fileContents = fs.readFileSync(filePath, "utf8");
-  const partners = JSON.parse(fileContents);
+  const partners = await client.fetch(`
+    *[_type == "partner"] | order(name asc) {
+      name,
+      solution,
+      description,
+      "logoUrl": logo.asset->url
+    }
+  `)
 
   const partner = partners.find((p) => p.name === params.id) || null;
 
   return {
     props: {
       partner,
+      revalidate: 60,
     },
   };
 }
