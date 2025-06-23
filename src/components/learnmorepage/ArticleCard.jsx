@@ -18,9 +18,9 @@ export default function ArticleCard({ article }) {
         <p className="article-card__description">{article.description}</p>
       </div>
       <div className="article-card__footer">
-        <Link href={article.articleUrl} className="article-card__link">
+        <a href={article.articleUrl} className="article-card__link" target="_blank" rel="noopener noreferrer">
           Read More
-        </Link>
+        </a>
       </div>
     </div>
   );
