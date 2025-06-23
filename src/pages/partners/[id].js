@@ -1,5 +1,4 @@
 import { client } from "@/lib/sanity";
-import Link from "next/link";
 
 export default function PartnerPage({ partner }) {
   return (
