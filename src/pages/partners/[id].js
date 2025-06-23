@@ -3,16 +3,15 @@ import { client } from '@/lib/sanity'
 export default function PartnerPage({ partner }) {
   return (
     <div className="container my-5">
-      <h1 className="mb-4">{partner.name}</h1>
       <div className="card p-4">
+      <h1 className="mb-4 text-center">{partner.name}</h1>
         <img
           src={partner.logoUrl}
           alt={`${partner.name}-logo`}
           objectFit="contain"
-          style={{ maxHeight: "100px", maxWidth: "100px" }}
+          style={{ maxHeight: "150px", maxWidth: "150px", margin: "0 auto" }}
         />
-        <h4 className="mt-3">{partner.solution}</h4>
-        <p>{partner.description}</p>
+        <p className='mt-5'>{partner.description}</p>
       </div>
     </div>
   );
@@ -36,7 +35,6 @@ export async function getStaticProps({ params }) {
   const partners = await client.fetch(`
     *[_type == "partner"] | order(name asc) {
       name,
-      solution,
       description,
       "logoUrl": logo.asset->url
     }
