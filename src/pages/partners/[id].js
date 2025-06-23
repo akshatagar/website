@@ -12,9 +12,9 @@ export default function PartnerPage({ partner }) {
           style={{ maxHeight: "150px", maxWidth: "150px", margin: "0 auto" }}
         />
         <p className="mt-5">{partner.description}</p>
-        <Link href={partner.website} className="text-center mt-4">
+        <a href={partner.website} className="text-center mt-4" target="_blank" rel="noopener noreferrer">
           <button type="button" className="btn btn-dark">Visit Website</button>
-        </Link>
+        </a>
       </div>
     </div>
   );
