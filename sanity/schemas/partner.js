@@ -38,6 +38,14 @@ export default {
         },
         validation: Rule => Rule.required(),
       },
+      {
+        name: 'website',
+        title: 'Website URL',
+        type: 'url',
+        validation: Rule => Rule.required().uri({
+          scheme: ['http', 'https']
+        }),
+      },
     ],
   }
   
