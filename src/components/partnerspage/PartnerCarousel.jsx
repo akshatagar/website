@@ -36,7 +36,7 @@ export default function PartnerCarousel({ partners }) {
         />
         <div className="card-body">
           <h5 className="card-title">{partner.name}</h5>
-          <h6 className="card-subtitle mb-2 text-muted">{partner.solution}</h6>
+          <h6 className="card-subtitle mb-3 mt-2 text-muted">{partner.solution}</h6>
           <p className="card-text">{partner.summary}</p>
         </div>
       </div>

@@ -1,19 +1,19 @@
 [
   {
     "id": 1,
-    "name": "Partner1",
-    "solution": "Type",
-    "summary": "Short Summary",
-    "description" : "Long description",
-    "logo": ""
+    "name": "Route Mobile Limited",
+    "solution": "CPaaS",
+    "summary": "Global leader in omnichannel communications, enabling businesses to reach customers via SMS, WhatsApp, email, RCS, and chatbots.",
+    "description" : "Route Mobile offers a robust CPaaS platform with strong presence in Asia, the Middle East, North Africa, and LATAM. Their network includes 19 virtualized data centers, 18 firewalls, and over 280+ interconnects globally. Used across public and private sectors (e.g., Delhi Metro, BFC, Bank of Maharashtra), they enable scalable communication solutions integrated with CRMs like FreshSales, and provide automation for real-time notifications, campaign scheduling, and customer support.",
+    "logo": "/Logo.png"
   },
   {
     "id": 2,
-    "name": "Partner2",
-    "solution": "Type",
-    "summary": "Short Summary",
-    "description" : "Long description",
-    "logo": ""
+    "name": "SpeedTech.ai",
+    "solution": "GenAI SaaS",
+    "summary": "Enterprise-grade GenAI platform automating document processing, telephony, and customer service across BFSI, Logistics, Healthcare, Retail.",
+    "description" : "SpeedTech.ai, a tech unit of EarnWealth Solutions, launched RAIYA to drive AI-led business transformation. Hosted on Azure with zero-knowledge architecture, the RAIYA platform includes: RAIYA IDP: Automates extraction, classification, and enrichment of 140+ document types with 97.5% accuracy. RAIYA Concierge: Voice/chat assistant for multilingual customer support, lead qualification, and smart scheduling. RAIYA Telephony: Handles calls, appointments, collections, and personalized alerts using GPT-4o and STT/TTS. Use cases include: Logistics (AJ Worldwide): 4,000 invoices/day automated. Infrastructure (ThyssenKrupp): RFP turnaround time reduced from 4–6 weeks to <2 weeks.",
+    "logo": "/speedtechlogo2.png"
   },
   {
     "id": 3,

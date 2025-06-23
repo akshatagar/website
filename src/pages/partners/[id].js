@@ -5,14 +5,13 @@ import Image from "next/image";
 export default function PartnerPage({ partner }) {
   return (
     <div className="container my-5">
-      <h1 className="mb-4">{partner.name} Page</h1>
+      <h1 className="mb-4">{partner.name}</h1>
       <div className="card p-4">
-        <Image
+        <img
           src={partner.logo}
           alt={`${partner.name}-logo`}
-          width={200}
-          height={100}
           objectFit="contain"
+          style={{ maxHeight: "100px", maxWidth: "100px" }}
         />
         <h4 className="mt-3">{partner.solution}</h4>
         <p>{partner.description}</p>
