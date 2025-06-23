@@ -9,7 +9,7 @@ export default function AboutUs() {
                     <div className="col-lg-6 mb-4 mb-lg-0">
                         <div className="about-content pe-lg-4">
                             <p className="lead mb-4">
-                                Omintel Ventures is a UAE -based digital solutions partner focused on enabling AI-powered transformation across BFSI and Corporate Entities in the GCC. We connect global SaaS innovators with regional demand through a channel-driven, insight-led model.
+                                Omintel Ventures is a UAE-based digital solutions partner focused on enabling AI-powered transformation across BFSI and Corporate Entities in the GCC. We connect global SaaS innovators with regional demand through a channel-driven, insight-led model.
                             </p>
 
                             <h3 className="mb-3">How we do it?</h3>
