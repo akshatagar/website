@@ -1,131 +1,147 @@
 @import "bootstrap";
 @import "partnerspage.css";
-@import "learnmore.css";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html, body {
-    overflow-x: hidden;
-    width: 100%;
-    max-width: 100%;
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
-    /* background-color: rgba(40, 27, 113, 0.942); */
-    color: white;
-    /* background-color: rgba(201,201,255, 0.942);
+  /* background-color: rgba(40, 27, 113, 0.942); */
+  color: white;
+  /* background-color: rgba(201,201,255, 0.942);
     color: rgba(44, 42, 42, 0.959);*/
-    background: linear-gradient(to bottom, rgba(40, 27, 113, 0.942), rgba(6, 6, 16, 0.942));
-    position: relative;
+  background: linear-gradient(
+    to bottom,
+    rgba(40, 27, 113, 0.942),
+    rgba(6, 6, 16, 0.942)
+  );
+  position: relative;
 }
 
 .navbar {
-    color: black;
-    width: 100vw;
-    max-width: 100%;
-    padding-left: 0;
-    padding-right: 0;
+  color: black;
+  width: 100vw;
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .navbar .container-fluid {
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
 }
 
 .navbar-brand {
-    color: white;
+  color: white;
 }
 
 .navbar-nav {
-    margin-left: 70%;
+  margin-left: 70%;
 }
 
 @media (max-width: 992px) {
-    .navbar-nav {
-        margin-left: 0;
-    }
+  .navbar-nav {
+    margin-left: 0;
+  }
 }
 
 .logo {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .feedback-link {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .custom-btn {
-    background-color: rgba(40, 50, 113, 0.2);
-    color: white; 
-    border: none; 
+  background-color: rgba(40, 50, 113, 0.2);
+  color: white;
+  border: none;
 }
 
 .custom-btn:hover {
-    background-color: rgb(30, 21, 86); 
-    color: black;
+  background-color: rgb(30, 21, 86);
+  color: black;
 }
 
 footer {
-    margin-top: 20px;
-    width: 100vw;
-    max-width: 100%;
-    overflow-x: hidden;
-    background-color: rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
 .container-fluid {
-    padding-left: 0;
-    padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 footer .row {
-    margin-left: 0;
-    margin-right: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 #homeDropdown {
-    margin-top: 7.5px;
+  margin-top: 7.5px;
 }
 
 /* Hide dropdown by default */
 .nav-item.dropdown .dropdown-menu {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    transform: translateY(-10px); /* Optional: subtle slide-in effect */
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateY(-10px); /* Optional: subtle slide-in effect */
 }
 
 /* Show on hover */
 .nav-item.dropdown:hover .dropdown-menu {
-    display: block;
-    opacity: 1;
-    transform: translateY(0); /* Reset slide effect */
-    margin-top: 0;
+  display: block;
+  opacity: 1;
+  transform: translateY(0); /* Reset slide effect */
+  margin-top: 0;
 }
 
 /* Keep dropdown open when hovering over menu */
 .dropdown-menu:hover {
-    display: block;
-    opacity: 1;
+  display: block;
+  opacity: 1;
 }
 
 /* Button styling (optional) */
 .navbar .nav-item.dropdown .dropdown-toggle {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .navbar-toggler {
-    background-color: grey;
+  background-color: grey;
 }
 
 #contact-us {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
+.learn-more-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.article-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}

@@ -1,24 +1,24 @@
-import Link from "next/link";
 import Image from "next/image";
+import styles from './LearnMore.module.css';
 
 export default function ArticleCard({ article }) {
   return (
-    <div className="article-card">
-      <div className="article-card__image-container">
+    <div className={styles.articleCard}>
+      <div className={styles.articleCardImageContainer}>
         <Image
           src={article.imageUrl}
           alt={article.title}
           width={200}
           height={200}
-          className="article-card__image"
+          className={styles.articleCardImage}
         />
       </div>
-      <div className="article-card__content">
-        <h3 className="article-card__title">{article.title}</h3>
-        <p className="article-card__description">{article.description}</p>
+      <div className={styles.articleCardContent}>
+        <h3 className={styles.articleCardTitle}>{article.title}</h3>
+        <p className={styles.articleCardDescription}>{article.description}</p>
       </div>
-      <div className="article-card__footer">
-        <a href={article.articleUrl} className="article-card__link" target="_blank" rel="noopener noreferrer">
+      <div className={styles.articleCardFooter}>
+        <a href={article.articleUrl} className={styles.articleCardLink} target="_blank" rel="noopener noreferrer">
           Read More
         </a>
       </div>
