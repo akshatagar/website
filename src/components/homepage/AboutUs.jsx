@@ -2,7 +2,7 @@ import styles from './AboutUs.module.css';
 
 export default function AboutUs() {
     return (
-        <section id="about-us" className="about-section py-5">
+        <section id="about" className="about-section py-5">
             <div className="container">
                 <h1 className={styles.aboutTitle + " text-center mb-5"}>About Us</h1>
                 
