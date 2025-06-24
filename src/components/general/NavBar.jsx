@@ -1,12 +1,23 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function NavBar() {
+  const [navOpen, setNavOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
   return (
     <nav className="navbar navbar-expand-lg sticky-top bg-dark w-100">
       <div className="container-fluid px-3">
         <Link href="/">
-          <Image width={40} height={40} src="/white-logo.png" alt="omintel-logo" className="logo" priority />
+          <Image
+            width={40}
+            height={40}
+            src="/white-logo.png"
+            alt="omintel-logo"
+            className="logo"
+            priority
+          />
         </Link>
         <Link className="navbar-brand" href="/">
           OMiNTEL
@@ -14,21 +25,19 @@ export default function NavBar() {
         <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
+          aria-expanded={navOpen}
           aria-label="Toggle navigation"
+          onClick={() => setNavOpen(!navOpen)}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className={`collapse navbar-collapse ${navOpen ? "show" : ""}`}>
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item dropdown">
               <button
-                className="btn btn-dark btn-lg dropdown-toggle me-md-2"
+                className="btn btn-dark btn-lg dropdown-toggle me-md-2 mt-2"
                 type="button"
-                id="homeDropdown"
+                onClick={() => setDropdownOpen(!dropdownOpen)}
               >
                 Home
               </button>
@@ -43,16 +52,12 @@ export default function NavBar() {
                     Contact Us
                   </Link>
                 </li>
-              </ul>            
-
+              </ul>
             </li>
 
             <li className="nav-item">
               <Link className="nav-link" href="/partners">
-                <button
-                  type="button"
-                  className="btn btn-dark btn-lg me-md-2"
-                >
+                <button type="button" className="btn btn-dark btn-lg me-md-2">
                   Partners
                 </button>
               </Link>
