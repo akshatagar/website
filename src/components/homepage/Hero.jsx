@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './InteractiveImage.module.css';
 
 export default function Hero() {
 
@@ -26,7 +27,7 @@ export default function Hero() {
     <div className="container col-xxl-8 py-5 hero">
       <div className="row align-items-center gx-5 py-5">
         {/* Text Column - Left Side */}
-          <div className="text-container col-lg-5">
+          <div className={styles.textContainer + " col-lg-5"}>
               <h1 className="display-5 fw-bold lh-1 mb-3 hero-header" id="headline">
                 AI First Solutions
               </h1>
@@ -35,10 +36,10 @@ export default function Hero() {
 
         {/* Diagram Column - Right Side */}
         <div className="col-lg-6">
-          <div className="diagram-container">
-            <div className="interactive-diagram">
+          <div className={styles.diagramContainer}>
+            <div className={styles.interactiveDiagram}>
               {/* Central Logo */}
-              <div className={`central-logo ${isClicked ? 'clicked' : ''}`}
+              <div className={`${styles.centralLogo} ${isClicked ? styles.clicked : ''}`}
                 onClick={handleCentralClick}
                 style={{ cursor: 'pointer' }}
               >
@@ -53,7 +54,7 @@ export default function Hero() {
               {nodes.map((node) => (
                 <div 
                   key={node.id}
-                  className={`satellite-logo ${isClicked ? 'scattered' : ''}`}
+                  className={`${styles.satelliteLogo} ${isClicked ? styles.scattered : ''}`}
                   style={{
                     /*top: node.top,
                     left: node.left,
@@ -68,13 +69,13 @@ export default function Hero() {
                   <img 
                     src={node.img} 
                     alt={node.name} 
-                    className="satellite-img"
+                    className={styles.satelliteImg}
                     style={{ 
                       width: node.size,
                       height: node.size
                     }}
                   />
-                  <span className="satellite-label">{node.name}</span>
+                  <span className={styles.satelliteLabel}>{node.name}</span>
                 </div>
               ))}
             </div>

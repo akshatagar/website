@@ -1,6 +1,7 @@
 'use client'; // Must be the first line
 
 import { useState } from 'react';
+import styles from './Feedback.module.css';
 
 export default function EmailForm() {
   const [formData, setFormData] = useState({
@@ -54,17 +55,17 @@ export default function EmailForm() {
       //action="mailto:ved_rb@rediffmail.com"
       encType="text/plain"
       method="POST"
-      className="feedback-form"
+      className={styles.feedbackForm}
     >
       
       <h2> Feedback Page</h2>
       <input type="hidden" name="_captcha" value="false" />
       <input type="hidden" name="_template" value="table" />
 
-      <div className="mb-3">
-        <label htmlFor="phoneInput" className="form-label">Phone Number</label>
+      <div className={styles.formGroup + " mb-3"}>
+        <label htmlFor="phoneInput" className={styles.formLabel}>Phone Number</label>
         <input
-          className="form-control"
+          className={styles.formControl}
           type='tel'
           id="phoneInput"
           name="phone"
@@ -75,24 +76,24 @@ export default function EmailForm() {
         />
       </div>
       
-      <div className="mb-3">
-        <label htmlFor="emailInput" className="form-label">Email address</label>
+      <div className={styles.formGroup + " mb-3"}>
+        <label htmlFor="emailInput" className={styles.formLabel}>Email address</label>
         <input
           type="email"
-          className="form-control"
+          className={styles.formControl}
           id="emailInput"
           name="email"
           onChange={handleChange}
           placeholder="Enter email"
           required
         />
-        <div className="form-text">We'll never share your email</div>
+        <div className={styles.formText}>We'll never share your email</div>
       </div>
       
-      <div className="mb-3">
-        <label htmlFor="companyInput" className="form-label">Company Name</label>
+      <div className={styles.formGroup + " mb-3"}>
+        <label htmlFor="companyInput" className={styles.formLabel}>Company Name</label>
         <input
-          className="form-control"
+          className={styles.formControl}
           id="companyInput"
           name="company"
           value={formData.company}
@@ -102,7 +103,7 @@ export default function EmailForm() {
         />
       </div>
       
-      <button type="submit" className="submit-btn">
+      <button type="submit" className={styles.submitBtn}>
         Submit
       </button>
     </form>

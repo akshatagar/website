@@ -1,10 +1,6 @@
 @import "bootstrap";
-@import "homepage.css";
 @import "partnerspage.css";
 @import "learnmore.css";
-@import "interactive-image.css";
-@import "feedbackpage.css";
-@import "aboutus.css";
 
 * {
     margin: 0;
@@ -126,5 +122,10 @@ footer .row {
 
 .navbar-toggler {
     background-color: grey;
+}
+
+#contact-us {
+    display: flex;
+    justify-content: center;
 }
 
