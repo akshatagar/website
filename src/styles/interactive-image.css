@@ -88,18 +88,12 @@
   }
 }
 
-@keyframes biggen {
-  0%, 100% {
-    transform: scale(1.1);
-  }
-}
-
 .central-logo.clicked {
-  animation: biggen 3s ease-in-out;
+  animation: scale(1.1) 3s ease-in-out;
 }
 
 .central-logo:hover {
-  animation: biggen 3s ease-in-out infinite;
+  animation: scale(1.1) 3s ease-in-out infinite;
 }
 
 .satellite-logo.scattered {
