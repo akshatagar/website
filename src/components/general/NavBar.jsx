@@ -9,7 +9,7 @@ export default function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg sticky-top bg-dark w-100">
       <div className="container-fluid px-3">
-        <Link href="/">
+        <Link href="/" className="d-flex align-items-center text-decoration-none">
           <Image
             width={40}
             height={40}
@@ -18,9 +18,7 @@ export default function NavBar() {
             className="logo"
             priority
           />
-        </Link>
-        <Link className="navbar-brand" href="/">
-          OMiNTEL
+          <span className="navbar-brand mb-0">OMiNTEL</span>
         </Link>
         <button
           className="navbar-toggler"
