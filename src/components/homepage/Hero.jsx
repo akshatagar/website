@@ -1,23 +1,10 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState } from 'react';
 
 export default function Hero() {
 
     const [isClicked, setIsClicked] = useState(false);
-    const [isReady, setIsReady] = useState(false);
 
-    useEffect(() => {
-      if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
-        window.requestIdleCallback(() => {
-          setIsReady(true);
-        });
-      } else {
-        // Fallback for Safari or environments without requestIdleCallback
-        setTimeout(() => setIsReady(true), 200);
-      }
-    }, []);
-    
-
-    const nodes = useMemo(() => [
+    const nodes = [
     { id: 1, name: 'Attention', img: '/white-logo.png', top: '15%', left: '75%', size: '50px' },
     { id: 2, name: 'Analysis', img: '/white-logo.png', top: '60%', left: '12%', size: '45px' },
     { id: 3, name: 'Options', img: '/white-logo.png', top: '80%', left: '37%', size: '55px' },
@@ -29,7 +16,7 @@ export default function Hero() {
     { id: 9, name: 'Inductance', img: '/white-logo.png', top: '25%', left: '55%', size: '45px' },
     { id: 10, name: 'Lorentz', img: '/white-logo.png', top: '75%', left: '60%', size: '45px' }
     
-  ], []);
+  ];
 
   const handleCentralClick = () => {
     setIsClicked(!isClicked);
@@ -51,7 +38,7 @@ export default function Hero() {
           <div className="diagram-container">
             <div className="interactive-diagram">
               {/* Central Logo */}
-              <div className={`central-logo ${isClicked && isReady ? 'clicked' : ''}`}
+              <div className={`central-logo ${isClicked ? 'clicked' : ''}`}
                 onClick={handleCentralClick}
                 style={{ cursor: 'pointer' }}
               >
@@ -66,7 +53,7 @@ export default function Hero() {
               {nodes.map((node) => (
                 <div 
                   key={node.id}
-                  className={`satellite-logo ${isClicked && isReady ? 'scattered' : ''}`}
+                  className={`satellite-logo ${isClicked ? 'scattered' : ''}`}
                   style={{
                     /*top: node.top,
                     left: node.left,
