@@ -191,3 +191,7 @@
     font-size: 0.7rem;
   }
 }
+
+.satellite-logo, .central-logo {
+  will-change: transform, opacity;
+}

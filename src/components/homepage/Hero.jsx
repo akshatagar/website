@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
 export default function Hero() {
 
@@ -18,9 +18,9 @@ export default function Hero() {
     
   ];
 
-  const handleCentralClick = () => {
-    setIsClicked(!isClicked);
-  }
+  const handleCentralClick = useCallback(() => {
+    setIsClicked(prev => !prev);
+  }, [])
 
   return (
     <div className="container col-xxl-8 py-5 hero">

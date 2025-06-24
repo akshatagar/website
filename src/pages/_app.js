@@ -13,6 +13,7 @@ export default function MyApp({ Component, pageProps }) {
       <Head>
         <title>OMiNTEL</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preload" as="image" href="/white-logo.png" />
       </Head>
       <MainLayout>
         <Component {...pageProps} />
