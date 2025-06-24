@@ -1,4 +1,8 @@
+import React, { useState } from 'react';
+
 export default function Hero() {
+
+    const [isClicked, setIsClicked] = useState(false);
 
     const nodes = [
     { id: 1, name: 'Attention', img: '/white-logo.png', top: '15%', left: '75%', size: '50px' },
@@ -6,13 +10,17 @@ export default function Hero() {
     { id: 3, name: 'Options', img: '/white-logo.png', top: '80%', left: '37%', size: '55px' },
     { id: 4, name: 'Problems', img: '/white-logo.png', top: '20%', left: '10%', size: '40px' },
     { id: 5, name: 'Learning', img: '/white-logo.png', top: '40%', left: '68%', size: '55px' },
-    { id: 6, name: 'Patterns', img: '/white-logo.png', top: '70%', left: '75%', size: '50px' },
+    { id: 6, name: 'Patterns', img: '/white-logo.png', top: '60%', left: '80%', size: '50px' },
     { id: 7, name: 'Decisions', img: '/white-logo.png', top: '10%', left: '40%', size: '45px' },
     { id: 8, name: 'Ambience', img: '/white-logo.png', top: '40%', left: '25%', size: '45px' },
     { id: 9, name: 'Inductance', img: '/white-logo.png', top: '25%', left: '55%', size: '45px' },
-    { id: 10, name: 'Lorentz', img: '/white-logo.png', top: '63%', left: '48%', size: '45px' }
+    { id: 10, name: 'Lorentz', img: '/white-logo.png', top: '75%', left: '60%', size: '45px' }
     
   ];
+
+  const handleCentralClick = () => {
+    setIsClicked(!isClicked);
+  }
 
   return (
     <div className="container col-xxl-8 py-5 hero">
@@ -30,7 +38,10 @@ export default function Hero() {
           <div className="diagram-container">
             <div className="interactive-diagram">
               {/* Central Logo */}
-              <div className="central-logo">
+              <div className={`central-logo ${isClicked ? 'clicked' : ''}`}
+                onClick={handleCentralClick}
+                style={{ cursor: 'pointer' }}
+              >
                 <img 
                   src="/Logo_with_white.png" 
                   alt="AI Core" 
@@ -42,12 +53,16 @@ export default function Hero() {
               {nodes.map((node) => (
                 <div 
                   key={node.id}
-                  className="satellite-logo"
+                  className={`satellite-logo ${isClicked ? 'scattered' : ''}`}
                   style={{
-                    top: node.top,
+                    /*top: node.top,
                     left: node.left,
                     width: `calc(${node.size} + 30px)`,
-                    height: `calc(${node.size} + 30px)`
+                    height: `calc(${node.size} + 30px)`*/
+                    '--final-top': node.top,
+                    '--final-left': node.left,
+                    '--size': node.size,
+                    '--delay': `${node.id * 0.1}s`                    
                   }}
                 >
                   <img 

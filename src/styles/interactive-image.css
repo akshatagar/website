@@ -65,7 +65,19 @@
   width: 120px;
   height: 120px;
   z-index: 10;
+  transition: transform 0.3s ease;
 }
+
+.satellite-logo:nth-child(1) { transition-delay: 0.1s; }
+.satellite-logo:nth-child(2) { transition-delay: 0.2s; }
+.satellite-logo:nth-child(3) { transition-delay: 0.3s; }
+.satellite-logo:nth-child(4) { transition-delay: 0.4s; }
+.satellite-logo:nth-child(5) { transition-delay: 0.5s; }
+.satellite-logo:nth-child(6) { transition-delay: 0.6s; }
+.satellite-logo:nth-child(7) { transition-delay: 0.7s; }
+.satellite-logo:nth-child(8) { transition-delay: 0.8s; }
+.satellite-logo:nth-child(9) { transition-delay: 0.9s; }
+.satellite-logo:nth-child(10) { transition-delay: 1s; }
 
 @keyframes float {
   0%, 100% { 
@@ -76,8 +88,25 @@
   }
 }
 
+@keyframes biggen {
+  0%, 100% {
+    transform: scale(1.1);
+  }
+}
+
+.central-logo.clicked {
+  animation: biggen 3s ease-in-out;
+}
+
 .central-logo:hover {
-  transform: translate(-50%, -50%) scale(1.1);
+  animation: biggen 3s ease-in-out infinite;
+}
+
+.satellite-logo.scattered {
+  top: var(--final-top);
+  left: var(--final-left);
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
 }
 
 .central-logo img {
@@ -88,19 +117,48 @@
 
 
 .satellite-logo {
+  /*opacity: 0;
+  transform: scale(0.5) translate(-50%, -50%);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 5;*/
+
+  top:50%;
+  left:50%;
+  position: absolute;
+  width: calc(var(--size) + 30px);
+  height: calc(var(--size) + 30px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: 
+    top 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+    left 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.4s ease,
+    opacity 0.3s ease;
+  transition-delay: var(--delay);
   z-index: 5;
 }
 
 .satellite-img {
+  /*object-fit: contain;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+  will-change: transform;*/
+  width: var(--size);
+  height: var(--size);
   object-fit: contain;
   margin-bottom: 5px;
   transition: all 0.3s ease;
   will-change: transform;
+  will-change: transition;
 }
 
 .satellite-logo:hover .satellite-img {
