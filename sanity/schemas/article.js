@@ -17,6 +17,24 @@ export default {
         validation: Rule => Rule.required().max(300),
       },
       {
+        name: 'categories',
+        title: 'Categories',
+        type: 'array',
+        of: [
+          {
+            type: 'string',
+            options: {
+              list: [
+                { title: 'Banking', value: 'banking' },
+                { title: 'AI', value: 'ai' },
+                { title: 'Miscellaneous', value: 'misc' },
+              ]
+            }
+          }
+        ],
+        validation: Rule => Rule.min(1).error('At least one category is required')
+      },
+      {
         name: 'articleUrl',
         title: 'External Article URL',
         type: 'url',

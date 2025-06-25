@@ -1,22 +1,6 @@
-import ArticleCard from "../../components/learnmorepage/ArticleCard";
-import { client } from "@/lib/sanity";
+import Link from "next/link";
 
-export async function getStaticProps() {
-  const query = `*[_type == "article"]{
-        title,
-        description,
-        articleUrl,
-        "imageUrl": image.asset->url
-      }`;
-  const articles = await client.fetch(query);
-
-  return {
-    props: { articles },
-    revalidate: 60,
-  };
-}
-
-export default function LearnMore({ articles }) {
+export default function LearnMore() {
   return (
     <div className="learn-more-container">
       <h1>Learn More</h1>
@@ -26,9 +10,15 @@ export default function LearnMore({ articles }) {
       </p>
 
       <div className="article-cards">
-        {articles.map((article) => (
-          <ArticleCard key={article.title} article={article} />
-        ))}
+        <Link href="/learn-more/banking" className="learn-more-card">
+          Banking
+        </Link>
+        <Link href="/learn-more/ai" className="learn-more-card">
+          AI
+        </Link>
+        <Link href="/learn-more/misc" className="learn-more-card">
+          Miscellaneous
+        </Link>
       </div>
     </div>
   );
