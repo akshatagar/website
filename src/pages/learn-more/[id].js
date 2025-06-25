@@ -24,17 +24,15 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      articles,
-      category
+      articles
     },
   };
 }
 
-export default function LearnMore({ articles, category }) {
+export default function LearnMore({ articles }) {
   return (
     <div className="learn-more-container">
       <h1>Learn More</h1>
-      <p>Learn more about {category}</p>
       <div className="article-cards">
         {articles.map((article) => (
           <ArticleCard key={article.title} article={article} />

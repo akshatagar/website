@@ -11,10 +11,10 @@ export default function Footer() {
         <div className="col-12 col-md-4 col-lg-4 text-center" id="contact-us">
           <div>
             <div className="d-flex align-items-center justify-content-center mb-1">
-              <a href="mailto:email@website.com" className="text-white text-decoration-none">email@website.com</a>
+              <a href="mailto:contact@omintel.com" className="text-white text-decoration-none">contact@omintel.com</a>
             </div>
             <div className="d-flex align-items-center justify-content-center">
-              <a href="tel:6666666666" className="text-white text-decoration-none">666 666 6666</a>
+              <a href="tel:6666666666" className="text-white text-decoration-none">666 666 6666</a> 
             </div>
           </div>
         </div>
