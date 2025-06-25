@@ -172,9 +172,22 @@
   
   @media (max-width: 992px) {
     .diagramContainer {
+      margin: auto;
+      position: relative;
+      margin-right: 80px;
       height: 400px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .textContainer {
+      text-align: center;
+      padding-bottom: 100px;
     }
     
+    .satelliteImg {
+      transform: scale(0.8);
+    }
+
     .centralLogo {
       width: 80px;
       height: 80px;

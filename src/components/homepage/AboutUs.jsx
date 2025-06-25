@@ -25,7 +25,7 @@ export default function AboutUs() {
                     <div className="col-lg-6">
                         <div className={styles.aboutImage}>
                             <img 
-                                src="/Logo_with_white.png"
+                                src="/aboutuspic.png"
                                 alt="AI Solutions in Action"
                                 className="img-fluid rounded shadow"
                             />

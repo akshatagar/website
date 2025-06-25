@@ -3,7 +3,20 @@ import styles from './InteractiveImage.module.css';
 
 export default function Hero() {
 
-    const [isClicked, setIsClicked] = useState(false);
+    const [isClickedC, setIsClickedC] = useState(false);
+    const [isClicked1, setIsClicked1] = useState(false);
+
+    const nodes1 = [
+        { id: 1, name: 'Home', img: '/white-logo.png', top: '40%', left: '68%', size: '55px' },
+        { id: 2, name: 'Partners', img: '/white-logo.png', top: '40%', left: '25%', size: '55px' },
+        { id: 3, name: 'Learn more', img: '/white-logo.png', top: '75%', left: '60%', size: '55px' }
+    ]
+
+    const nodesH = [
+        { id: 1, name: 'Decisions', img: '/white-logo.png', top: '-17%', left: '-16%', size: '40px' },
+        { id: 2, name: 'Decisions', img: '/white-logo.png', top: '-20%', left: '4%', size: '40px' },
+        { id: 3, name: 'Decisions', img: '/white-logo.png', top: '0%', left: '20%', size: '40px' },
+    ]
 
     const nodes = [
     { id: 1, name: 'Attention', img: '/white-logo.png', top: '15%', left: '75%', size: '50px' },
@@ -20,7 +33,11 @@ export default function Hero() {
   ];
 
   const handleCentralClick = () => {
-    setIsClicked(!isClicked);
+    setIsClickedC(!isClickedC);
+  }
+
+    const handleClick1 = () => {
+    setIsClicked1(!isClicked1);
   }
 
   return (
@@ -39,7 +56,7 @@ export default function Hero() {
           <div className={styles.diagramContainer}>
             <div className={styles.interactiveDiagram}>
               {/* Central Logo */}
-              <div className={`${styles.centralLogo} ${isClicked ? styles.clicked : ''}`}
+              <div className={`${styles.centralLogo} ${isClickedC ? styles.clicked : ''}`}
                 onClick={handleCentralClick}
                 style={{ cursor: 'pointer' }}
               >
@@ -50,16 +67,20 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Satellite Logos */}
-              {nodes.map((node) => (
+              {/*primary logos*/}
+
+
+              {nodes1.map((node) => (
                 <div 
                   key={node.id}
-                  className={`${styles.satelliteLogo} ${isClicked ? styles.scattered : ''}`}
+                  className={`${styles.satelliteLogo} ${isClickedC ? styles.scattered : ''}`}
+                  onClick={handleClick1}
                   style={{
                     /*top: node.top,
                     left: node.left,
                     width: `calc(${node.size} + 30px)`,
                     height: `calc(${node.size} + 30px)`*/
+                    cursor: 'pointer',
                     '--final-top': node.top,
                     '--final-left': node.left,
                     '--size': node.size,
@@ -78,6 +99,66 @@ export default function Hero() {
                   <span className={styles.satelliteLabel}>{node.name}</span>
                 </div>
               ))}
+
+              {nodesH.map((node) => (
+                <div 
+                  key={node.id}
+                  className={`${styles.satelliteLogo} ${isClickedC && isClicked1 ? styles.scattered : ''}`}
+                  style={{
+                    /*top: node.top,
+                    left: node.left,
+                    width: `calc(${node.size} + 30px)`,
+                    height: `calc(${node.size} + 30px)`*/
+                    '--final-top': `calc(${nodes1.at(0).top} + ${node.top})`,
+                    '--final-left': `calc(${nodes1.at(0).left} + ${node.left})`,
+                    '--size': node.size,
+                    '--delay': `${node.id * 0.1}s`                    
+                  }}
+                >
+                  <img 
+                    src={node.img} 
+                    alt={node.name} 
+                    className={styles.satelliteImg}
+                    style={{ 
+                      width: node.size,
+                      height: node.size
+                    }}
+                  />
+                  <span className={styles.satelliteLabel}>{node.name}</span>
+                </div>
+              ))}
+
+              
+
+              {/* Satellite Logos 
+              {nodes.map((node) => (
+                <div 
+                  key={node.id}
+                  className={`${styles.satelliteLogo} ${isClickedC ? styles.scattered : ''}`}
+                  onClick={handleCentralClick}
+                  style={{
+                    top: node.top,
+                    left: node.left,
+                    width: `calc(${node.size} + 30px)`,
+                    height: `calc(${node.size} + 30px)`
+                    '--final-top': node.top,
+                    '--final-left': node.left,
+                    '--size': node.size,
+                    '--delay': `${node.id * 0.1}s`                    
+                  }}
+                >
+                  <img 
+                    src={node.img} 
+                    alt={node.name} 
+                    className={styles.satelliteImg}
+                    style={{ 
+                      width: node.size,
+                      height: node.size
+                    }}
+                  />
+                  <span className={styles.satelliteLabel}>{node.name}</span>
+                </div>
+              ))}*/}
             </div>
           </div>
         </div>
