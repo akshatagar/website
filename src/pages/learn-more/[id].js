@@ -1,4 +1,4 @@
-import ArticleCard from "@/src/components/learnmorepage/ArticleCard";
+import CategoryPage from "@/src/components/learnmorepage/CategoryPage";
 import { client } from "@/lib/sanity";
 
 export async function getStaticPaths() {
@@ -29,15 +29,8 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function LearnMore({ articles }) {
+export default function LearnMorePage({ articles }) {
   return (
-    <div className="learn-more-container">
-      <h1>Learn More</h1>
-      <div className="article-cards">
-        {articles.map((article) => (
-          <ArticleCard key={article.title} article={article} />
-        ))}
-      </div>
-    </div>
+    <CategoryPage articles={articles} />
   );
 }

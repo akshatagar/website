@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from './LearnMore.module.css';
+import styles from './ArticleCard.module.css';
 
 export default function ArticleCard({ article }) {
   return (
