@@ -4,40 +4,46 @@ import styles from './InteractiveImage.module.css';
 export default function Hero() {
 
     const [isClickedC, setIsClickedC] = useState(false);
-    const [isClicked1, setIsClicked1] = useState(false);
+    const [isClickedH, setIsClickedH] = useState(false);
+    const [isClickedP, setIsClickedP] = useState(false);
+    const [isClickedL, setIsClickedL] = useState(false);
 
     const nodes1 = [
         { id: 1, name: 'Home', img: '/white-logo.png', top: '40%', left: '68%', size: '55px' },
         { id: 2, name: 'Partners', img: '/white-logo.png', top: '40%', left: '25%', size: '55px' },
-        { id: 3, name: 'Learn more', img: '/white-logo.png', top: '75%', left: '60%', size: '55px' }
+        { id: 3, name: 'Learn more', img: '/white-logo.png', top: '70%', left: '60%', size: '55px' }
     ]
 
     const nodesH = [
-        { id: 1, name: 'Decisions', img: '/white-logo.png', top: '-17%', left: '-16%', size: '40px' },
-        { id: 2, name: 'Decisions', img: '/white-logo.png', top: '-20%', left: '4%', size: '40px' },
-        { id: 3, name: 'Decisions', img: '/white-logo.png', top: '0%', left: '20%', size: '40px' },
+        { id: 1, name: 'Main Page', img: '/white-logo.png', top: '-17%', left: '-16%', size: '40px' },
+        { id: 2, name: 'About', img: '/white-logo.png', top: '-20%', left: '4%', size: '40px' },
+        { id: 3, name: 'Contact', img: '/white-logo.png', top: '0%', left: '20%', size: '40px' }
     ]
 
-    const nodes = [
-    { id: 1, name: 'Attention', img: '/white-logo.png', top: '15%', left: '75%', size: '50px' },
-    { id: 2, name: 'Analysis', img: '/white-logo.png', top: '60%', left: '12%', size: '45px' },
-    { id: 3, name: 'Options', img: '/white-logo.png', top: '80%', left: '37%', size: '55px' },
-    { id: 4, name: 'Problems', img: '/white-logo.png', top: '20%', left: '10%', size: '40px' },
-    { id: 5, name: 'Learning', img: '/white-logo.png', top: '40%', left: '68%', size: '55px' },
-    { id: 6, name: 'Patterns', img: '/white-logo.png', top: '60%', left: '80%', size: '50px' },
-    { id: 7, name: 'Decisions', img: '/white-logo.png', top: '10%', left: '40%', size: '45px' },
-    { id: 8, name: 'Ambience', img: '/white-logo.png', top: '40%', left: '25%', size: '45px' },
-    { id: 9, name: 'Inductance', img: '/white-logo.png', top: '25%', left: '55%', size: '45px' },
-    { id: 10, name: 'Lorentz', img: '/white-logo.png', top: '75%', left: '60%', size: '45px' }
-    
-  ];
+    const nodesP = [
+        { id: 1, name: 'Speedtech.ai', img: '/white-logo.png', top: '-17%', left: '-16%', size: '40px' },
+        { id: 2, name: 'Route Mobile', img: '/white-logo.png', top: '-20%', left: '4%', size: '40px' },
+        { id: 3, name: 'Temporary', img: '/white-logo.png', top: '10%', left: '-17%', size: '40px' },
+        { id: 4, name: 'Temporary', img: '/white-logo.png', top: '20%', left: '0%', size: '40px' }
+    ]
+
+    const nodesL = [
+        { id: 1, name: 'Banking', img: '/white-logo.png', top: '6%', left: '-20%', size: '40px' },
+        { id: 2, name: 'AI', img: '/white-logo.png', top: '13%', left: '20%', size: '40px' },
+        { id: 3, name: 'Miscellaneous', img: '/white-logo.png', top: '-5%', left: '20%', size: '40px' }
+    ]
 
   const handleCentralClick = () => {
+    if (isClickedC) {
+      setIsClickedH(false);
+      setIsClickedL(false);
+      setIsClickedP(false);
+    }
     setIsClickedC(!isClickedC);
   }
 
-    const handleClick1 = () => {
-    setIsClicked1(!isClicked1);
+    const handleClick1 = (id) => {
+    id == 1 ? setIsClickedH(!isClickedH) : id == 2 ? setIsClickedP(!isClickedP) : setIsClickedL(!isClickedL);
   }
 
   return (
@@ -74,12 +80,8 @@ export default function Hero() {
                 <div 
                   key={node.id}
                   className={`${styles.satelliteLogo} ${isClickedC ? styles.scattered : ''}`}
-                  onClick={handleClick1}
+                  onClick={() => handleClick1(node.id)}
                   style={{
-                    /*top: node.top,
-                    left: node.left,
-                    width: `calc(${node.size} + 30px)`,
-                    height: `calc(${node.size} + 30px)`*/
                     cursor: 'pointer',
                     '--final-top': node.top,
                     '--final-left': node.left,
@@ -103,14 +105,59 @@ export default function Hero() {
               {nodesH.map((node) => (
                 <div 
                   key={node.id}
-                  className={`${styles.satelliteLogo} ${isClickedC && isClicked1 ? styles.scattered : ''}`}
+                  className={`${styles.satelliteLogo} ${isClickedC && isClickedH ? styles.scattered : ''}`}
                   style={{
-                    /*top: node.top,
-                    left: node.left,
-                    width: `calc(${node.size} + 30px)`,
-                    height: `calc(${node.size} + 30px)`*/
                     '--final-top': `calc(${nodes1.at(0).top} + ${node.top})`,
                     '--final-left': `calc(${nodes1.at(0).left} + ${node.left})`,
+                    '--size': node.size,
+                    '--delay': `${node.id * 0.1}s`                    
+                  }}
+                >
+                  <img 
+                    src={node.img} 
+                    alt={node.name} 
+                    className={styles.satelliteImg}
+                    style={{ 
+                      width: node.size,
+                      height: node.size
+                    }}
+                  />
+                  <span className={styles.satelliteLabel}>{node.name}</span>
+                </div>
+              ))}
+
+
+              {nodesP.map((node) => (
+                <div 
+                  key={node.id}
+                  className={`${styles.satelliteLogo} ${isClickedC && isClickedP ? styles.scattered : ''}`}
+                  style={{
+                    '--final-top': `calc(${nodes1.at(1).top} + ${node.top})`,
+                    '--final-left': `calc(${nodes1.at(1).left} + ${node.left})`,
+                    '--size': node.size,
+                    '--delay': `${node.id * 0.1}s`                    
+                  }}
+                >
+                  <img 
+                    src={node.img} 
+                    alt={node.name} 
+                    className={styles.satelliteImg}
+                    style={{ 
+                      width: node.size,
+                      height: node.size
+                    }}
+                  />
+                  <span className={styles.satelliteLabel}>{node.name}</span>
+                </div>
+              ))}
+
+              {nodesL.map((node) => (
+                <div 
+                  key={node.id}
+                  className={`${styles.satelliteLogo} ${isClickedC && isClickedL ? styles.scattered : ''}`}
+                  style={{
+                    '--final-top': `calc(${nodes1.at(2).top} + ${node.top})`,
+                    '--final-left': `calc(${nodes1.at(2).left} + ${node.left})`,
                     '--size': node.size,
                     '--delay': `${node.id * 0.1}s`                    
                   }}
