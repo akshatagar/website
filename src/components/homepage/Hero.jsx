@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './InteractiveImage.module.css';
+import Image from 'next/image';
 
 export default function Hero() {
 
@@ -24,7 +25,7 @@ export default function Hero() {
         { id: 1, name: 'Speedtech.ai', img: '/white-logo.png', top: '-17%', left: '-16%', size: '40px' },
         { id: 2, name: 'Route Mobile', img: '/white-logo.png', top: '-20%', left: '4%', size: '40px' },
         { id: 3, name: 'Temporary', img: '/white-logo.png', top: '10%', left: '-17%', size: '40px' },
-        { id: 11, name: 'Temp', img: '/white-logo.png', top: '20%', left: '0%', size: '40px' }
+        { id: 4, name: 'Temp', img: '/white-logo.png', top: '20%', left: '0%', size: '40px' }
     ]
 
     const nodesL = [
@@ -66,10 +67,13 @@ export default function Hero() {
                 onClick={handleCentralClick}
                 style={{ cursor: 'pointer' }}
               >
-                <img 
+                <Image
                   src="/Logo_with_white.png" 
                   alt="AI Core" 
                   className="img-fluid"
+                  width={120}
+                  height={120}
+                  priority={true}
                 />
               </div>
 
@@ -85,19 +89,20 @@ export default function Hero() {
                     cursor: 'pointer',
                     '--final-top': node.top,
                     '--final-left': node.left,
+                    '--init-top':'50%',
+                    '--init-left': '50%',
                     '--size': node.size,
                     '--delay': `${node.id * 0.1}s`                    
                   }}
                 >
-                  <img 
-                    src={node.img} 
-                    alt={node.name} 
-                    className={styles.satelliteImg}
-                    style={{ 
-                      width: node.size,
-                      height: node.size
-                    }}
-                  />
+                <Image 
+                  src={node.img} 
+                  alt={node.name}
+                  width={parseInt(node.size)} 
+                  height={parseInt(node.size)}
+                  loading="lazy"
+                  className={styles.satelliteImg}
+                />
                   <span className={styles.satelliteLabel}>{node.name}</span>
                 </div>
               ))}
@@ -109,19 +114,20 @@ export default function Hero() {
                   style={{
                     '--final-top': `calc(${nodes1.at(0).top} + ${node.top})`,
                     '--final-left': `calc(${nodes1.at(0).left} + ${node.left})`,
+                    '--init-top':nodes1.at(0).top,
+                    '--init-left': nodes1.at(0).left,
                     '--size': node.size,
                     '--delay': `${node.id * 0.1}s`                    
                   }}
                 >
-                  <img 
-                    src={node.img} 
-                    alt={node.name} 
-                    className={styles.satelliteImg}
-                    style={{ 
-                      width: node.size,
-                      height: node.size
-                    }}
-                  />
+                <Image 
+                  src={node.img} 
+                  alt={node.name}
+                  width={parseInt(node.size)} 
+                  height={parseInt(node.size)}
+                  loading="lazy"
+                  className={styles.satelliteImg}
+                />
                   <span className={styles.satelliteLabel}>{node.name}</span>
                 </div>
               ))}
@@ -134,19 +140,20 @@ export default function Hero() {
                   style={{
                     '--final-top': `calc(${nodes1.at(1).top} + ${node.top})`,
                     '--final-left': `calc(${nodes1.at(1).left} + ${node.left})`,
+                    '--init-top':nodes1.at(1).top,
+                    '--init-left': nodes1.at(1).left,
                     '--size': node.size,
                     '--delay': `${node.id * 0.1}s`                    
                   }}
                 >
-                  <img 
-                    src={node.img} 
-                    alt={node.name} 
-                    className={styles.satelliteImg}
-                    style={{ 
-                      width: node.size,
-                      height: node.size
-                    }}
-                  />
+                <Image 
+                  src={node.img} 
+                  alt={node.name}
+                  width={parseInt(node.size)} 
+                  height={parseInt(node.size)}
+                  loading="lazy"
+                  className={styles.satelliteImg}
+                />
                   <span className={styles.satelliteLabel}>{node.name}</span>
                 </div>
               ))}
@@ -158,19 +165,20 @@ export default function Hero() {
                   style={{
                     '--final-top': `calc(${nodes1.at(2).top} + ${node.top})`,
                     '--final-left': `calc(${nodes1.at(2).left} + ${node.left})`,
+                    '--init-top':nodes1.at(2).top,
+                    '--init-left': nodes1.at(2).left,
                     '--size': node.size,
                     '--delay': `${node.id * 0.1}s`                    
                   }}
                 >
-                  <img 
-                    src={node.img} 
-                    alt={node.name} 
-                    className={styles.satelliteImg}
-                    style={{ 
-                      width: node.size,
-                      height: node.size
-                    }}
-                  />
+                <Image 
+                  src={node.img} 
+                  alt={node.name}
+                  width={parseInt(node.size)} 
+                  height={parseInt(node.size)}
+                  loading="lazy"
+                  className={styles.satelliteImg}
+                />
                   <span className={styles.satelliteLabel}>{node.name}</span>
                 </div>
               ))}
