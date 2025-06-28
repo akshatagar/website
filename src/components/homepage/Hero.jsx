@@ -24,7 +24,7 @@ export default function Hero() {
         { id: 1, name: 'Speedtech.ai', img: '/white-logo.png', top: '-17%', left: '-16%', size: '40px' },
         { id: 2, name: 'Route Mobile', img: '/white-logo.png', top: '-20%', left: '4%', size: '40px' },
         { id: 3, name: 'Temporary', img: '/white-logo.png', top: '10%', left: '-17%', size: '40px' },
-        { id: 4, name: 'Temporary', img: '/white-logo.png', top: '20%', left: '0%', size: '40px' }
+        { id: 11, name: 'Temp', img: '/white-logo.png', top: '20%', left: '0%', size: '40px' }
     ]
 
     const nodesL = [
