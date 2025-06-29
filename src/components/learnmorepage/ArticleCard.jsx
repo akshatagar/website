@@ -5,10 +5,12 @@ export default function ArticleCard({ article }) {
   return (
     <div className={styles.articleCard}>
       <div className={styles.articleCardImageContainer}>
-        <img
+        <Image
           src={article.imageUrl}
           alt={article.title}
           className={styles.articleCardImage}
+          width={200}
+          height={200}
         />
       </div>
       <div className={styles.articleCardContent}>
