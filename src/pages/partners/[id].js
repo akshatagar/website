@@ -1,8 +1,18 @@
 import { client } from "@/lib/sanity";
+import Link from "next/link";
 
 export default function PartnerPage({ partner }) {
   return (
     <div className="container my-5">
+      <Link href="/partners">
+        <button
+          type="button"
+          className="btn btn-outline-light"
+          style={{ marginBottom: "20px", width: "75px" }}
+        >
+          &larr;
+        </button>
+      </Link>
       <div className="card p-4">
         <h1 className="mb-4 text-center">{partner.name}</h1>
         <img
@@ -11,8 +21,15 @@ export default function PartnerPage({ partner }) {
           style={{ maxHeight: "150px", maxWidth: "150px", margin: "0 auto" }}
         />
         <p className="mt-5">{partner.description}</p>
-        <a href={partner.website} className="text-center mt-4" target="_blank" rel="noopener noreferrer">
-          <button type="button" className="btn btn-dark">Visit Website</button>
+        <a
+          href={partner.website}
+          className="text-center mt-4"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button type="button" className="btn btn-dark">
+            Visit Website
+          </button>
         </a>
       </div>
     </div>

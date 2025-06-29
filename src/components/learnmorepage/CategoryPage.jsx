@@ -1,9 +1,19 @@
 import ArticleCard from "./ArticleCard";
 import styles from "./LearnMore.module.css";
+import Link from "next/link";
 
 export default function CategoryPage({ articles }) {
     return (
       <div className={styles.learnMoreContainer}>
+        <Link href="/learn-more">
+        <button
+          type="button"
+          className="btn btn-outline-light"
+          style={{ marginBottom: "20px", width: "75px" }}
+        >
+          &larr;
+        </button>
+      </Link> 
         <h1>Learn More</h1>
         <div className={styles.articleCards}>
           {articles.map((article) => (
