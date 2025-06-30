@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { client } from "@/lib/sanity";
 import Link from "next/link";
 
 export default function PartnerPage({ partner }) {
+  const [activeCaseStudy, setActiveCaseStudy] = useState(null);
+
+  const showIframe = (key) => {
+    setActiveCaseStudy((prev) => (prev === key ? null : key));
+  };
+
   return (
     <div className="container my-5">
       <Link href="/partners">
@@ -31,6 +38,46 @@ export default function PartnerPage({ partner }) {
             Visit Website
           </button>
         </a>
+        {partner.name === "SpeedTech.ai" && (
+          <div className="mt-5 text-center">
+            <h3 className="mb-4">Case Studies</h3>
+
+            <div className="d-flex justify-content-center gap-3 mb-4">
+              <button
+                className={`btn ${activeCaseStudy === "ajww" ? "btn-primary" : "btn-outline-primary"}`}
+                onClick={() => showIframe("ajww")}
+              >
+                View AJWW Case Study
+              </button>
+              <button
+                className={`btn ${activeCaseStudy === "tk" ? "btn-primary" : "btn-outline-primary"}`}
+                onClick={() => showIframe("tk")}
+              >
+                View TK Case Study
+              </button>
+            </div>
+
+            {activeCaseStudy === "ajww" && (
+              <iframe
+                src="/embed/ajww_case_study.html"
+                width="100%"
+                height="500"
+                style={{ border: "1px solid #ccc" }}
+                title="AJWW Case Study"
+              />
+            )}
+
+            {activeCaseStudy === "tk" && (
+              <iframe
+                src="/embed/tk_case_study.html"
+                width="100%"
+                height="500"
+                style={{ border: "1px solid #ccc" }}
+                title="TK Case Study"
+              />
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

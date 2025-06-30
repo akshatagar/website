@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAIYA IDP Case Study - AJ Worldwide Logistics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 50%, #1e40af 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .slide {
+            background: white;
+            width: 100%;
+            max-width: 1400px;
+            min-height: 85vh;
+            border-radius: 20px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(90deg, #2c5aa0, #1e3a8a, #3b82f6, #06b6d4);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .company-logo {
+            background: linear-gradient(45deg, #2c5aa0, #1e3a8a);
+            color: white;
+            padding: 18px 35px;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 26px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(44, 90, 160, 0.4);
+            letter-spacing: 1px;
+        }
+        
+        .title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #1e293b, #2c5aa0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 22px;
+            color: #64748b;
+            font-weight: 400;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        
+        .section {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 35px;
+            border-radius: 18px;
+            border-left: 6px solid #2c5aa0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        
+        .section h3 {
+            color: #1e293b;
+            font-size: 24px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .problem-icon {
+            color: #dc2626;
+            font-size: 28px;
+            margin-right: 12px;
+        }
+        
+        .solution-icon {
+            color: #059669;
+            font-size: 28px;
+            margin-right: 12px;
+        }
+        
+        .section p {
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 18px;
+            font-size: 16px;
+        }
+        
+        .section ul {
+            color: #475569;
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+        
+        .section li {
+            margin-bottom: 8px;
+        }
+        
+        .metrics-section {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 20px;
+            margin-top: 30px;
+            box-shadow: 0 15px 40px rgba(44, 90, 160, 0.3);
+        }
+        
+        .metrics-section h3 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .metric {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .metric-value {
+            font-size: 48px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            color: #fbbf24;
+        }
+        
+        .metric-label {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .implementation-stages {
+            grid-column: 1 / -1;
+            margin-top: 40px;
+            padding: 40px;
+            background: #f8fafc;
+            border-radius: 18px;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .implementation-stages h4 {
+            color: #1e293b;
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .stages-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+        }
+        
+        .stage {
+            flex: 1;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            position: relative;
+            border-top: 4px solid #2c5aa0;
+        }
+        
+        .stage-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: #2c5aa0;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .stage h5 {
+            color: #1e293b;
+            font-size: 18px;
+            margin-bottom: 15px;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        .stage p {
+            color: #64748b;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        
+        .stage-arrow {
+            font-size: 30px;
+            color: #2c5aa0;
+            align-self: center;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        
+        .accuracy-highlight {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(5, 150, 105, 0.3);
+        }
+        
+        .accuracy-highlight h4 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .accuracy-value {
+            font-size: 64px;
+            font-weight: bold;
+            color: #fbbf24;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        @media (max-width: 1024px) {
+            .stages-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .stage-arrow {
+                transform: rotate(90deg);
+                margin: 10px 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .slide {
+                padding: 30px;
+            }
+            
+            .content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .title {
+                font-size: 32px;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <div class="company-logo">RAIYA IDP</div>
+            <h1 class="title">AJ Worldwide Logistics Case Study</h1>
+            <p class="subtitle">Automating Invoice Processing for High-Volume Operations</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h3><span class="problem-icon">📊</span>The Challenge</h3>
+                <p><strong>Client:</strong> AJ Worldwide Logistics (AJWW)</p>
+                <p><strong>Volume:</strong> 4,000 invoices processed daily</p>
+                <p><strong>Process:</strong> Manual data entry from PDF invoices into ERP system</p>
+                <p><strong>Resource Impact:</strong></p>
+                <ul>
+                    <li>20-person team dedicated to manual invoice processing</li>
+                    <li>Time-intensive manual keying of extracted information</li>
+                    <li>Limited capacity for value-adding activities</li>
+                    <li>High risk of human error in data entry</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h3><span class="solution-icon">⚡</span>The Solution</h3>
+                <p><strong>RAIYA IDP Implementation:</strong></p>
+                <ul>
+                    <li>Automated PDF invoice data extraction</li>
+                    <li>Integration with staging workbench for quality control</li>
+                    <li>Automatic ERP loading post-verification</li>
+                    <li>Email-based invoice processing system</li>
+                    <li>Seamless workflow automation</li>
+                </ul>
+                <p><strong>Workflow:</strong> PDF Invoices → RAIYA Extraction → Workbench Review → ERP Integration</p>
+            </div>
+        </div>
+        
+        <div class="metrics-section">
+            <h3>Transformation Results</h3>
+            <div class="metrics-grid">
+                <div class="metric">
+                    <span class="metric-value">4,000</span>
+                    <span class="metric-label">Invoices/Day Processed</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-value">20→2</span>
+                    <span class="metric-label">Team Size Reduction</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-value">18</span>
+                    <span class="metric-label">Resources Reassigned</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-value">90%</span>
+                    <span class="metric-label">Resource Optimization</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="implementation-stages">
+            <h4>Implementation Stages</h4>
+            <div class="stages-container">
+                <div class="stage">
+                    <div class="stage-number">1</div>
+                    <h5>Core Automation</h5>
+                    <p>Deployed RAIYA IDP to automatically extract data from PDF invoices, replacing manual data entry processes.</p>
+                </div>
+                <div class="stage-arrow">→</div>
+                <div class="stage">
+                    <div class="stage-number">2</div>
+                    <h5>Quality Control</h5>
+                    <p>Implemented staging workbench with 2 resources for manual verification before ERP loading.</p>
+                </div>
+                <div class="stage-arrow">→</div>
+                <div class="stage">
+                    <div class="stage-number">3</div>
+                    <h5>Email Integration</h5>
+                    <p>Created automated mailbox system for invoice attachment processing and direct workflow integration.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="accuracy-highlight">
+            <h4>Accuracy Achievement</h4>
+            <div class="accuracy-value">97.8%</div>
+            <p>Exceptional accuracy rate achieved through intelligent document processing</p>
+        </div>
+    </div>
+</body>
+</html>
