@@ -8,9 +8,9 @@ export default function ArticleCard({ article }) {
         <Image
           src={article.imageUrl}
           alt={article.title}
+          className={styles.articleCardImage}
           width={200}
           height={200}
-          className={styles.articleCardImage}
         />
       </div>
       <div className={styles.articleCardContent}>

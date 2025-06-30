@@ -9,7 +9,10 @@ export default function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg sticky-top bg-dark w-100">
       <div className="container-fluid px-3">
-        <Link href="/" className="d-flex align-items-center text-decoration-none">
+        <Link
+          href="/"
+          className="d-flex align-items-center text-decoration-none"
+        >
           <Image
             width={40}
             height={40}
@@ -32,13 +35,15 @@ export default function NavBar() {
         <div className={`collapse navbar-collapse ${navOpen ? "show" : ""}`}>
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item dropdown">
-              <button
-                className="btn btn-dark btn-lg dropdown-toggle me-md-2 mt-2"
-                type="button"
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-              >
-                Home
-              </button>
+              <Link href="/">
+                <button
+                  className="btn btn-dark btn-lg dropdown-toggle me-md-2 mt-2"
+                  type="button"
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                >
+                  Home
+                </button>
+              </Link>
               <ul className="dropdown-menu dropdown-menu-dark">
                 <li>
                   <Link className="dropdown-item" href="/#about">

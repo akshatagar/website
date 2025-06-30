@@ -18,9 +18,12 @@ export default function MainPage() {
   
         <div className={styles.articleCards}>
           {categories.map((category) => (
-            <Link href={`/learn-more/${category.name}`} className={styles.learnMoreCard} key={category.name} >
-              {category.title}
+            <div className={styles.learnMoreCardContainer}>
+            <Link href={`/learn-more/${category.name}`} style={{ textDecoration: "none" }} key={category.name} >
+            <div className={styles.learnMoreCardTitle}>{category.title}</div>
+            <div className={styles.learnMoreCard} style={{ backgroundImage: `url(${category.name}.jpg)`, backgroundSize: "cover", backgroundPosition: "center" }}></div>
             </Link>
+            </div>
           ))}
         </div>
       </div>

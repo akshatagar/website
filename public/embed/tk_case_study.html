@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAIYA IDP Case Study - Thyssen Krupp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .slide {
+            background: white;
+            width: 100%;
+            max-width: 1200px;
+            min-height: 80vh;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .company-logo {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            color: #718096;
+            font-weight: 400;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        
+        .section {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .section h3 {
+            color: #2d3748;
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .problem-icon {
+            color: #e53e3e;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        
+        .solution-icon {
+            color: #38a169;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        
+        .section p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .metrics {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .metrics h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+        
+        .metric-row {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .metric {
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 48px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .metric-label {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .arrow {
+            font-size: 40px;
+            color: #ffd700;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .key-features {
+            margin-top: 30px;
+            padding: 30px;
+            background: #edf2f7;
+            border-radius: 15px;
+        }
+        
+        .key-features h4 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .feature {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            font-size: 14px;
+            color: #4a5568;
+        }
+        
+        @media (max-width: 768px) {
+            .slide {
+                padding: 30px;
+            }
+            
+            .content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .title {
+                font-size: 28px;
+            }
+            
+            .metric-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <div class="company-logo">RAIYA IDP</div>
+            <h1 class="title">Thyssen Krupp Case Study</h1>
+            <p class="subtitle">Transforming RFP Response Time for Large Infrastructure Projects</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h3><span class="problem-icon">⚠️</span>The Challenge</h3>
+                <p><strong>Client:</strong> Thyssen Krupp Infrastructure Limited (TKIL)</p>
+                <p><strong>Industry:</strong> Large Infrastructure Commissioning (Oil Refineries)</p>
+                <p><strong>Problem:</strong> Engineers required 4-6 weeks to respond to RFPs due to manual processing of complex vendor datasheets stored as PDFs across multiple repositories.</p>
+                <p>The team had to manually dig through hundreds of datasheets in various formats, correlate them with historical Purchase Orders for pricing, and build quotes - a time-intensive and error-prone process.</p>
+            </div>
+            
+            <div class="section">
+                <h3><span class="solution-icon">💡</span>The Solution</h3>
+                <p><strong>RAIYA IDP Implementation:</strong></p>
+                <p>• Automated extraction of key data elements from complex PDF datasheets</p>
+                <p>• Intelligent correlation with vendor Purchase Orders for accurate pricing</p>
+                <p>• Creation of a comprehensive database with full traceability</p>
+                <p>• Standardized data extraction for components including temperature ranges, pressure ranges, and technical specifications for pumps and other equipment</p>
+            </div>
+        </div>
+        
+        <div class="metrics">
+            <h3>Results Achieved</h3>
+            <div class="metric-row">
+                <div class="metric">
+                    <span class="metric-value">4-6</span>
+                    <span class="metric-label">Weeks Before</span>
+                </div>
+                <div class="arrow">→</div>
+                <div class="metric">
+                    <span class="metric-value">&lt;2</span>
+                    <span class="metric-label">Weeks After</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-value">65%</span>
+                    <span class="metric-label">Time Reduction</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="key-features">
+            <h4>Key Implementation Features</h4>
+            <div class="features-grid">
+                <div class="feature">
+                    <strong>Multi-format Processing:</strong> Handled complex PDFs in various formats and layouts
+                </div>
+                <div class="feature">
+                    <strong>Intelligent Extraction:</strong> Key technical parameters (temp/pressure ranges, specifications)
+                </div>
+                <div class="feature">
+                    <strong>Historical Correlation:</strong> Automatic matching with past PO data for pricing accuracy
+                </div>
+                <div class="feature">
+                    <strong>Full Traceability:</strong> Complete audit trail from datasheet to final quote
+                </div>
+                <div class="feature">
+                    <strong>Database Creation:</strong> Structured repository for future RFP responses
+                </div>
+                <div class="feature">
+                    <strong>Scalable Solution:</strong> Handles hundreds of RFPs with consistent performance
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

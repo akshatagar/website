@@ -12,16 +12,21 @@
   }
   
   .learnMoreCard {
-    background-color: rgba(40, 50, 113, 0.2);
     border-radius: 10px;
-    color: white;
     min-height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border: 1px solid white;
+  }
+
+  .learnMoreCardTitle {
+    text-align: center;
     font-size: 2rem;
     font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-    border: 1px solid white;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+
+  .learnMoreCardContainer:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
   }
