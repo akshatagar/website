@@ -3,8 +3,8 @@ import styles from "./LearnMore.module.css";
 
 export default function MainPage() {
     const categories = [
-      { name: "banking", title: "Banking" },
-      { name: "ai", title: "AI" },
+      { name: "bfsi", title: "BFSI" },
+      { name: "corporate", title: "Corporate" },
       { name: "misc", title: "Miscellaneous" },
     ];
   

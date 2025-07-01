@@ -2,7 +2,7 @@ import CategoryPage from "@/src/components/learnmorepage/CategoryPage";
 import { client } from "@/lib/sanity";
 
 export async function getStaticPaths() {
-  const categories = ["banking", "ai", "misc"];
+  const categories = ["bfsi", "corporate", "misc"];
 
   const paths = categories.map((category) => ({
     params: { id: category },
