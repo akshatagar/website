@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { client } from "@/lib/sanity";
 import Link from "next/link";
-import PortableText from "react-portable-text";
+import { PortableText } from "@portabletext/react";
 
-export default function PartnerPage({ partner }) {
+export default function PartnerPage({ partner }) {    
   const [activeCaseStudy, setActiveCaseStudy] = useState(null);
 
   const showIframe = (key) => {
@@ -26,9 +26,10 @@ export default function PartnerPage({ partner }) {
         <img
           src={partner.logoUrl}
           alt={`${partner.name}-logo`}
+          className="mb-4"
           style={{ maxHeight: "150px", maxWidth: "150px", margin: "0 auto" }}
         />
-        <PortableText className="mt-4" content={partner.description} />
+        <PortableText value={partner.description} />
         <a
           href={partner.website}
           className="text-center mt-4"
