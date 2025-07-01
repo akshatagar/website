@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { client } from "@/lib/sanity";
 import Link from "next/link";
+import PortableText from "react-portable-text";
 
 export default function PartnerPage({ partner }) {
   const [activeCaseStudy, setActiveCaseStudy] = useState(null);
@@ -27,7 +28,7 @@ export default function PartnerPage({ partner }) {
           alt={`${partner.name}-logo`}
           style={{ maxHeight: "150px", maxWidth: "150px", margin: "0 auto" }}
         />
-        <p className="mt-5">{partner.description}</p>
+        <PortableText className="mt-4" content={partner.description} />
         <a
           href={partner.website}
           className="text-center mt-4"
@@ -44,13 +45,21 @@ export default function PartnerPage({ partner }) {
 
             <div className="d-flex justify-content-center gap-3 mb-4">
               <button
-                className={`btn ${activeCaseStudy === "ajww" ? "btn-primary" : "btn-outline-primary"}`}
+                className={`btn ${
+                  activeCaseStudy === "ajww"
+                    ? "btn-primary"
+                    : "btn-outline-primary"
+                }`}
                 onClick={() => showIframe("ajww")}
               >
                 View AJWW Case Study
               </button>
               <button
-                className={`btn ${activeCaseStudy === "tk" ? "btn-primary" : "btn-outline-primary"}`}
+                className={`btn ${
+                  activeCaseStudy === "tk"
+                    ? "btn-primary"
+                    : "btn-outline-primary"
+                }`}
                 onClick={() => showIframe("tk")}
               >
                 View TK Case Study
