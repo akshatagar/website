@@ -2,6 +2,7 @@ import { useState } from "react";
 import { client } from "@/lib/sanity";
 import Link from "next/link";
 import { PortableText } from "@portabletext/react";
+import Image from "next/image";
 
 export default function PartnerPage({ partner }) {    
   const [activeCaseStudy, setActiveCaseStudy] = useState(null);
@@ -23,12 +24,19 @@ export default function PartnerPage({ partner }) {
       </Link>
       <div className="card p-4">
         <h1 className="mb-4 text-center">{partner.name}</h1>
+        <div style={{ margin: "0 auto"}} className="mb-4">
         <img
           src={partner.logoUrl}
           alt={`${partner.name}-logo`}
-          className="mb-4"
-          style={{ maxHeight: "150px", maxWidth: "150px", margin: "0 auto" }}
+          style={{ maxWidth: "150px", maxHeight: "150px", objectFit: "contain" }}
         />
+        {partner.name === "Route Mobile" && (<Image
+          width={100}
+          height={75}
+          src="/Proximus_logo1.png"
+          alt={`proximus-logo`}
+        />)}
+        </div>
         <PortableText value={partner.description} />
         <a
           href={partner.website}
