@@ -13,6 +13,8 @@ export default function MyApp({ Component, pageProps }) {
         <title>OMiNTEL</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preload" as="image" href="/Logo_with_white.png" />
+        <link rel="preload" as="image" href="/Proximus_logo1.png" />
+        <link rel="preload" as="image" href="/white-logo.png" />
         <meta
           name="description"
           content="Discover AI-powered business solutions and explore Omintel's partner network and intelligent automation services."
