@@ -34,28 +34,12 @@ export default function NavBar() {
         </button>
         <div className={`collapse navbar-collapse ${navOpen ? "show" : ""}`}>
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li className="nav-item dropdown">
-              <Link href="/">
-                <button
-                  className="btn btn-dark btn-lg dropdown-toggle me-md-2 mt-2"
-                  type="button"
-                  onClick={() => setDropdownOpen(!dropdownOpen)}
-                >
+            <li className="nav-item">
+              <Link className="nav-link" href="/">
+                <button type="button" className="btn btn-dark btn-lg me-md-2">
                   Home
                 </button>
               </Link>
-              <ul className="dropdown-menu dropdown-menu-dark">
-                <li>
-                  <Link className="dropdown-item" href="/#about">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" href="/#contact-us">
-                    Contact Us
-                  </Link>
-                </li>
-              </ul>
             </li>
 
             <li className="nav-item">

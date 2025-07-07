@@ -1,7 +1,7 @@
 import styles from './AboutUs.module.css';
 import Image from 'next/image';
 
-export default function AboutUs() {
+export default function AboutUs({ aboutUs }) {
     return (
 <section id="about" className="about-section py-5">
   <div className="container text-center">
@@ -10,7 +10,7 @@ export default function AboutUs() {
 
     {/* Top Paragraph */}
     <p className="lead mb-5 " style={{ color: 'white' }}>
-      Omintel Ventures is a UAE-based digital solutions partner focused on enabling AI-powered transformation across BFSI and Corporate Entities in the GCC. We connect global SaaS innovators with regional demand through a channel-driven, insight-led model.
+      {aboutUs["aboutUsText"]}
     </p>
   
   </div>
@@ -37,9 +37,10 @@ export default function AboutUs() {
     {/* Right: List */}
     <div className="col-md-7">
       <ul className={styles.processList}>
-        <li>Select high-impact SaaS platforms in automation, AI, data and compliance</li>
-        <li>Enable client adoption through tailored outreach and use-case alignment</li>
-        <li>Accelerate market entry via advisory-led sales, RFI/RFP support and ecosystem integration</li>
+        {aboutUs["howWeDoIt"].map((item, index) => (
+          <li key={index}>{item}
+          </li>
+        ))}
       </ul>
     </div>
   </div>

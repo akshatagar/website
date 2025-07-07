@@ -3,11 +3,11 @@ import AboutUs from "../components/homepage/AboutUs"
 import { client } from '@/lib/sanity'
 
 
-export default function Home({partners}) {
+export default function Home({partners, aboutUs}) {
     return (
         <>
             <Hero partners={partners}/>
-            <AboutUs />
+            <AboutUs aboutUs={aboutUs}/>
         </>
     )
 }
@@ -20,8 +20,15 @@ export async function getStaticProps() {
     }
   `)
 
+  const aboutUs = await client.fetch(`
+    *[_type == "homepage"][0] {
+      aboutUsText,
+      howWeDoIt
+    }
+  `)
+
   return {
-    props: { partners },
+    props: { partners, aboutUs },
     revalidate: 60,
   }
 }
