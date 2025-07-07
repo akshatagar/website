@@ -25,8 +25,8 @@ export default {
             type: 'string',
             options: {
               list: [
-                { title: 'Banking', value: 'banking' },
-                { title: 'AI', value: 'ai' },
+                { title: 'BFSI', value: 'bfsi' },
+                { title: 'Corporate', value: 'corporate' },
                 { title: 'Miscellaneous', value: 'misc' },
               ]
             }

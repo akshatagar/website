@@ -24,10 +24,12 @@ export default {
       },
       {
         name: 'description',
-        title: 'Long Description',
-        type: 'text',
-        rows: 10,
-        validation: Rule => Rule.required(),
+        title: 'Description',
+        type: 'array',
+        of: [
+          { type: 'block' },        
+        ],
+        validation: Rule => Rule.required()
       },
       {
         name: 'logo',

@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { client } from "@/lib/sanity";
 import Link from "next/link";
+import { PortableText } from "@portabletext/react";
+import Image from "next/image";
 
-export default function PartnerPage({ partner }) {
+export default function PartnerPage({ partner }) {    
   const [activeCaseStudy, setActiveCaseStudy] = useState(null);
 
   const showIframe = (key) => {
@@ -22,12 +24,20 @@ export default function PartnerPage({ partner }) {
       </Link>
       <div className="card p-4">
         <h1 className="mb-4 text-center">{partner.name}</h1>
+        <div style={{ margin: "0 auto"}} className="mb-4">
         <img
           src={partner.logoUrl}
           alt={`${partner.name}-logo`}
-          style={{ maxHeight: "150px", maxWidth: "150px", margin: "0 auto" }}
+          style={{ maxWidth: "150px", maxHeight: "150px", objectFit: "contain" }}
         />
-        <p className="mt-5">{partner.description}</p>
+        {partner.name === "Route Mobile" && (<Image
+          width={100}
+          height={75}
+          src="/Proximus_logo1.png"
+          alt={`proximus-logo`}
+        />)}
+        </div>
+        <PortableText value={partner.description} />
         <a
           href={partner.website}
           className="text-center mt-4"
@@ -44,13 +54,21 @@ export default function PartnerPage({ partner }) {
 
             <div className="d-flex justify-content-center gap-3 mb-4">
               <button
-                className={`btn ${activeCaseStudy === "ajww" ? "btn-primary" : "btn-outline-primary"}`}
+                className={`btn ${
+                  activeCaseStudy === "ajww"
+                    ? "btn-primary"
+                    : "btn-outline-primary"
+                }`}
                 onClick={() => showIframe("ajww")}
               >
                 View AJWW Case Study
               </button>
               <button
-                className={`btn ${activeCaseStudy === "tk" ? "btn-primary" : "btn-outline-primary"}`}
+                className={`btn ${
+                  activeCaseStudy === "tk"
+                    ? "btn-primary"
+                    : "btn-outline-primary"
+                }`}
                 onClick={() => showIframe("tk")}
               >
                 View TK Case Study

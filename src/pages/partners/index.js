@@ -11,7 +11,6 @@ export async function getStaticProps() {
   const partners = await client.fetch(`
     *[_type == "partner"] | order(name asc) {
       name,
-      description,
       solution,
       summary,
       description,
