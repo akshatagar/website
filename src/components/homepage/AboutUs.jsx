@@ -16,7 +16,7 @@ export default function AboutUs() {
   </div>
 
     {/* Center Image */}
-  <div style={{ position: 'relative', width: '100%', height: '400px', marginBottom: '50px' }}>
+  <div className="mx-auto" style={{ position: 'relative', width: '95%', height: '400px', marginBottom: '50px' }}>
     <Image
       src="/pic2.jpeg"
       alt="AI"

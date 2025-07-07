@@ -1,62 +1,46 @@
-'use client'; // Must be the first line
-
+'use client';
 import { useState } from 'react';
 import styles from './Feedback.module.css';
 
-export default function EmailForm() {
+export default function FeedbackForm() {
   const [formData, setFormData] = useState({
     email: '',
     company: '',
     phone: ''
   });
 
-    const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: value
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     
-    try {
-      const formData = new FormData();
-      formData.append('email', formData.email);
-      formData.append('company', formData.company);
-      formData.append('phone', formData.phone);
-      
-      const response = await fetch('https://formsubmit.co/ved_rb@rediffmail.com', {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'multipart/form-data',
-        }
-      });
-      
-      if (response.ok) {
-        alert('Form submitted successfully!');
-        setFormData({ email: '', company: '', phone: ''});
-      } else {
-        throw new Error('Network response was not ok');
-      }
-    } catch (error) {
-      console.error('Submission error:', error);
-      alert('Failed to submit form. Please try again.');
-    }
+    // Replace with your actual Microsoft Forms URL and field IDs
+    const formUrl = 'https://forms.office.com/Pages/ResponsePage.aspx?id=YOUR_FORM_ID';
+    
+    // Create URL parameters with prefilled data
+    const params = new URLSearchParams();
+    params.append('email', formData.email);       // Replace with actual field ID
+    params.append('company', formData.company);   // Replace with actual field ID
+    params.append('phone', formData.phone);       // Replace with actual field ID
+    
+    // Open Microsoft Forms in new tab with prefilled data
+    window.open(`${formUrl}?${params.toString()}`, '_blank', 'noopener,noreferrer');
+    
+    // Optional: Reset form after submission
+    setFormData({ email: '', company: '', phone: '' });
+    
+    // Optional: Show success message
+    alert('Opening Microsoft Forms with your information...');
   };
 
   return (
-    <form 
-      //onSubmit={handleSubmit}
-      action="https://formsubmit.co/ved_rb@rediffmail.com" 
-      //action="mailto:ved_rb@rediffmail.com"
-      encType="text/plain"
-      method="POST"
-      className={styles.feedbackForm}
-    >
+    <form onSubmit={handleSubmit} className={styles.feedbackForm}>
       
       <h2> Feedback Page</h2>
       <input type="hidden" name="_captcha" value="false" />

@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="container-fluid py-3 text-white w-100">
       <div className="row gy-3 align-items-center mx-0">
         <div className="col-12 col-md-4 col-lg-4 text-center text-md-start px-3">
-          <span>© 2025 Omintel</span>
+          <span>© Omintel</span>
         </div>
         
         <div className="col-12 col-md-4 col-lg-4 text-center" id="contact-us">

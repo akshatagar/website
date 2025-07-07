@@ -1,21 +1,36 @@
 import React, { useState } from 'react';
 import styles from './InteractiveImage.module.css';
 import Image from 'next/image';
+import { left } from '@popperjs/core';
 
-export default function Hero() {
+export default function Hero({partners}) {
 
-    const [isClickedC, setIsClickedC] = useState(false);
-    const [isClickedH, setIsClickedH] = useState(false);
+  let nodes = [];
+
+  const interval = 360 / partners.length;
+  for (let i = 0; i < partners.length; i++) {
+    nodes.push({  
+      id: i,
+      name: partners[i].name,
+      img: partners[i].logoUrl,
+      top: `calc(${Math.sin(i * interval * (Math.PI / 180)) * 40}% + 50%)`,  
+      left: `calc(${Math.cos(i * interval * (Math.PI / 180)) * 40}% + 50%)`,
+      size: '55px'
+    });
+  }
+
+    const [isClicked, setIsClicked] = useState(false);
+    /*const [isClickedH, setIsClickedH] = useState(false);
     const [isClickedP, setIsClickedP] = useState(false);
-    const [isClickedL, setIsClickedL] = useState(false);
+    const [isClickedL, setIsClickedL] = useState(false);*/
 
-    const nodes1 = [
-        { id: 1, name: 'Home', img: '/white-logo.png', top: '40%', left: '68%', size: '55px' },
-        { id: 2, name: 'Partners', img: '/white-logo.png', top: '40%', left: '25%', size: '55px' },
-        { id: 3, name: 'Learn more', img: '/white-logo.png', top: '70%', left: '60%', size: '55px' }
-    ]
+    /*const nodes = [
+        { id: 1, name: 'Home', img: '/white-logo.png', top: '30%', left: '78%', size: '55px' },
+        { id: 2, name: 'Partners', img: '/white-logo.png', top: '25%', left: '15%', size: '55px' },
+        { id: 3, name: 'Learn more', img: '/white-logo.png', top: '80%', left: '70%', size: '55px' }
+    ]*/
 
-    const nodesH = [
+    /*const nodesH = [
         { id: 1, name: 'Main Page', img: '/white-logo.png', top: '-17%', left: '-16%', size: '40px' },
         { id: 2, name: 'About', img: '/white-logo.png', top: '-20%', left: '4%', size: '40px' },
         { id: 3, name: 'Contact', img: '/white-logo.png', top: '0%', left: '20%', size: '40px' }
@@ -45,12 +60,17 @@ export default function Hero() {
 
     const handleClick1 = (id) => {
     id == 1 ? setIsClickedH(!isClickedH) : id == 2 ? setIsClickedP(!isClickedP) : setIsClickedL(!isClickedL);
+  }*/
+
+  const handleCentralClick = () => {
+    setIsClicked(!isClicked);
   }
 
   return (
     <div className="container col-xxl-8 py-5 hero">
+
+
       <div className="row align-items-center gx-5 py-5">
-        {/* Text Column - Left Side */}
           <div className={styles.textContainer + " col-lg-5"}>
               <h1 className="display-5 fw-bold lh-1 mb-3 hero-header" id="headline">
                 AI First Solutions
@@ -58,12 +78,14 @@ export default function Hero() {
               <p>Empowering decisions with intelligent automation and contextual AI systems. </p>
           </div>
 
-        {/* Diagram Column - Right Side */}
+
+          
         <div className="col-lg-6">
           <div className={styles.diagramContainer}>
             <div className={styles.interactiveDiagram}>
-              {/* Central Logo */}
-              <div className={`${styles.centralLogo} ${isClickedC ? styles.clicked : ''}`}
+
+            
+              <div className={`${styles.centralLogo} ${isClicked ? styles.clicked : ''}`}
                 onClick={handleCentralClick}
                 style={{ cursor: 'pointer' }}
               >
@@ -77,10 +99,42 @@ export default function Hero() {
                 />
               </div>
 
-              {/*primary logos*/}
+
+              {/* Satellite Logos */}
+              {nodes.map((node) => (
+                <div 
+                  key={node.id}
+                  className={`${styles.satelliteLogo} ${isClicked ? styles.scattered : ''}`}
+                  onClick={handleCentralClick}
+                  style={{
+                    top: node.top,
+                    left: node.left,
+                    width: `calc(${node.size} + 30px)`,
+                    height: `calc(${node.size} + 30px)`,
+                    '--final-top': node.top,
+                    '--final-left': node.left,
+                    '--size': node.size,
+                    '--delay': `${node.id * 0.1}s`                    
+                  }}
+                >
+                  <img 
+                    src={node.img} 
+                    alt={node.name} 
+                    className={styles.satelliteImg}
+                    style={{ 
+                      width: node.size,
+                      height: node.size
+                    }}
+                  />
+                  <span className={styles.satelliteLabel}>{node.name}</span>
+                </div>
+              ))}
 
 
-              {nodes1.map((node) => (
+              
+
+
+              {/*nodes1.map((node) => (
                 <div 
                   key={node.id}
                   className={`${styles.satelliteLogo} ${isClickedC ? styles.scattered : ''}`}
@@ -107,7 +161,7 @@ export default function Hero() {
                 </div>
               ))}
 
-              {nodesH.map((node) => (
+              {/*{nodesH.map((node) => (
                 <div 
                   key={node.id}
                   className={`${styles.satelliteLogo} ${isClickedC && isClickedH ? styles.scattered : ''}`}
@@ -181,39 +235,11 @@ export default function Hero() {
                 />
                   <span className={styles.satelliteLabel}>{node.name}</span>
                 </div>
-              ))}
+             ))}*/}
 
               
 
-              {/* Satellite Logos 
-              {nodes.map((node) => (
-                <div 
-                  key={node.id}
-                  className={`${styles.satelliteLogo} ${isClickedC ? styles.scattered : ''}`}
-                  onClick={handleCentralClick}
-                  style={{
-                    top: node.top,
-                    left: node.left,
-                    width: `calc(${node.size} + 30px)`,
-                    height: `calc(${node.size} + 30px)`
-                    '--final-top': node.top,
-                    '--final-left': node.left,
-                    '--size': node.size,
-                    '--delay': `${node.id * 0.1}s`                    
-                  }}
-                >
-                  <img 
-                    src={node.img} 
-                    alt={node.name} 
-                    className={styles.satelliteImg}
-                    style={{ 
-                      width: node.size,
-                      height: node.size
-                    }}
-                  />
-                  <span className={styles.satelliteLabel}>{node.name}</span>
-                </div>
-              ))}*/}
+
             </div>
           </div>
         </div>
