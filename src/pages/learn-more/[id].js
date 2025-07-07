@@ -24,13 +24,19 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      articles
+      articles,
+      category
     },
   };
 }
 
-export default function LearnMorePage({ articles }) {
+export default function LearnMorePage({ articles, category }) {
+  const categories = {
+    "bfsi": "BFSI",
+    "corporate": "Corporate",
+    "misc": "Miscellaneous",
+  };
   return (
-    <CategoryPage articles={articles} />
+    <CategoryPage articles={articles} heading={categories[category]} />
   );
 }
