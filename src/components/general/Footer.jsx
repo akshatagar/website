@@ -1,11 +1,15 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="container-fluid py-3 text-white w-100">
       <div className="row gy-3 align-items-center mx-0">
-        <div className="col-12 col-md-4 col-lg-4 text-center text-md-start px-3">
-          <span>© Omintel</span>
+        <div className="col-12 col-md-4 col-lg-4 text-center text-md-start">
+          <span style={{ marginRight: "10px" }}>© Omintel</span>
+              <Link href="#">
+              <img src="https://img.icons8.com/?size=100&id=85141&format=png&color=FFFFFF" style={{ width: "35px", height: "35px", marginBottom: "3px" }}></img>
+              </Link>
         </div>
         
         <div className="col-12 col-md-4 col-lg-4 text-center" id="contact-us">
@@ -26,16 +30,7 @@ export default function Footer() {
                 Feedback
               </button>
             </Link>
-            {/* <div className="social-links">
-              <Link href="#" className="text-white me-2" aria-label="Facebook">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-facebook" viewBox="0 0 16 16">
-                </svg>
-              </Link>
-              <Link href="#" className="text-white" aria-label="Twitter">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-twitter-x" viewBox="0 0 16 16">
-                </svg>
-              </Link>
-            </div> */}
+            
           </div>
         </div>
       </div>
