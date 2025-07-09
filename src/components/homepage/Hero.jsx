@@ -13,8 +13,8 @@ export default function Hero({partners}) {
       id: i,
       name: partners[i].name,
       img: partners[i].logoUrl,
-      top: `calc(${Math.sin(i * interval * (Math.PI / 180)) * 40}% + 50%)`,  
-      left: `calc(${Math.cos(i * interval * (Math.PI / 180)) * 40}% + 50%)`,
+      top: `calc(${Math.sin((i * interval * (Math.PI / 180)) + (Math.PI / 4)) * 40}% + 50%)`,  
+      left: `calc(${Math.cos(i * interval * (Math.PI / 180) + (Math.PI / 4)) * 40}% + 50%)`,
       size: '55px'
     });
   }

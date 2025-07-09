@@ -18,7 +18,7 @@ export default function Footer() {
               <a href="mailto:contact@omintel.com" className="text-white text-decoration-none">contact@omintel.com</a>
             </div>
             <div className="d-flex align-items-center justify-content-center">
-              <a href="tel:6666666666" className="text-white text-decoration-none">666 666 6666</a> 
+              <a href="tel:+97143796750" className="text-white text-decoration-none">(+971) 43 796 750</a> 
             </div>
           </div>
         </div>
