@@ -19,8 +19,10 @@ body {
   background: radial-gradient(
     circle at center,
     rgba(40, 27, 113, 0.942),
-    rgba(6, 6, 16, 0.942)
+    rgba(6, 6, 16, 0.942),
+     #071323
   );
+  background: linear-gradient(to top, rgba(31, 21, 87, 0.942),  rgba(6, 6, 16, 0.942) 60%, #071323) 10%;
   position: relative;
 }
 
