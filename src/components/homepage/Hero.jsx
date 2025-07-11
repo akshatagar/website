@@ -158,6 +158,7 @@ export default function Hero({ partners, aboutUs }) {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
       }}
     >
       <div className="container col-xxl-8">
