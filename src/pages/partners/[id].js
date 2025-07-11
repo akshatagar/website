@@ -4,7 +4,7 @@ import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 
-export default function PartnerPage({ partner }) {    
+export default function PartnerPage({ partner, idx }) {    
   const [activeCaseStudy, setActiveCaseStudy] = useState(null);
 
   const showIframe = (key) => {
@@ -13,7 +13,10 @@ export default function PartnerPage({ partner }) {
 
   return (
     <div className="container my-5">
-      <Link href="/partners">
+      <Link href={{
+                    pathname:'/partners',
+                    query: { id: idx}
+                  }}>
         <button
           type="button"
           className="btn btn-outline-light"
@@ -126,10 +129,12 @@ export async function getStaticProps({ params }) {
   `);
 
   const partner = partners.find((p) => p.name === params.id) || null;
+  const idx = partners.indexOf(partner);
 
   return {
     props: {
       partner,
+      idx,
       revalidate: 60,
     },
   };

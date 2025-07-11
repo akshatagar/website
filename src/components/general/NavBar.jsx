@@ -4,7 +4,6 @@ import { useState } from "react";
 
 export default function NavBar() {
   const [navOpen, setNavOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
     <nav className="navbar navbar-expand-lg sticky-top bg-dark w-100">
@@ -43,10 +42,7 @@ export default function NavBar() {
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" href={{
-                    pathname:'/partners',
-                    query: { id: '0'}
-                  }}>
+              <Link className="nav-link" href="/partners">
                 <button type="button" className="btn btn-dark btn-lg me-md-2">
                   Partners
                 </button>

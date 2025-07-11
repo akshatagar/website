@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
-import styles from './AboutUs.module.css';
-import Image from 'next/image';
+import React, { useState } from "react";
+import styles from "./AboutUs.module.css";
+import Image from "next/image";
 
-export default function Hero({partners, aboutUs}) {
-
-    /*const [isClickedH, setIsClickedH] = useState(false);
+export default function Hero({ partners, aboutUs }) {
+  /*const [isClickedH, setIsClickedH] = useState(false);
     const [isClickedP, setIsClickedP] = useState(false);
     const [isClickedL, setIsClickedL] = useState(false);*/
 
-    /*const nodes = [
+  /*const nodes = [
         { id: 1, name: 'Home', img: '/white-logo.png', top: '30%', left: '78%', size: '55px' },
         { id: 2, name: 'Partners', img: '/white-logo.png', top: '25%', left: '15%', size: '55px' },
         { id: 3, name: 'Learn more', img: '/white-logo.png', top: '80%', left: '70%', size: '55px' }
     ]*/
 
-    /*const nodesH = [
+  /*const nodesH = [
         { id: 1, name: 'Main Page', img: '/white-logo.png', top: '-17%', left: '-16%', size: '40px' },
         { id: 2, name: 'About', img: '/white-logo.png', top: '-20%', left: '4%', size: '40px' },
         { id: 3, name: 'Contact', img: '/white-logo.png', top: '0%', left: '20%', size: '40px' }
@@ -46,7 +45,8 @@ export default function Hero({partners, aboutUs}) {
     id == 1 ? setIsClickedH(!isClickedH) : id == 2 ? setIsClickedP(!isClickedP) : setIsClickedL(!isClickedL);
   }*/
 
-                  {/*nodes1.map((node) => (
+  {
+    /*nodes1.map((node) => (
                 <div 
                   key={node.id}
                   className={`${styles.satelliteLogo} ${isClickedC ? styles.scattered : ''}`}
@@ -147,27 +147,44 @@ export default function Hero({partners, aboutUs}) {
                 />
                   <span className={styles.satelliteLabel}>{node.name}</span>
                 </div>
-             ))}*/}
+             ))}*/
+  }
 
   return (
-    <div className="container col-xxl-8 py-5 hero">
-      <div className="row flex-nowrap g-3 py-5 " style={{paddingTop: '12rem'}}>
-          <div className={styles.textContainer + " col-auto pe-3 align-self-center"}>
+    <div
+      className="w-100 py-5 hero"
+      style={{
+         backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/pic2.jpeg")`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="container col-xxl-8">
+        <div
+          className="row flex-nowrap g-3 py-5"
+          style={{ paddingTop: "12rem" }}
+        >
+          <div
+            className={
+              styles.textContainer + " col-auto pe-3 align-self-center"
+            }
+          >
             <h1 className="fw-bold mb-3" id="headline">
               AI First Solutions
             </h1>
-            <p className="fs-5 mb-0 " style={{maxWidth: '45ch'}}>Empowering decisions with intelligent automation and contextual AI systems. </p>
+            <p className="fs-5 mb-0" style={{ maxWidth: "45ch" }}>
+              Empowering decisions with intelligent automation and contextual AI
+              systems.
+            </p>
           </div>
-        
-        <div className="col-lg-7 text-center ps-3 align-self-end">
-          {/* Title */}
-            <h2 className={styles.aboutTitle + " fw-bold mb-3"}>About Us</h2>
 
-              {/* Top Paragraph */}
-              <p className="fs-6 mb-0 " style={{ color: 'white' }}>
-                {aboutUs["aboutUsText"]}
-              </p>
-       
+          <div className="col-lg-7 text-center ps-3 align-self-end">
+            <h2 className={styles.aboutTitle + " fw-bold mb-3"}>About Us</h2>
+            <p className="fs-6 mb-0" style={{ color: "white" }}>
+              {aboutUs["aboutUsText"]}
+            </p>
+          </div>
         </div>
       </div>
     </div>

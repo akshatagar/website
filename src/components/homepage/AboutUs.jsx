@@ -1,12 +1,9 @@
 import styles from './InteractiveImage.module.css';
 import Image from 'next/image';
 import React, { useState } from 'react';
-import Link from 'next/link'
-import PartnerPage from '@/src/pages/partners/[id]';
-  
+import Link from 'next/link'  
 
 export default function AboutUs({aboutUs, partners}) {
-
   let nodes = [];
 
   const interval = 360 / partners.length;
