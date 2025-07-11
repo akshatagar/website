@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 export default function PartnerCarousel({ partners }) {
   const router = useRouter();
   const { id } = router.query;
-  const [centerSlideIndex, setCenterSlideIndex] = useState(id || 0);
+  const [centerSlideIndex, setCenterSlideIndex] = useState(parseInt(id) || 0);
 
   const settings = {
     infinite: true,
@@ -16,6 +16,7 @@ export default function PartnerCarousel({ partners }) {
     centerMode: true,
     centerPadding: "0px",
     focusOnSelect: true,
+    initialSlide: centerSlideIndex,
     afterChange: (current) => setCenterSlideIndex(current),
     responsive: [
       {

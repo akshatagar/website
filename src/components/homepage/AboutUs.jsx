@@ -6,7 +6,6 @@ import PartnerPage from '@/src/pages/partners/[id]';
   
 
 export default function AboutUs({aboutUs, partners}) {
-  const [selectedPartnerId, setSelectedPartnerId] = useState(null)
 
   let nodes = [];
 
@@ -60,7 +59,6 @@ export default function AboutUs({aboutUs, partners}) {
                 <div 
                   key={node.id}
                   className={`${styles.satelliteLogo} ${isClicked ? styles.scattered : ''}`}
-                  onClick={PartnerPage(partners, node.id)}
                   style={{
                     top: node.top,
                     left: node.left,
