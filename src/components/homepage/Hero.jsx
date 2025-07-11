@@ -159,12 +159,13 @@ export default function Hero({ partners, aboutUs }) {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
+        minHeight: '75vh',
       }}
     >
-      <div className="container col-xxl-8">
+      <div className="container col-xxl-8"
+         style={{ paddingTop: '11rem'}}>
         <div
           className="row flex-nowrap g-3 py-5"
-          style={{ paddingTop: "12rem" }}
         >
           <div
             className={
