@@ -1,25 +1,9 @@
 import React, { useState } from 'react';
-import styles from './InteractiveImage.module.css';
+import styles from './AboutUs.module.css';
 import Image from 'next/image';
-import { left } from '@popperjs/core';
 
-export default function Hero({partners}) {
+export default function Hero({partners, aboutUs}) {
 
-  let nodes = [];
-
-  const interval = 360 / partners.length;
-  for (let i = 0; i < partners.length; i++) {
-    nodes.push({  
-      id: i,
-      name: partners[i].name,
-      img: partners[i].logoUrl,
-      top: `calc(${Math.sin((i * interval * (Math.PI / 180)) + (Math.PI / 4)) * 40}% + 50%)`,  
-      left: `calc(${Math.cos(i * interval * (Math.PI / 180) + (Math.PI / 4)) * 40}% + 50%)`,
-      size: '55px'
-    });
-  }
-
-    const [isClicked, setIsClicked] = useState(false);
     /*const [isClickedH, setIsClickedH] = useState(false);
     const [isClickedP, setIsClickedP] = useState(false);
     const [isClickedL, setIsClickedL] = useState(false);*/
@@ -62,79 +46,7 @@ export default function Hero({partners}) {
     id == 1 ? setIsClickedH(!isClickedH) : id == 2 ? setIsClickedP(!isClickedP) : setIsClickedL(!isClickedL);
   }*/
 
-  const handleCentralClick = () => {
-    setIsClicked(!isClicked);
-  }
-
-  return (
-    <div className="container col-xxl-8 py-5 hero">
-
-
-      <div className="row align-items-center gx-5 py-5">
-          <div className={styles.textContainer + " col-lg-5"}>
-              <h1 className="display-5 fw-bold lh-1 mb-3 hero-header" id="headline">
-                AI First Solutions
-              </h1>
-              <p>Empowering decisions with intelligent automation and contextual AI systems. </p>
-          </div>
-
-
-          
-        <div className="col-lg-6">
-          <div className={styles.diagramContainer}>
-            <div className={styles.interactiveDiagram}>
-
-            
-              <div className={`${styles.centralLogo} ${isClicked ? styles.clicked : ''}`}
-                onClick={handleCentralClick}
-                style={{ cursor: 'pointer' }}
-              >
-                <Image
-                  src="/Logo_with_white.png" 
-                  alt="AI Core" 
-                  className="img-fluid"
-                  width={120}
-                  height={120}
-                  priority={true}
-                />
-              </div>
-
-
-              {/* Satellite Logos */}
-              {nodes.map((node) => (
-                <div 
-                  key={node.id}
-                  className={`${styles.satelliteLogo} ${isClicked ? styles.scattered : ''}`}
-                  onClick={handleCentralClick}
-                  style={{
-                    top: node.top,
-                    left: node.left,
-                    width: `calc(${node.size} + 30px)`,
-                    height: `calc(${node.size} + 30px)`,
-                    '--final-top': node.top,
-                    '--final-left': node.left,
-                    '--size': node.size,
-                    '--delay': `${node.id * 0.1}s`                    
-                  }}
-                >
-                  <img 
-                    src={node.img} 
-                    alt={node.name} 
-                    className={styles.satelliteImg}
-                    style={{ 
-                      width: node.size,
-                      height: node.size
-                    }}
-                  />
-                  <span className={styles.satelliteLabel}>{node.name}</span>
-                </div>
-              ))}
-
-
-              
-
-
-              {/*nodes1.map((node) => (
+                  {/*nodes1.map((node) => (
                 <div 
                   key={node.id}
                   className={`${styles.satelliteLogo} ${isClickedC ? styles.scattered : ''}`}
@@ -237,11 +149,25 @@ export default function Hero({partners}) {
                 </div>
              ))}*/}
 
-              
-
-
-            </div>
+  return (
+    <div className="container col-xxl-8 py-5 hero">
+      <div className="row flex-nowrap g-3 py-5 " style={{paddingTop: '12rem'}}>
+          <div className={styles.textContainer + " col-auto pe-3 align-self-center"}>
+            <h1 className="fw-bold mb-3" id="headline">
+              AI First Solutions
+            </h1>
+            <p className="fs-5 mb-0 " style={{maxWidth: '45ch'}}>Empowering decisions with intelligent automation and contextual AI systems. </p>
           </div>
+        
+        <div className="col-lg-7 text-center ps-3 align-self-end">
+          {/* Title */}
+            <h2 className={styles.aboutTitle + " fw-bold mb-3"}>About Us</h2>
+
+              {/* Top Paragraph */}
+              <p className="fs-6 mb-0 " style={{ color: 'white' }}>
+                {aboutUs["aboutUsText"]}
+              </p>
+       
         </div>
       </div>
     </div>

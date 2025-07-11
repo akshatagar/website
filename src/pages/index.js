@@ -6,8 +6,8 @@ import { client } from '@/lib/sanity'
 export default function Home({partners, aboutUs}) {
     return (
         <>
-            <Hero partners={partners}/>
-            <AboutUs aboutUs={aboutUs}/>
+            <Hero partners={partners} aboutUs={aboutUs}/>
+            <AboutUs aboutUs={aboutUs} partners={partners}/>
         </>
     )
 }

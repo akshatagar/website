@@ -1,9 +1,12 @@
 import { useState } from "react";
 import Slider from "react-slick";
 import Link from "next/link";
+import { useRouter } from 'next/router';
 
 export default function PartnerCarousel({ partners }) {
-  const [centerSlideIndex, setCenterSlideIndex] = useState(0);
+  const router = useRouter();
+  const { id } = router.query;
+  const [centerSlideIndex, setCenterSlideIndex] = useState(id || 0);
 
   const settings = {
     infinite: true,

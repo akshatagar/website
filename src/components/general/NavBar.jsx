@@ -43,7 +43,10 @@ export default function NavBar() {
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" href="/partners">
+              <Link className="nav-link" href={{
+                    pathname:'/partners',
+                    query: { id: '0'}
+                  }}>
                 <button type="button" className="btn btn-dark btn-lg me-md-2">
                   Partners
                 </button>
