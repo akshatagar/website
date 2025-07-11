@@ -86,7 +86,7 @@
     height: 500px;
     border-radius: 20px;
     overflow: hidden;
-    margin-left: 80px;
+    max-width: 50vw;
   }
   
   .interactiveDiagram {

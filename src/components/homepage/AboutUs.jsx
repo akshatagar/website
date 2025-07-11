@@ -32,8 +32,9 @@ export default function AboutUs({aboutUs, partners}) {
 
     return (
       <section id="about" className="about-section py-5">
-        <div className={`${styles.diagramContainer} row`}>
-            <div className={`${styles.interactiveDiagram} col-md-6`}>
+        <div className="row">
+        <div className={styles.diagramContainer + " col-md-6"}>
+            <div className={styles.interactiveDiagram}>
 
             
               <div className={`${styles.centralLogo} ${isClicked ? styles.clicked : ''}`}
@@ -89,24 +90,25 @@ export default function AboutUs({aboutUs, partners}) {
 
     {/* How we do it Section */}
 <div className="container">
-  <div className="row align-items-center justify-content-center">
-    {/* Left: Heading */}
-    <div className="col-md-3 text-md-end text-center mb-4 mb-md-0">
-      <h3 className="text-white">How we do it?</h3>
-    </div>
-
-    {/* Right: List */}
-    <div className="col-md-7">
+  <div className="row align-items-center">
+    <div className="col-md-6">
+            <h3 className="text-white"
+            style={{
+              paddingBottom: '3rem',
+            }}>
+              How we do it?
+            </h3>
       <ul className={styles.processList}>
         {aboutUs["howWeDoIt"].map((item, index) => (
           <li key={index}>{item}
           </li>
         ))}
       </ul>
+      </div>
     </div>
   </div>
 </div>
 </section>
         
-    )
+  )
 }
