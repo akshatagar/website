@@ -163,13 +163,13 @@ export default function Hero({ partners, aboutUs }) {
       }}
     >
       <div className="container col-xxl-8"
-         style={{ paddingTop: '11rem'}}>
+         style={{ paddingTop: "10rem", paddingBottom: "5rem" }}>
         <div
-          className="row flex-nowrap g-3 py-5"
+          className="row flex-nowrap g-5 pb-5"
         >
           <div
             className={
-              styles.textContainer + " col-auto pe-3 align-self-center"
+              styles.textContainer + " col-auto pe-3"
             }
           >
             <h1 className="fw-bold mb-3" id="headline">
@@ -181,7 +181,7 @@ export default function Hero({ partners, aboutUs }) {
             </p>
           </div>
 
-          <div className="col-lg-7 text-center ps-3 align-self-end">
+          <div className="col-lg-7 text-center ps-3">
             <h2 className={styles.aboutTitle + " fw-bold mb-3"}>About Us</h2>
             <p className="fs-6 mb-0" style={{ color: "white" }}>
               {aboutUs["aboutUsText"]}

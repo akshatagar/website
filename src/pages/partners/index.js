@@ -13,8 +13,10 @@ export async function getStaticProps() {
       name,
       solution,
       summary,
-      description,
-      "logoUrl": logo.asset->url
+      "logoUrl": logo.asset->url,
+      "carouselLogo": carouselLogoImage.asset->url,
+      carouselSubtext,
+      "carouselGraphic": carouselGraphic.asset->url
     }
   `)
 

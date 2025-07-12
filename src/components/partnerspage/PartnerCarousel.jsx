@@ -34,14 +34,15 @@ export default function PartnerCarousel({ partners }) {
     const cardContent = (
       <div className="card partner-card h-100 text-start">
         <img
-          src={partner.logoUrl}
+          src={partner.carouselLogo}
           className="card-img-top"
           alt={`${partner.name} logo`}
+          style={{ maxHeight: "60px" }}
         />
         <div className="card-body">
-          <h5 className="card-title text-center">{partner.name}</h5>
-          <h6 className="card-subtitle mb-3 mt-2 text-muted text-center">{partner.solution}</h6>
-          <p className="card-text">{partner.summary}</p>
+          <p className="card-text" style={{ fontWeight: "bold" }}>{partner.summary}</p>
+          <p className="card-text">{partner.carouselSubtext}</p>
+          <img className="card-img mt-4" src={partner.carouselGraphic} alt="carousel-graphic" style={{ maxHeight: "300px", maxWidth: "600px" }} />
         </div>
       </div>
     );
