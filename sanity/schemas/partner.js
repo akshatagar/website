@@ -17,23 +17,36 @@ export default {
       },
       {
         name: 'summary',
-        title: 'Summary',
+        title: 'Bolded Summary on Carousel',
         type: 'text',
         rows: 2,
         validation: Rule => Rule.required(),
       },
       {
-        name: 'description',
-        title: 'Description',
-        type: 'array',
-        of: [
-          { type: 'block' },        
-        ],
-        validation: Rule => Rule.required()
+        name: 'carouselSubtext',
+        title: 'Carousel Subtext',
+        type: 'text',
+        rows: 2,
+      },
+      {
+        name: 'carouselGraphic',
+        title: 'Carousel Graphic',
+        type: 'image',
+        options: {
+          hotspot: true,
+        },
+      },
+      {
+        name: 'carouselLogoImage',
+        title: 'Carousel Logo Image',
+        type: 'image',
+        options: {
+          hotspot: true,
+        },
       },
       {
         name: 'logo',
-        title: 'Logo Image',
+        title: 'Interactive Diagram Textless Logo Image',
         type: 'image',
         options: {
           hotspot: true,
