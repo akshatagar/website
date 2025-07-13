@@ -32,12 +32,11 @@ export default function PartnerCarousel({ partners }) {
 
   const renderCard = (partner, isCenter) => {
     const cardContent = (
-      <div className="card partner-card h-100 text-start">
+      <div className="card partner-card text-start">
         <img
           src={partner.carouselLogo}
-          className="card-img-top"
           alt={`${partner.name} logo`}
-          style={{ maxHeight: "60px" }}
+          style={{ maxHeight: "60px", maxWidth: "200px", margin: "0 auto"}}
         />
         <div className="card-body">
           <p className="card-text" style={{ fontWeight: "bold" }}>{partner.summary}</p>
