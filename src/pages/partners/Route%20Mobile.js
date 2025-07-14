@@ -4,7 +4,7 @@ import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 
-export default function SpeedTechPage({ partner, idx }) {
+export default function RouteMobilePage({ partner, idx }) {
   const [activeCaseStudy, setActiveCaseStudy] = useState(null);
 
   const showIframe = (key) => {
