@@ -115,11 +115,7 @@
       transform:  translateY(-8px) scale(1.3); 
     }
   }
-  
-  .centralLogo.clicked {
-    animation: scale(1.1) 3s ease-in-out;
-  }
-  
+    
   .centralLogo:hover {
     animation: scale(1.1) 3s ease-in-out infinite;
   }

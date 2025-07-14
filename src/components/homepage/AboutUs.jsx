@@ -1,7 +1,34 @@
 import styles from './InteractiveImage.module.css';
 import Image from 'next/image';
-import React, { useState } from 'react';
-import Link from 'next/link'  
+import { useRef, useEffect, useState } from 'react';
+//import { intersectionObserver } from './intersectionObserver';
+import Link from 'next/link';  
+
+const intersectionObserver = (options) => {
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsIntersecting(entry.isIntersecting);
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+      }
+    }, options);
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [options]);
+
+  return [ref, isIntersecting];
+};
 
 export default function AboutUs({aboutUs, partners}) {
   let nodes = [];
@@ -12,17 +39,26 @@ export default function AboutUs({aboutUs, partners}) {
       id: i,
       name: partners[i].name,
       img: partners[i].logoUrl,
-      top: `calc(${Math.sin((i * interval * (Math.PI / 180)) + (Math.PI / 4)) * 40}% + 50%)`,  
+      top: `calc(${Math.sin((i * interval * (Math.PI / 180)) + (Math.PI / 4)) * 38}% + 50%)`,  
       left: `calc(${Math.cos(i * interval * (Math.PI / 180) + (Math.PI / 4)) * 40}% + 50%)`,
       size: '55px'
     });
   }
 
-  const [isClicked, setIsClicked] = useState(false);
+  const [diagramRef, isVisible] = intersectionObserver({
+    threshold: 0.3,
+    rootMargin: '0px 0px -100px 0px'
+  });
+
+  useEffect(() => {
+  console.log('Is diagram visible?', isVisible);
+  }, [isVisible]);
+
+  /*const [isClicked, setIsClicked] = useState(false);
 
   const handleCentralClick = () => {
     setIsClicked(!isClicked);
-  }
+  }*/
 
   /*const handleSatteliteClick = (id) => {
     return (
@@ -36,12 +72,12 @@ export default function AboutUs({aboutUs, partners}) {
           <div className="row align-items-center flex-nowrap gx-5">
 
 
-            <div className={styles.diagramContainer + " col-lg-6 mb-4 mb-lg-0"}>
+            <div ref = {diagramRef} className={styles.diagramContainer + " col-lg-6 mb-4 mb-lg-0"}>
               <div className={styles.interactiveDiagram}>
 
-                <div className={`${styles.centralLogo} ${isClicked ? styles.clicked : ''}`}
-                  onClick={handleCentralClick}
-                  style={{ cursor: 'pointer' }}
+                <div className={`${styles.centralLogo} ${isVisible ? styles.clicked : ''}`}
+                  //onClick={handleCentralClick}
+                  //style={{ cursor: 'pointer' }}
                 >
                   <Image
                     src="/Logo_with_white.png" 
@@ -56,16 +92,16 @@ export default function AboutUs({aboutUs, partners}) {
                 {nodes.map((node) => (
                   <div 
                     key={node.id}
-                    className={`${styles.satelliteLogo} ${isClicked ? styles.scattered : ''}`}
+                    className={`${styles.satelliteLogo} ${isVisible ? styles.scattered : ''}`}
                     style={{
                       top: node.top,
                       left: node.left,
-                      width: `calc(${node.size} + 30px)`,
-                      height: `calc(${node.size} + 30px)`,
+                      width: `calc(${node.size}px + 30px)`,
+                      height: `calc(${node.size}px + 30px)`,
                       '--final-top': node.top,
                       '--final-left': node.left,
                       '--size': node.size,
-                      '--delay': `${node.id * 0.1}s`                    
+                      '--delay': `calc(${node.id * 0.1}s + 0.5s)`                    
                     }}
                   >
                     <Link href={{
