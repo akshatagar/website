@@ -2,18 +2,15 @@ import styles from './InteractiveImage.module.css';
 import Image from 'next/image';
 import { useRef, useEffect, useState } from 'react';
 //import { intersectionObserver } from './intersectionObserver';
-import Link from 'next/link';  
+import Link from 'next/link'; 
 
-const intersectionObserver = (options) => {
+const useIntersectionObserver = (options) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
   const ref = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       setIsIntersecting(entry.isIntersecting);
-      if (entry.isIntersecting) {
-        observer.unobserve(entry.target);
-      }
     }, options);
 
     if (ref.current) {
@@ -30,7 +27,31 @@ const intersectionObserver = (options) => {
   return [ref, isIntersecting];
 };
 
+
 export default function AboutUs({aboutUs, partners}) {
+
+  const [isDiagramOpen, setIsDiagramOpen] = useState(false);
+
+  const [diagramRef, isVisible] = useIntersectionObserver({
+    threshold: 0.3,
+    rootMargin: '0px 0px -100px 0px'
+  });
+
+
+
+ useEffect(() => {
+  if (isVisible) {
+    setIsDiagramOpen(true);
+  } else if (!isVisible) {
+    setIsDiagramOpen(false);
+  }
+}, [isVisible]);
+
+  const handleCentralClick = () => {
+    setIsDiagramOpen(!isDiagramOpen);
+  };
+
+
   let nodes = [];
 
   const interval = 360 / partners.length;
@@ -45,10 +66,6 @@ export default function AboutUs({aboutUs, partners}) {
     });
   }
 
-  const [diagramRef, isVisible] = intersectionObserver({
-    threshold: 0.3,
-    rootMargin: '0px 0px -100px 0px'
-  });
 
   useEffect(() => {
   console.log('Is diagram visible?', isVisible);
@@ -75,9 +92,9 @@ export default function AboutUs({aboutUs, partners}) {
             <div ref = {diagramRef} className={styles.diagramContainer + " col-lg-6 mb-4 mb-lg-0"}>
               <div className={styles.interactiveDiagram}>
 
-                <div className={`${styles.centralLogo} ${isVisible ? styles.clicked : ''}`}
-                  //onClick={handleCentralClick}
-                  //style={{ cursor: 'pointer' }}
+                <div className={`${styles.centralLogo} ${isDiagramOpen ? styles.clicked : ''}`}
+                  onClick={handleCentralClick}
+                  style={{ cursor: 'pointer' }}
                 >
                   <Image
                     src="/Logo_with_white.png" 
@@ -92,7 +109,7 @@ export default function AboutUs({aboutUs, partners}) {
                 {nodes.map((node) => (
                   <div 
                     key={node.id}
-                    className={`${styles.satelliteLogo} ${isVisible ? styles.scattered : ''}`}
+                    className={`${styles.satelliteLogo} ${isDiagramOpen ? styles.scattered : ''}`}
                     style={{
                       top: node.top,
                       left: node.left,
