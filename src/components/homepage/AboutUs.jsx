@@ -29,6 +29,7 @@ const useIntersectionObserver = (options) => {
 
 
 export default function AboutUs({aboutUs, partners}) {
+  let del = '0s';
 
   const [isDiagramOpen, setIsDiagramOpen] = useState(false);
 
@@ -42,8 +43,10 @@ export default function AboutUs({aboutUs, partners}) {
  useEffect(() => {
   if (isVisible) {
     setIsDiagramOpen(true);
+    del = '0.4s'
   } else if (!isVisible) {
     setIsDiagramOpen(false);
+    del = '0s'
   }
 }, [isVisible]);
 
@@ -118,7 +121,7 @@ export default function AboutUs({aboutUs, partners}) {
                       '--final-top': node.top,
                       '--final-left': node.left,
                       '--size': node.size,
-                      '--delay': `calc(${node.id * 0.1}s + 0.5s)`                    
+                      '--delay': `calc(${node.id * 0.1}s + ${del})`                    
                     }}
                   >
                     <Link href={{
