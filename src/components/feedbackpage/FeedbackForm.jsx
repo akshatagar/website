@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import styles from './Feedback.module.css';
 
-export default function FeedbackForm() {
+export default function FeedbackForm({ onClose }) {
   const [formData, setFormData] = useState({
     email: '',
     company: '',
@@ -29,18 +29,17 @@ export default function FeedbackForm() {
     params.append('company', formData.company);   // Replace with actual field ID
     params.append('phone', formData.phone);       // Replace with actual field ID
     
-    // Open Microsoft Forms in new tab with prefilled data
-    window.open(`${formUrl}?${params.toString()}`, '_blank', 'noopener,noreferrer');
     
     // Optional: Reset form after submission
     setFormData({ email: '', company: '', phone: '' });
     
-    // Optional: Show success message
-    alert('Opening Microsoft Forms with your information...');
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.feedbackForm}>
+    <div className="feedback-overlay">
+    <div className={styles.feedbackForm}>
+    <button onClick={onClose} className="btn-close"></button>  
+    <form onSubmit={handleSubmit} >
       
       <h2> Feedback Page</h2>
       <input type="hidden" name="_captcha" value="false" />
@@ -91,5 +90,7 @@ export default function FeedbackForm() {
         Submit
       </button>
     </form>
+    </div>
+    </div>
   );
 }
