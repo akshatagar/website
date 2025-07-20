@@ -34,9 +34,9 @@ export default function NavBar() {
         <div className={`collapse navbar-collapse ${navOpen ? "show" : ""}`}>
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link" href="/">
+              <Link className="nav-link" href="/about-us">
                 <button type="button" className="btn btn-dark btn-lg me-md-2">
-                  Home
+                  About Us
                 </button>
               </Link>
             </li>

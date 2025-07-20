@@ -5,10 +5,12 @@ import "../styles/globals.css";
 import "../styles/partnerspage.css";
 import MainLayout from "../layout/main-layout";
 import Head from "next/head";
+import { FeedbackProvider } from "../components/contexts/FeedbackContext";
 
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
+    <FeedbackProvider>
       <Head>
         <title>OMiNTEL</title>
         <link rel="icon" href="/favicon.ico" />
@@ -32,6 +34,7 @@ export default function MyApp({ Component, pageProps }) {
       <MainLayout>
         <Component {...pageProps} />
       </MainLayout>
+    </FeedbackProvider>
     </>
   );
 }

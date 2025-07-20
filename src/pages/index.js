@@ -1,13 +1,21 @@
 import Hero from "../components/homepage/Hero"
-import AboutUs from "../components/homepage/AboutUs"
+import AboutUs from "../components/aboutpage/AboutUs"
 import { client } from '@/lib/sanity'
+import { useRouter } from 'next/router';
+import FeedbackForm from "../components/feedbackpage/FeedbackForm";
+import { useFeedback } from '../components/contexts/FeedbackContext';
 
 
-export default function Home({partners, aboutUs}) {
+export default function Home( { partners }) {
+
+  const { showFeedback, setShowFeedback } = useFeedback();
+
     return (
         <>
-            <Hero partners={partners} aboutUs={aboutUs}/>
-            <AboutUs aboutUs={aboutUs} partners={partners}/>
+            <Hero partners={partners}/>
+            {showFeedback && (
+            <FeedbackForm onClose={() => setShowFeedback(false)} />
+          )}
         </>
     )
 }
@@ -20,15 +28,8 @@ export async function getStaticProps() {
     }
   `)
 
-  const aboutUs = await client.fetch(`
-    *[_type == "homepage"][0] {
-      aboutUsText,
-      howWeDoIt
-    }
-  `)
-
   return {
-    props: { partners, aboutUs },
+    props: { partners },
     revalidate: 60,
   }
 }

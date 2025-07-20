@@ -1,50 +1,66 @@
 import React, { useState } from "react";
-import styles from "./AboutUs.module.css";
+import styles from "./InteractiveImage.module.css";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from 'next/router';
 
-export default function Hero({ partners, aboutUs }) {
-  /*const [isClickedH, setIsClickedH] = useState(false);
-    const [isClickedP, setIsClickedP] = useState(false);
-    const [isClickedL, setIsClickedL] = useState(false);*/
+export default function Hero({ partners }) {
 
-  /*const nodes = [
-        { id: 1, name: 'Home', img: '/white-logo.png', top: '30%', left: '78%', size: '55px' },
-        { id: 2, name: 'Partners', img: '/white-logo.png', top: '25%', left: '15%', size: '55px' },
-        { id: 3, name: 'Learn more', img: '/white-logo.png', top: '80%', left: '70%', size: '55px' }
-    ]*/
 
-  /*const nodesH = [
-        { id: 1, name: 'Main Page', img: '/white-logo.png', top: '-17%', left: '-16%', size: '40px' },
-        { id: 2, name: 'About', img: '/white-logo.png', top: '-20%', left: '4%', size: '40px' },
-        { id: 3, name: 'Contact', img: '/white-logo.png', top: '0%', left: '20%', size: '40px' }
-    ]
+  let del = '0s';
 
-    const nodesP = [
-        { id: 1, name: 'Speedtech.ai', img: '/white-logo.png', top: '-17%', left: '-16%', size: '40px' },
-        { id: 2, name: 'Route Mobile', img: '/white-logo.png', top: '-20%', left: '4%', size: '40px' },
-        { id: 3, name: 'Temporary', img: '/white-logo.png', top: '10%', left: '-17%', size: '40px' },
-        { id: 4, name: 'Temp', img: '/white-logo.png', top: '20%', left: '0%', size: '40px' }
-    ]
+  const [isDiagramOpen, setIsDiagramOpen] = useState(false);
 
-    const nodesL = [
-        { id: 1, name: 'Banking', img: '/white-logo.png', top: '6%', left: '-20%', size: '40px' },
-        { id: 2, name: 'AI', img: '/white-logo.png', top: '13%', left: '20%', size: '40px' },
-        { id: 3, name: 'Miscellaneous', img: '/white-logo.png', top: '-5%', left: '20%', size: '40px' }
-    ]
+  /*const [diagramRef, isVisible] = useIntersectionObserver({
+    threshold: 0.3,
+    rootMargin: '0px 0px -100px 0px'
+  });
+
+
+
+ useEffect(() => {
+  if (isVisible) {
+    setIsDiagramOpen(true);
+    del = '0.4s'
+  } else if (!isVisible) {
+    setIsDiagramOpen(false);
+    del = '0s'
+  }
+}, [isVisible]);*/
 
   const handleCentralClick = () => {
-    if (isClickedC) {
-      setIsClickedH(false);
-      setIsClickedL(false);
-      setIsClickedP(false);
-    }
-    setIsClickedC(!isClickedC);
+    setIsDiagramOpen(!isDiagramOpen);
+  };
+
+
+  let nodes = [];
+
+  const interval = 360 / partners.length;
+  for (let i = 0; i < partners.length; i++) {
+    nodes.push({  
+      id: i,
+      name: partners[i].name,
+      img: partners[i].logoUrl,
+      top: `calc(${Math.sin((i * interval * (Math.PI / 180)) + (Math.PI / 4)) * 38}% + 50%)`,  
+      left: `calc(${Math.cos(i * interval * (Math.PI / 180) + (Math.PI / 4)) * 40}% + 50%)`,
+      size: '55px'
+    });
   }
 
-    const handleClick1 = (id) => {
-    id == 1 ? setIsClickedH(!isClickedH) : id == 2 ? setIsClickedP(!isClickedP) : setIsClickedL(!isClickedL);
+
+
+  /*const [isClicked, setIsClicked] = useState(false);
+
+  const handleCentralClick = () => {
+    setIsClicked(!isClicked);
   }*/
 
+  /*const handleSatteliteClick = (id) => {
+    return (
+      <PartnersCarousel partners={partners} centerId={id}/>
+    );
+  }*/
+  
   {
     /*nodes1.map((node) => (
                 <div 
@@ -151,22 +167,10 @@ export default function Hero({ partners, aboutUs }) {
   }
 
   return (
-    <div
-      className="w-100 py-5 hero"
-      style={{
-         backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/pic2.jpeg")`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
-        minHeight: '75vh',
-      }}
-    >
+    <div className="w-100 py-5 hero">
       <div className="container col-xxl-8"
          style={{ paddingTop: "10rem", paddingBottom: "5rem" }}>
-        <div
-          className="row flex-nowrap g-5 pb-5"
-        >
+        <div className="row flex-nowrap g-5 pb-5">
           <div
             className={
               styles.textContainer + " col-auto pe-3"
@@ -181,11 +185,56 @@ export default function Hero({ partners, aboutUs }) {
             </p>
           </div>
 
-          <div className="col-lg-7 text-center ps-3">
-            <h2 className={styles.aboutTitle + " fw-bold mb-3"}>About Us</h2>
-            <p className="fs-6 mb-0" style={{ color: "white" }}>
-              {aboutUs["aboutUsText"]}
-            </p>
+          <div className={ styles.diagramContainer + " col-lg-7 mb-4 mb-lg-0"}>
+              <div className={styles.interactiveDiagram}>
+
+                <div className={`${styles.centralLogo} ${isDiagramOpen ? styles.clicked : ''}`}
+                  onClick={handleCentralClick}
+                  style={{ cursor: 'pointer' }}
+                >
+                  <Image
+                    src="/Logo_with_white.png" 
+                    alt="AI Core" 
+                    className="img-fluid"
+                    width={120}
+                    height={120}
+                    priority={true}
+                  />
+                </div>
+
+                {nodes.map((node) => (
+                  <div 
+                    key={node.id}
+                    className={`${styles.satelliteLogo} ${isDiagramOpen ? styles.scattered : ''}`}
+                    style={{
+                      top: node.top,
+                      left: node.left,
+                      width: `calc(${node.size}px + 30px)`,
+                      height: `calc(${node.size}px + 30px)`,
+                      '--final-top': node.top,
+                      '--final-left': node.left,
+                      '--size': node.size,
+                      '--delay': `calc(${node.id * 0.1}s + ${del})`                    
+                    }}
+                  >
+                    <Link href={{
+                      pathname:'/partners',
+                      query: { id: node.id }
+                    }}>
+                    <img 
+                      src={node.img} 
+                      alt={node.name} 
+                      className={styles.satelliteImg}
+                      style={{ 
+                        width: node.size,
+                        height: node.size
+                      }}
+                    />
+                    </Link>
+                    <span className={styles.satelliteLabel}>{node.name}</span>
+                  </div>
+                ))}
+              </div>
           </div>
         </div>
       </div>

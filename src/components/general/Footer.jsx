@@ -1,10 +1,12 @@
 import Link from "next/link";
-import FeedbackForm from "../feedbackpage/FeedbackForm";
 import Image from "next/image";
 import { useState } from 'react';
+import { useFeedback } from '../contexts/FeedbackContext';
 
 export default function Footer() {
-  const [showFeedback, setShowFeedback] = useState(false);
+  
+  const { showFeedback, setShowFeedback } = useFeedback();
+
   return (
     <footer className="container-fluid py-3 text-white w-100">
       <div className="row gy-3 align-items-center mx-0">
@@ -30,15 +32,11 @@ export default function Footer() {
           <div className="d-flex justify-content-center justify-content-md-end align-items-center">
             <button type="button" 
             className="btn custom-btn"
-            onClick={() => setShowFeedback(true)}
+            onClick={() => setShowFeedback(!showFeedback)}
             >
               Feedback
             </button>
-            
           </div>
-        {showFeedback && (
-        <FeedbackForm onClose={() => setShowFeedback(false)} />
-        )}
         </div>
 
       </div>
