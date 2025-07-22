@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import styles from './Feedback.module.css';
 
-export default function FeedbackForm({ onClose }) {
+export default function FeedbackForm() {
   const [formData, setFormData] = useState({
     email: '',
     company: '',
@@ -38,7 +38,6 @@ export default function FeedbackForm({ onClose }) {
   return (
     <div className="feedback-overlay">
     <div className={styles.feedbackForm}>
-    <button onClick={onClose} className="btn-close"></button>  
     <form onSubmit={handleSubmit} >
       
       <h2> Feedback Page</h2>

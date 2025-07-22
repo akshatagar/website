@@ -1,0 +1,70 @@
+.popupContainer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.popupWindow {
+  width: 400px;
+  background: white;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.popupWindow.minimized {
+  height: 40px !important;
+  overflow: hidden;
+}
+
+.popupHeader {
+  background: #4285f4;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.popupTitle {
+  font-weight: bold;
+}
+
+.popupControls {
+  display: flex;
+  gap: 10px;
+}
+
+.popupButton {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.popupButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.popupButtonClose:hover {
+  background: #d32f2f;
+}
+
+.popupContent {
+  padding: 15px;
+  max-height: 500px;
+  overflow-y: auto;
+}

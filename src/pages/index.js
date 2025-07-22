@@ -4,6 +4,7 @@ import { client } from '@/lib/sanity'
 import { useRouter } from 'next/router';
 import FeedbackForm from "../components/feedbackpage/FeedbackForm";
 import { useFeedback } from '../components/contexts/FeedbackContext';
+import PopupWindow from "../components/feedbackpage/Popup";
 
 
 export default function Home( { partners }) {
@@ -14,7 +15,11 @@ export default function Home( { partners }) {
         <>
             <Hero partners={partners}/>
             {showFeedback && (
-            <FeedbackForm onClose={() => setShowFeedback(false)} />
+            <PopupWindow
+              title="Feedback Form"
+              onClose={() => setShowFeedback(false)}>
+              <FeedbackForm />
+            </PopupWindow>
           )}
         </>
     )
