@@ -1,8 +1,11 @@
 'use client';
 import { useState } from 'react';
 import styles from './Feedback.module.css';
+import { useFeedback } from '../contexts/FeedbackContext';
 
 export default function FeedbackForm() {
+
+  const {showFeedback, setShowFeedback} = useFeedback();
   const [formData, setFormData] = useState({
     email: '',
     company: '',
@@ -85,7 +88,8 @@ export default function FeedbackForm() {
         />
       </div>
       
-      <button type="submit" className={styles.submitBtn}>
+      <button type="submit" className={styles.submitBtn}
+        onClick={ () => setShowFeedback(false)}>
         Submit
       </button>
     </form>
