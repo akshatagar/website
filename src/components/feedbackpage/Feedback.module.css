@@ -5,7 +5,7 @@
     max-width: 600px;
     margin: 2rem auto;
     padding: 2rem;
-    background: #ffffff;
+    background: #ffffff00;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -13,7 +13,8 @@
   
   /* Form Header */
   .feedbackForm h2 {
-    color: #2c3e50;
+    /*color: #2c3e50;*/
+    color: white;
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
     font-weight: 600;
@@ -30,7 +31,8 @@
   .formLabel {
     display: block;
     margin-bottom: 0.5rem;
-    color: #34495e;
+    /*color: #34495e;*/
+    color: white;
     font-weight: 500;
     font-size: 0.95rem;
   }
