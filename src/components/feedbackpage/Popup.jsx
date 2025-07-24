@@ -7,6 +7,8 @@ const PopupWindow = ({ title, children, onClose }) => {
   return (
     <div className={styles.popupContainer}>
       <div className={`${styles.popupWindow} ${isMinimized ? 'minimized' : ''}`}>
+        
+        <button onClick={() => setIsMinimized(!isMinimized)} style={{ background: 'none', border: 'none'}}>
         <div className={styles.popupHeader}>
           <div className={styles.popupTitle}>{title}</div>
           <div className={styles.popupControls}>
@@ -26,6 +28,7 @@ const PopupWindow = ({ title, children, onClose }) => {
             </button>
           </div>
         </div>
+        </button>
         {!isMinimized && (
           <div className="popup-content">
             {children}
