@@ -43,7 +43,7 @@ export default function RouteMobilePage({ partner, idx }) {
             src="/RouteMobilePage/RouteMobileGraphic.png"
             alt="Venn diagram"
             className="img-fluid"
-            style={{ maxWidth: "400px", height: "auto" }}
+            style={{ maxWidth: "40%", height: "auto" }}
           />
         </div>
 
