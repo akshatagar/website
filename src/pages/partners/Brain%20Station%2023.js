@@ -3,7 +3,7 @@ import { client } from "@/lib/sanity";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function SpeedTechPage({ partner, idx }) {
+export default function BrainStationPage({ partner, idx }) {
   const [activeCaseStudy, setActiveCaseStudy] = useState(null);
 
   const showIframe = (key) => {
@@ -45,16 +45,17 @@ export default function SpeedTechPage({ partner, idx }) {
             View TK Case Study
           </button> */}
         </div>
-        <a
-          href={partner.website}
-          className="text-center mt-4"
-          target="_blank"
-          rel="noopener noreferrer"
+       {/* Website Button */}
+        <button
+          type="button"
+          className="btn btn-dark mt-4 text-center"
+          style={{ width: "125px", margin: "0 auto" }}
+          onClick={() =>
+            window.open(partner.website, "_blank", "noopener,noreferrer")
+          }
         >
-          <button type="button" className="btn btn-dark">
-            Visit Website
-          </button>
-        </a>
+          Visit Website
+        </button>
         {/* {activeCaseStudy === "ajww" && (
           <iframe
             src="/embed/ajww_case_study.html"

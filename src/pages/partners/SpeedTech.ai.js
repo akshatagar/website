@@ -20,85 +20,75 @@ export default function SpeedTechPage({ partner, idx }) {
       >
         <button
           type="button"
-          className="btn btn-outline-light"
-          style={{ marginBottom: "20px", width: "75px" }}
+          className="btn btn-outline-light mb-3"
+          style={{ width: "75px" }}
         >
           &larr;
         </button>
       </Link>
+
       <div className="card p-4">
-        <div style={{ display: "flex" }}>
+        {/* Header Section */}
+        <div className="d-flex flex-column flex-md-row align-items-center mb-4">
           <Image
             src={partner.carouselLogo}
             alt="SpeedTech.ai Logo"
             width={155}
             height={75}
+            className="mb-3 mb-md-0 me-md-3"
           />
-          <h1 style={{ fontSize: "1.75rem", margin: "0 auto" }}>
+          <h1 className="text-center text-md-start fs-4 fw-bold">
             <span style={{ fontWeight: "bold" }}>RAIYA</span> - Responsive AI
             Yield Assistant
           </h1>
         </div>
-        <div
-          style={{
-            display: "flex",
-            margin: "0 auto",
-            marginTop: "10px",
-            marginBottom: "15px",
-          }}
-          className="gap-5"
-        >
-          <div
-            className="card partner-card"
-            style={{ border: "2px solid black", width: "500px" }}
-          >
-            <h2
-              style={{
-                fontSize: "1.25rem",
-                margin: "0 auto",
-                marginTop: "15px",
-              }}
-            >
-              <span style={{ fontWeight: "bold" }}>RAIYA</span> - Concierge and
-              Telephony
-            </h2>
-            <div className="card-body text-center">
-              <img
-                className="card-img mt-4"
-                src="/SpeedTechPage/SpeedTechGraphic2.png"
-                alt="carousel-graphic"
-                style={{ maxHeight: "300px", maxWidth: "600px" }}
-              />
+
+        {/* Graphics Cards */}
+        <div className="row justify-content-center g-4 mb-4">
+          {/* Card 1 */}
+          <div className="col-12 col-md-6">
+            <div className="card h-100 border border-dark">
+              <h2 className="text-center mt-3 fs-5">
+                <strong>RAIYA</strong> - Concierge and Telephony
+              </h2>
+              <div className="card-body text-center">
+                <img
+                  className="img-fluid"
+                  src="/SpeedTechPage/SpeedTechGraphic2.png"
+                  alt="carousel-graphic"
+                  style={{ maxHeight: "300px" }}
+                />
+              </div>
             </div>
           </div>
-          <div
-            className="card partner-card"
-            style={{ border: "2px solid black", width: "500px" }}
-          >
-            <h2
-              style={{
-                fontSize: "1.25rem",
-                margin: "0 auto",
-                marginTop: "15px",
-              }}
-            >
-              <span style={{ fontWeight: "bold" }}>RAIYA</span> - Intelligent
-              Document Processing
-            </h2>
-            <div className="card-body text-center">
-              <img
-                className="card-img mt-4"
-                src="/SpeedTechPage/SpeedTechGraphic.png"
-                alt="carousel-graphic"
-                style={{ maxHeight: "300px", maxWidth: "600px", marginBottom: "10px" }}
-              />
-              <video width="400" height="250" controls>
-                <source src="/SpeedTechPage/IDPVideo.mp4" type="video/mp4" />
-              </video>
+
+          {/* Card 2 */}
+          <div className="col-12 col-md-6">
+            <div className="card h-100 border border-dark">
+              <h2 className="text-center mt-3 fs-5">
+                <strong>RAIYA</strong> - Intelligent Document Processing
+              </h2>
+              <div className="card-body text-center">
+                <img
+                  className="img-fluid mb-3"
+                  src="/SpeedTechPage/SpeedTechGraphic.png"
+                  alt="carousel-graphic"
+                  style={{ maxHeight: "300px" }}
+                />
+                <video
+                  controls
+                  className="w-100"
+                  style={{ maxHeight: "250px" }}
+                >
+                  <source src="/SpeedTechPage/IDPVideo.mp4" type="video/mp4" />
+                </video>
+              </div>
             </div>
           </div>
         </div>
-        <div className="d-flex justify-content-center gap-3 mb-4">
+
+        {/* Case Study Buttons */}
+        <div className="d-flex flex-column flex-md-row justify-content-center gap-3 mb-4">
           <button
             className={`btn ${
               activeCaseStudy === "ajww" ? "btn-primary" : "btn-outline-primary"
@@ -116,16 +106,20 @@ export default function SpeedTechPage({ partner, idx }) {
             View TK Case Study
           </button>
         </div>
-        <a
-          href={partner.website}
-          className="text-center mt-2"
-          target="_blank"
-          rel="noopener noreferrer"
+
+        {/* Website Button */}
+        <button
+          type="button"
+          className="btn btn-dark text-center"
+          style={{ width: "125px", margin: "0 auto" }}
+          onClick={() =>
+            window.open(partner.website, "_blank", "noopener,noreferrer")
+          }
         >
-          <button type="button" className="btn btn-dark">
-            Visit Website
-          </button>
-        </a>
+          Visit Website
+        </button>
+
+        {/* Iframes */}
         {activeCaseStudy === "ajww" && (
           <iframe
             src="/embed/ajww_case_study.html"
@@ -135,7 +129,6 @@ export default function SpeedTechPage({ partner, idx }) {
             title="AJWW Case Study"
           />
         )}
-
         {activeCaseStudy === "tk" && (
           <iframe
             src="/embed/tk_case_study.html"

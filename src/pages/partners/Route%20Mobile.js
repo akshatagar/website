@@ -1,18 +1,14 @@
 import { useState } from "react";
 import { client } from "@/lib/sanity";
 import Link from "next/link";
-import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 
 export default function RouteMobilePage({ partner, idx }) {
   const [activeCaseStudy, setActiveCaseStudy] = useState(null);
 
-  const showIframe = (key) => {
-    setActiveCaseStudy((prev) => (prev === key ? null : key));
-  };
-
   return (
     <div className="container my-5">
+      {/* Back Button */}
       <Link
         href={{
           pathname: "/partners",
@@ -21,64 +17,57 @@ export default function RouteMobilePage({ partner, idx }) {
       >
         <button
           type="button"
-          className="btn btn-outline-light"
-          style={{ marginBottom: "20px", width: "75px" }}
+          className="btn btn-outline-light mb-3"
+          style={{ width: "75px" }}
         >
           &larr;
         </button>
       </Link>
-      <div className="card p-4">
-        {/* <div className="d-flex justify-content-center gap-3 mb-4">
-          <button
-            className={`btn ${
-              activeCaseStudy === "ajww" ? "btn-primary" : "btn-outline-primary"
-            }`}
-            onClick={() => showIframe("ajww")}
-          >
-            View AJWW Case Study
-          </button>
-          <button
-            className={`btn ${
-              activeCaseStudy === "tk" ? "btn-primary" : "btn-outline-primary"
-            }`}
-            onClick={() => showIframe("tk")}
-          >
-            View TK Case Study
-          </button>
-        </div> */}
-        <Image src={partner.carouselLogo} alt="route-mobile-logo" width={155} height={45}/>
-        <Image src="/RouteMobilePage/RouteMobileGraphic.png" alt="venn-diagram" width={350} height={300} 
-        style={{ margin: "0 auto" }} />
-        <Image src="/RouteMobilePage/RouteMobileGraphic2.png" alt="venn-diagram" width={700} height={115} style={{ margin: "0 auto" }} />
-        <a
-          href={partner.website}
-          className="text-center mt-4"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button type="button" className="btn btn-dark">
-            Visit Website
-          </button>
-        </a>
-        {/* {activeCaseStudy === "ajww" && (
-          <iframe
-            src="/embed/ajww_case_study.html"
-            width="100%"
-            height="500"
-            style={{ border: "1px solid #ccc" }}
-            title="AJWW Case Study"
-          />
-        )}
 
-        {activeCaseStudy === "tk" && (
-          <iframe
-            src="/embed/tk_case_study.html"
-            width="100%"
-            height="500"
-            style={{ border: "1px solid #ccc" }}
-            title="TK Case Study"
+      {/* Main Card */}
+      <div className="card p-4">
+        {/* Carousel Logo */}
+        <div className="mb-4">
+          <Image
+            src={partner.carouselLogo}
+            alt="Route Mobile Logo"
+            width={155}
+            height={45}
+            className="img-fluid"
           />
-        )} */}
+        </div>
+
+        {/* First Graphic */}
+        <div className="mb-4 text-center">
+          <img
+            src="/RouteMobilePage/RouteMobileGraphic.png"
+            alt="Venn diagram"
+            className="img-fluid"
+            style={{ maxWidth: "400px", height: "auto" }}
+          />
+        </div>
+
+        {/* Second Graphic */}
+        <div className="mb-4 text-center">
+          <img
+            src="/RouteMobilePage/RouteMobileGraphic2.png"
+            alt="Graphic 2"
+            className="img-fluid"
+            style={{ maxWidth: "100%", height: "auto" }}
+          />
+        </div>
+
+        {/* Website Button */}
+        <button
+          type="button"
+          className="btn btn-dark text-center"
+          style={{ width: "125px", margin: "0 auto" }}
+          onClick={() =>
+            window.open(partner.website, "_blank", "noopener,noreferrer")
+          }
+        >
+          Visit Website
+        </button>
       </div>
     </div>
   );
