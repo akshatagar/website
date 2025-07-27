@@ -110,7 +110,7 @@ export default function SpeedTechPage({ partner, idx }) {
         {/* Website Button */}
         <button
           type="button"
-          className="btn btn-dark text-center"
+          className="btn btn-dark text-center mb-3"
           style={{ width: "125px", margin: "0 auto" }}
           onClick={() =>
             window.open(partner.website, "_blank", "noopener,noreferrer")
@@ -122,7 +122,7 @@ export default function SpeedTechPage({ partner, idx }) {
         {/* Iframes */}
         {activeCaseStudy === "ajww" && (
           <iframe
-            src="/embed/ajww_case_study.html"
+            src="/SpeedTechPage/ajww_case_study.html"
             width="100%"
             height="500"
             style={{ border: "1px solid #ccc" }}
@@ -131,7 +131,7 @@ export default function SpeedTechPage({ partner, idx }) {
         )}
         {activeCaseStudy === "tk" && (
           <iframe
-            src="/embed/tk_case_study.html"
+            src="/SpeedTechPage/tk_case_study.html"
             width="100%"
             height="500"
             style={{ border: "1px solid #ccc" }}
