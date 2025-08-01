@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./InteractiveImage.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from 'next/router';
 
 export default function Hero({ partners }) {
 
@@ -27,6 +26,14 @@ export default function Hero({ partners }) {
     del = '0s'
   }
 }, [isVisible]);*/
+
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsDiagramOpen(true);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleCentralClick = () => {
     setIsDiagramOpen(!isDiagramOpen);
@@ -167,13 +174,13 @@ export default function Hero({ partners }) {
   }
 
   return (
-    <div className="w-100 py-5 hero">
-      <div className="container col-xxl-8"
-         style={{ paddingTop: "10rem", paddingBottom: "5rem" }}>
-        <div className="row flex-nowrap g-5 pb-5">
+    <div className="w-100 py-0 hero">
+      <div className="container col-xxl-9"
+         style={{ paddingTop: "10rem"}}>
+        <div className="row align-items-center flex-nowrap pb-0">
           <div
             className={
-              styles.textContainer + " col-auto pe-3"
+              styles.textContainer + " col-lg-5 pe-3 mb-4"
             }
           >
             <h1 className="fw-bold mb-3" id="headline">
@@ -185,7 +192,7 @@ export default function Hero({ partners }) {
             </p>
           </div>
 
-          <div className={ styles.diagramContainer + " col-lg-7 mb-4 mb-lg-0"}>
+          <div className={ "col-lg-7 mb-4 " + styles.diagramContainer}>
               <div className={styles.interactiveDiagram}>
 
                 <div className={`${styles.centralLogo} ${isDiagramOpen ? styles.clicked : ''}`}
