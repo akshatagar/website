@@ -37,6 +37,16 @@ export default function NCSPage({ partner, idx }) {
           />
         </div>
 
+        {/* First Graphic */}
+        <div className="mb-4 text-center">
+          <img
+            src="/NCSPage/Graphic.png"
+            alt="Venn diagram"
+            className="img-fluid"
+            style={{ maxWidth: "60%", height: "auto" }}
+          />
+        </div>
+
         {/* Website Button */}
         <button
           type="button"
