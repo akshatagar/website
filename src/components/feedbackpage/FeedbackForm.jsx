@@ -43,7 +43,7 @@ export default function FeedbackForm() {
 
     // Create a hidden form element
     const form = document.createElement('form');
-    form.action = 'https://docs.google.com/forms/d/e/1FAIpQLSfrrtud2jwhMHWSj8EMc4vwv350aWMOPj06BRDTQ1g7LHFG_Q/formResponse';
+    form.action = 'https://docs.google.com/forms/d/e/1FAIpQLScL9KGrkSdcNcE0VtfOvXROq4SIUZnOITlNoyJ6nasbqyhbnw/formResponse';
     form.method = 'POST';
     form.target = 'hiddenIframe';
     form.style.display = 'none';
@@ -58,10 +58,10 @@ export default function FeedbackForm() {
       form.appendChild(input);
     };
 
-    addField('entry.1509298625', formData.phone);
-    addField('entry.740224318', formData.email);
-    addField('entry.1294341968', formData.company);
-    addField('entry.1228085098', formData.remarks);
+    addField('entry.1001698622', formData.phone);
+    addField('entry.1427582892', formData.email);
+    addField('entry.1931833310', formData.company);
+    addField('entry.736732928', formData.remarks);
 
     // Create hidden iframe if it doesn't exist
     let iframe = document.getElementById('hiddenIframe');
