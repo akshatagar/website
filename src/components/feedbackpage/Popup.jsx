@@ -30,7 +30,7 @@ const PopupWindow = ({ title, children, onClose }) => {
         </div>
         </button>
         {!isMinimized && (
-          <div className="popup-content">
+          <div className={styles.popupContent}>
             {children}
           </div>
         )}
