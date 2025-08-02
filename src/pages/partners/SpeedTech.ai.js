@@ -5,10 +5,7 @@ import Image from "next/image";
 
 export default function SpeedTechPage({ partner, idx }) {
   const [activeCaseStudy, setActiveCaseStudy] = useState(null);
-
-  const showIframe = (key) => {
-    setActiveCaseStudy((prev) => (prev === key ? null : key));
-  };
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
     <div className="container my-5">
@@ -87,37 +84,66 @@ export default function SpeedTechPage({ partner, idx }) {
           </div>
         </div>
 
-        {/* Case Study Buttons */}
-        <div className="d-flex flex-column flex-md-row justify-content-center gap-3 mb-4">
+        {/* Image button to toggle dropdown */}
+        <div style={{ textAlign: "right", position: "relative", marginBottom: "10px" }}>
           <button
-            className={`btn ${
-              activeCaseStudy === "ajww" ? "btn-primary" : "btn-outline-primary"
-            }`}
-            onClick={() => showIframe("ajww")}
+            onClick={() => setDropdownOpen((prev) => !prev)}
+            style={{
+              background: "none",
+              border: "none",
+              padding: 0
+            }}
           >
-            View AJWW Case Study
+            <Image
+              src="/case-studies-graphic.png"
+              width={105}
+              height={70}
+              alt="Case Studies"
+            />
           </button>
-          <button
-            className={`btn ${
-              activeCaseStudy === "tk" ? "btn-primary" : "btn-outline-primary"
-            }`}
-            onClick={() => showIframe("tk")}
-          >
-            View TK Case Study
-          </button>
-        </div>
 
-        {/* Website Button */}
-        <button
-          type="button"
-          className="btn btn-dark text-center mb-3"
-          style={{ width: "125px", margin: "0 auto" }}
-          onClick={() =>
-            window.open(partner.website, "_blank", "noopener,noreferrer")
-          }
-        >
-          Visit Website
-        </button>
+          {/* Dropdown */}
+          {dropdownOpen && (
+            <div
+              className="bg-white border rounded mt-2"
+              style={{
+                position: "absolute",
+                right: 0,
+                zIndex: 10,
+                minWidth: "200px",
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              <button
+                className="dropdown-item w-100 text-start px-3 py-2 border-bottom"
+                onClick={() => {
+                  setActiveCaseStudy("ajww");
+                  setDropdownOpen(false);
+                }}
+              >
+                Client 1 Case Study
+              </button>
+              <button
+                className="dropdown-item w-100 text-start px-3 py-2 border-bottom"
+                onClick={() => {
+                  setActiveCaseStudy("tk");
+                  setDropdownOpen(false);
+                }}
+              >
+                Client 2 Case Study
+              </button>
+              <button
+                className="dropdown-item w-100 text-start px-3 py-2 text-danger"
+                onClick={() => {
+                  setActiveCaseStudy(null);
+                  setDropdownOpen(false);
+                }}
+              >
+                Hide Case Study
+              </button>
+            </div>
+          )}
+        </div>
 
         {/* Iframes */}
         {activeCaseStudy === "ajww" && (
@@ -138,6 +164,18 @@ export default function SpeedTechPage({ partner, idx }) {
             title="TK Case Study"
           />
         )}
+
+        {/* Website Button */}
+        <button
+          type="button"
+          className="btn btn-dark text-center mb-3"
+          style={{ width: "125px", margin: "0 auto", marginTop: "10px"}}
+          onClick={() =>
+            window.open(partner.website, "_blank", "noopener,noreferrer")
+          }
+        >
+          Visit Website
+        </button>
       </div>
     </div>
   );
