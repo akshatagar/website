@@ -101,6 +101,8 @@
     left: var(--final-left);
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
+    /*filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);*/
   }
   
   .centralLogo img {
@@ -143,6 +145,13 @@
     transition: all 0.3s ease;
     will-change: transform;
     will-change: transition;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    background: radial-gradient(
+    circle closest-side at center,
+    rgba(255, 255, 0, 0.5),
+    rgba(0, 0, 0, 0)
+      
+    );
   }
   
   .satelliteLogo:hover .satelliteImg {
