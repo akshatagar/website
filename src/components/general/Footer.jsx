@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="row gy-3 align-items-center mx-0">
         <div className="col-12 col-md-4 col-lg-4 text-center text-md-start">
           <span style={{ marginRight: "10px" }}>© Omintel</span>
-              <Link href="#">
+              <Link href="https://www.linkedin.com/company/omintel-ventures/">
               <img src="https://img.icons8.com/?size=100&id=85141&format=png&color=FFFFFF" style={{ width: "35px", height: "35px", marginBottom: "3px" }}></img>
               </Link>
         </div>
