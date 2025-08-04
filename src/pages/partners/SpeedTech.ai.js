@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { client } from "@/lib/sanity";
 import Link from "next/link";
 import Image from "next/image";
@@ -6,6 +6,14 @@ import Image from "next/image";
 export default function SpeedTechPage({ partner, idx }) {
   const [activeCaseStudy, setActiveCaseStudy] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const caseStudyRef = useRef(null);
+
+  useEffect(() => {
+    if (activeCaseStudy && caseStudyRef.current) {
+      caseStudyRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [activeCaseStudy]);
 
   return (
     <div className="container my-5">
@@ -145,25 +153,17 @@ export default function SpeedTechPage({ partner, idx }) {
           )}
         </div>
 
+        <div ref={caseStudyRef}>
         {/* Iframes */}
-        {activeCaseStudy === "ajww" && (
+        {activeCaseStudy && (
           <iframe
-            src="/SpeedTechPage/ajww_case_study.html"
+            src={`/SpeedTechPage/${activeCaseStudy}_case_study.html`}
             width="100%"
-            height="500"
+            height="800"
             style={{ border: "1px solid #ccc" }}
-            title="AJWW Case Study"
           />
         )}
-        {activeCaseStudy === "tk" && (
-          <iframe
-            src="/SpeedTechPage/tk_case_study.html"
-            width="100%"
-            height="500"
-            style={{ border: "1px solid #ccc" }}
-            title="TK Case Study"
-          />
-        )}
+        </div>
 
         {/* Website Button */}
         <button
