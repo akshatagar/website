@@ -12,8 +12,7 @@ export default function MainPage() {
       <div className={styles.learnMoreContainer}>
         <h1>Learn More</h1>
         <p>
-          Explore our collection of articles to deepen your knowledge on various
-          topics.
+          Explore our collection of articles.
         </p>
   
         <div className={styles.articleCards}>

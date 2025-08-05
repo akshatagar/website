@@ -16,6 +16,7 @@ export async function getStaticProps() {
   const partners = await client.fetch(`
     *[_type == "partner"] | order(name asc) {
       name,
+      logoHue,
       "logoUrl": logo.asset->url
     }
   `)
