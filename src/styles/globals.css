@@ -12,16 +12,31 @@ body {
 }
 
 body {
-  /* background-color: rgba(40, 27, 113, 0.942); */
   color: white;
-  /* background-color: rgba(201,201,255, 0.942);
-    color: rgba(44, 42, 42, 0.959);*/
+
+  /*background: radial-gradient(
+    circle at center,
+    #b177dd,
+    rgba(40, 27, 113, 0.942)
+      
+    );*/
+
+  /*background: radial-gradient(
+    circle at center,
+    #b177dd,
+    #4a4ea9
+      
+    );*/
+
   background: radial-gradient(
     circle at center,
-    rgba(40, 27, 113, 0.942),
-    rgba(6, 6, 16, 0.942)  
+    #8db3be,
+    #4a4ea9
+      
     );
-  /*background: linear-gradient(to top, rgba(31, 21, 87, 0.942),  rgba(6, 6, 16, 0.942) 60%, #071323) 10%;*/
+  
+    
+  /*background-color: #addadf;*/
   position: relative;
 }
 
@@ -78,7 +93,7 @@ footer {
   width: 100vw;
   max-width: 100%;
   overflow-x: hidden;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .container-fluid {

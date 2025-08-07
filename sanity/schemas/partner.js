@@ -54,6 +54,12 @@ export default {
         validation: Rule => Rule.required(),
       },
       {
+        name: 'logoHue',
+        title: 'Interactive Diagram Logo Backgroud Hue Color',
+        type: 'string',
+        validation: Rule => Rule.required(),
+      },
+      {
         name: 'website',
         title: 'Website URL',
         type: 'url',

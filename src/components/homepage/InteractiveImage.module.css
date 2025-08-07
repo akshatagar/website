@@ -32,6 +32,10 @@
   filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
 } */
 
+.fullContainer {
+  flex-wrap: nowrap;
+}
+
 
 .textContainer {
     position: relative;
@@ -53,7 +57,7 @@
     position: relative;
     width: 100%;
     padding-left: 0;
-    height: 500px;
+    height: 32.8vw;
     overflow: hidden;
     max-width: 50vw;
     padding-top: 0;
@@ -91,9 +95,19 @@
       transform:  translateY(-8px) scale(1.3); 
     }
   }
+
+  @keyframes cenFloat {
+    0%, 100% {
+      transform: translate(-50%,-50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%,-55%) scale(1.1);
+    }
+  }
     
   .centralLogo:hover {
-    animation: scale(1.1) 3s ease-in-out infinite;
+    animation: cenFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
   }
   
   .satelliteLogo.scattered {
@@ -101,6 +115,8 @@
     left: var(--final-left);
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
+    /*filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);*/
   }
   
   .centralLogo img {
@@ -143,6 +159,12 @@
     transition: all 0.3s ease;
     will-change: transform;
     will-change: transition;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    background: radial-gradient(
+    circle closest-side at center,
+    var(--hue),
+    transparent
+    );
   }
   
   .satelliteLogo:hover .satelliteImg {
@@ -161,6 +183,10 @@
   }
   
   @media (max-width: 992px) {
+    .fullContainer {
+      flex-wrap: wrap;
+    }
+
     .diagramContainer {
       margin: auto;
       position: relative;

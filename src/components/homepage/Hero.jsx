@@ -48,10 +48,12 @@ export default function Hero({ partners }) {
       id: i,
       name: partners[i].name,
       img: partners[i].logoUrl,
-      top: `calc(${Math.sin((i * interval * (Math.PI / 180)) + (Math.PI / 4)) * 38}% + 50%)`,  
-      left: `calc(${Math.cos(i * interval * (Math.PI / 180) + (Math.PI / 4)) * 40}% + 50%)`,
-      size: '55px'
+      top: `calc(${Math.sin(((i * interval * (Math.PI / 180)) + (Math.PI / 4))) * 38}% + 50%)`,  
+      left: `calc(${Math.cos(((i * interval * (Math.PI / 180)) + (Math.PI / 4))) * 38}% + 50%)`,
+      size: '55px',
+      hue: partners[i].logoHue
     });
+    //25.004
   }
 
 
@@ -175,9 +177,8 @@ export default function Hero({ partners }) {
 
   return (
     <div className="w-100 py-0 hero">
-      <div className="container col-xxl-9"
-         style={{ paddingTop: "10rem"}}>
-        <div className="row align-items-center flex-nowrap pb-0">
+      <div className=" container col-xxl-9" style={{paddingTop: "10rem"}}>
+        <div className={"row align-items-center pb-0 " + styles.fullContainer}>
           <div
             className={
               styles.textContainer + " col-lg-5 pe-3 mb-4"
@@ -221,7 +222,8 @@ export default function Hero({ partners }) {
                       '--final-top': node.top,
                       '--final-left': node.left,
                       '--size': node.size,
-                      '--delay': `calc(${node.id * 0.1}s + ${del})`                    
+                      '--delay': `calc(${node.id * 0.1}s + ${del})`,
+                      '--hue': node.hue                    
                     }}
                   >
                     <Link href={{
