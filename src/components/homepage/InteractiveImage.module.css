@@ -95,9 +95,19 @@
       transform:  translateY(-8px) scale(1.3); 
     }
   }
+
+  @keyframes cenFloat {
+    0%, 100% {
+      transform: translate(-50%,-50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%,-55%) scale(1.1);
+    }
+  }
     
   .centralLogo:hover {
-    animation: scale(1.1) 3s ease-in-out infinite;
+    animation: cenFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
   }
   
   .satelliteLogo.scattered {
