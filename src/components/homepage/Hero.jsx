@@ -187,7 +187,7 @@ export default function Hero({ partners }) {
             <h1 className="fw-bold mb-3" id="headline">
               AI First Solutions
             </h1>
-            <p className="fs-5 mb-0" style={{ maxWidth: "45ch" }}>
+            <p className="fs-5 mb-0">
               Empowering decisions with intelligent automation and contextual AI
               systems.
             </p>
