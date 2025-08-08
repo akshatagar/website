@@ -1,167 +1,206 @@
-/* ----------------------------------------- */
-/* Partners Carousel Styles                  */
-/* ----------------------------------------- */
+/* ========================================= */
+/* DESKTOP STYLES (min-width: 769px)         */
+/* ========================================= */
+@media (min-width: 769px) {
 
-/* Container & Slider */
-.partners-carousel {
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-.slider-container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-}
-
-/* Allow slides to overflow so center card can peek */
-.slick-list {
-  overflow: visible;
-}
-
-/* Center all slide wrappers vertically */
-.slick-track {
-  display: flex;
-  align-items: center;
-}
-
-/* Each slide: size to content & flex-center */
-.slick-slide > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  padding: 0;
-  height: 100%;
-}
-
-/* ----------------------------------------- */
-/* Card Base                                 */
-/* ----------------------------------------- */
-.partner-card {
-  background-color: #f8f9fa;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  width: 100%;
-  height: 100%;
-  min-height: 460px;
-}
-
-/* ----------------------------------------- */
-/* Side Logo Cards                           */
-/* ----------------------------------------- */
-.partner-card.logo-only {
-  /* keep Bootstrap card look */
-  display: flex;
-  align-items: center; /* vertical center */
-  justify-content: center; /* horizontal center */
-  width: auto; /* shrink-wrap */
-  padding: 10px;
-  background: #f8f9fa;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  min-height: unset;
-}
-
-.side-logo {
-  max-height: 60px;
-  max-width: 120px;
-  object-fit: contain;
-}
-
-/* ----------------------------------------- */
-/* Center Card Styles                        */
-/* ----------------------------------------- */
-.carousel-main {
-  z-index: 2;
-  opacity: 1;
-  transform: scale(1.02);
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-.carousel-main .partner-card {
-  /* fixed content width, but still responsive */
-  width: 900px;
-  max-width: 100%;
-}
-
-.center-logo {
-  max-height: 60px;
-  max-width: 200px;
-  margin: 0 auto;
-}
-
-.center-content {
-  padding: 1rem;
-}
-
-/* ----------------------------------------- */
-/* Non-center Cards                          */
-/* ----------------------------------------- */
-.carousel-side {
-  z-index: 1;
-  opacity: 0.6;
-  transform: scale(0.75);
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  min-width: none;
-}
-
-/* ----------------------------------------- */
-/* Fold-open Animation                      */
-/* ----------------------------------------- */
-.fold-open {
-  animation: foldOpen 0.6s ease-out;
-  transform-origin: top;
-}
-
-@keyframes foldOpen {
-  0% {
-    transform: scaleY(0);
-    opacity: 0;
+  /* ----------------------------------------- */
+  /* Partners Carousel Styles                  */
+  /* ----------------------------------------- */
+  .partners-carousel {
+    color: white;
+    position: relative;
+    overflow: hidden;
   }
-  60% {
-    transform: scaleY(1.05);
+
+  .slider-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .slick-list {
+    overflow: visible;
+  }
+
+  .slick-track {
+    display: flex;
+    align-items: center;
+  }
+
+  .slick-slide > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    padding: 0;
+    height: 100%;
+  }
+
+  .partner-card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    width: 100%;
+    height: 100%;
+    min-height: 460px;
+  }
+
+  .partner-card.logo-only {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    min-height: unset;
+  }
+
+  .side-logo {
+    max-height: 60px;
+    max-width: 120px;
+    object-fit: contain;
+  }
+
+  .carousel-main {
+    z-index: 2;
+    opacity: 1;
+    transform: scale(1.02);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+
+  .carousel-main .partner-card {
+    width: 900px;
+    max-width: 100%;
+  }
+
+  .center-logo {
+    max-height: 60px;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .center-content {
+    padding: 1rem;
+  }
+
+  .carousel-side {
+    z-index: 1;
+    opacity: 0.6;
+    transform: scale(0.75);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+
+  .fold-open {
+    animation: foldOpen 0.6s ease-out;
+    transform-origin: top;
+  }
+
+  @keyframes foldOpen {
+    0% { transform: scaleY(0); opacity: 0; }
+    60% { transform: scaleY(1.05); opacity: 1; }
+    100% { transform: scaleY(1); }
+  }
+
+  @keyframes foldClose {
+    0% { transform: scaleY(1); }
+    60% { transform: scaleY(1.05); opacity: 1; }
+    100% { transform: scaleY(0); opacity: 0; }
+  }
+
+  .card-img {
+    object-fit: contain;
+    margin: 0 auto;
+  }
+
+  .carousel-controls {
+    display: flex;
+    justify-content: center;
+  }
+
+  .carousel-controls .btn {
+    min-width: 100px;
+  }
+}
+
+/* ========================================= */
+/* MOBILE STYLES (max-width: 768px)          */
+/* ========================================= */
+@media (max-width: 768px) {
+
+  .partners-carousel {
+    color: white;
+  }
+
+  .carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .carousel-cards {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .carousel-main {
+    transform: scale(1);
+    flex: 0 0 32%;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .carousel-main:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .carousel-side {
+    transform: scale(0.8);
+    opacity: 0.6;
+    flex: 0 0 26%;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);  
+  }
+
+  .partner-card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    min-height: 460px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .partner-card img {
+    object-fit: contain;
+    max-height: 50px;
+    padding: 10px;
+  }
+
+  .carousel-btn {
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.7;
+  }
+
+  .carousel-btn:hover {
+    transform: scale(1.1);
     opacity: 1;
   }
-  100% {
-    transform: scaleY(1);
-  }
-}
 
-@keyframes foldClose {
-  0% {
-    transform: scaleY(1);
+  .slick-slide > div {
+    padding-top: 10px;
   }
-  60% {
-    transform: scaleY(1.05);
-    opacity: 1;
-  }
-  100% {
-    transform: scaleY(0);
-    opacity: 0;
-  }
-}
-
-/* ----------------------------------------- */
-/* Graphic Images                            */
-/* ----------------------------------------- */
-.card-img {
-  object-fit: contain;
-  margin: 0 auto;
-}
-/* ----------------------------------------- */
-/* Custom Prev/Next buttons below carousel  */
-/* ----------------------------------------- */
-.carousel-controls {
-  display: flex;
-  justify-content: center;
-}
-
-.carousel-controls .btn {
-  min-width: 100px;
 }

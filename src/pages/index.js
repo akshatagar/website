@@ -1,5 +1,4 @@
 import Hero from "../components/homepage/Hero"
-import AboutUs from "../components/aboutpage/AboutUs"
 import { client } from '@/lib/sanity'
 
 export default function Home( { partners }) {
