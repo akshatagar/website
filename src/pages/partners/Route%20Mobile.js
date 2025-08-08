@@ -156,28 +156,6 @@ export default function RouteMobilePage({ partner, idx }) {
 
         <div ref={caseStudyRef}>
           {/* Iframes */}
-          {activeCaseStudy === "ajww" && (
-            <iframe
-              src="/SpeedTechPage/ajww_case_study.html"
-              width="100%"
-              height="800"
-              style={{ border: "1px solid #ccc" }}
-              title="AJWW Case Study"
-            />
-          )}
-          {activeCaseStudy === "tk" && (
-            <iframe
-              src="/SpeedTechPage/tk_case_study.html"
-              width="100%"
-              height="800"
-              style={{ border: "1px solid #ccc" }}
-              title="TK Case Study"
-            />
-          )}
-        </div>
-
-        <div ref={caseStudyRef}>
-          {/* Iframes */}
           {activeCaseStudy && (
             <img
               className="img-fluid mb-3"
