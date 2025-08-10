@@ -203,4 +203,13 @@
   .slick-slide > div {
     padding-top: 10px;
   }
+
+  .carousel-controls {
+    display: flex;
+    justify-content: center;
+  }
+
+  .carousel-controls .btn {
+    min-width: 100px;
+  }
 }
