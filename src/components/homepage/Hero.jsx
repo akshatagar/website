@@ -1,16 +1,38 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./InteractiveImage.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
+const useIntersectionObserver = (options) => {
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsIntersecting(entry.isIntersecting);
+    }, options);
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [options]);
+
+  return [ref, isIntersecting];
+};
+
 export default function Hero({ partners }) {
 
-
-  let del = '0s';
+    let del = '0s';
 
   const [isDiagramOpen, setIsDiagramOpen] = useState(false);
 
-  /*const [diagramRef, isVisible] = useIntersectionObserver({
+  const [diagramRef, isVisible] = useIntersectionObserver({
     threshold: 0.3,
     rootMargin: '0px 0px -100px 0px'
   });
@@ -25,15 +47,13 @@ export default function Hero({ partners }) {
     setIsDiagramOpen(false);
     del = '0s'
   }
-}, [isVisible]);*/
-
-
-  useEffect(() => {
+}, [isVisible]);
+  /*useEffect(() => {
     const timer = setTimeout(() => {
       setIsDiagramOpen(true);
     }, 300);
     return () => clearTimeout(timer);
-  }, []);
+  }, []);*/
 
   const handleCentralClick = () => {
     setIsDiagramOpen(!isDiagramOpen);
@@ -55,6 +75,10 @@ export default function Hero({ partners }) {
     });
     //25.004
   }
+
+  useEffect(() => {
+  console.log('Is diagram visible?', isVisible);
+  }, [isVisible]);
 
 
 
@@ -177,26 +201,70 @@ export default function Hero({ partners }) {
 
   return (
     <div className="w-100 py-0 hero">
-      <div className=" container col-xxl-9" style={{paddingTop: "10rem"}}>
-        <div className={"row align-items-center pb-0 " + styles.fullContainer}>
+      <div className=" container" style={{paddingTop: "10rem"}}>
           <div
-            className={
-              styles.textContainer + " col-lg-5 pe-3 mb-4"
-            }
-          >
-            <h1 className="fw-bold mb-3" id="headline">
-              AI First Solutions
+            className={`${styles.textContainer} col-lg-10 mx-auto px-lg-5 py-5`}>
+            <h1 className={`display-5 fw-bold mb-4 ${styles.headline}`}>
+                  Powering Digital & AI Transformation<br />
+                  <span className={styles.highlight}>in the GCC & Beyond</span>
             </h1>
-            <p className="fs-5 mb-0">
-              Empowering decisions with intelligent automation and contextual AI
-              systems.
+            <p className={`lead fs-3 mb-4 ${styles.subheadline}`}>
+                      Omintel connects banks, financial services, and large institutions to 
+        <span className="text-white-80"> globally proven</span> Digital & AI SaaS solutions — 
+        <span className="fw-semibold text-white"> tailored for GCC and African markets</span>.
             </p>
           </div>
+
+
+           <div className={`${styles.divider} mx-auto mb-4`}></div>
+
+
+    <div className="row justify-content-center mt-5">
+    <div className={`col-lg-7 ${styles.listContainer}`}>
+      <div className={`${styles.listHeaderContainer} mb-4`}>
+        <h3 className={`${styles.listHeader} display-5 fw-bold`}>
+          <span>We Solve The Digital Execution Gap</span>
+        </h3>
+        <div className={`${styles.prominentDivider} mx-auto`}></div>
+      </div>
+
+      <div className={`${styles.textContainer} p-4`}>
+        <ul className={`list-unstyled ${styles.styledList}`}>
+          <li className="py-3 px-3">
+            <div className="d-flex align-items-center">
+              <div className={`${styles.listIcon} me-3`}>
+                <i className="bi bi-exclamation-diamond-fill"></i>
+              </div>
+              <span className={`${styles.listItem} fs-4`}>Too many choices</span>
+            </div>
+          </li>
+          <li className="py-3 px-3">
+            <div className="d-flex align-items-center">
+              <div className={`${styles.listIcon} me-3`}>
+                <i className="bi bi-arrow-left-right"></i>
+              </div>
+              <span className={`${styles.listItem} fs-4`}>Too little local alignment</span>
+            </div>
+          </li>
+          <li className="py-3 px-3">
+            <div className="d-flex align-items-center">
+              <div className={`${styles.listIcon} me-3`}>
+                <i className="bi bi-speedometer2"></i>
+              </div>
+              <span className={`${styles.listItem} fs-4`}>Projects stalling before impact</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div className="row justify-content-center mt-5">
 
           <div className={ "col-lg-7 mb-4 " + styles.diagramContainer}>
               <div className={styles.interactiveDiagram}>
 
-                <div className={`${styles.centralLogo} ${isDiagramOpen ? styles.clicked : ''}`}
+                <div ref={diagramRef} className={`${styles.centralLogo} ${isDiagramOpen ? styles.clicked : ''}`}
                   onClick={handleCentralClick}
                   style={{ cursor: 'pointer' }}
                 >
