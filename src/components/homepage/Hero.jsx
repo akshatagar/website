@@ -201,7 +201,7 @@ export default function Hero({ partners }) {
 
   return (
     <div className="w-100 py-0 hero">
-      <div className=" container" style={{paddingTop: "10rem"}}>
+      <div className=" container text-center" style={{paddingTop: "10rem"}}>
           <div
             className={`${styles.textContainer} col-lg-10 mx-auto px-lg-5 py-5`}>
             <h1 className={`display-5 fw-bold mb-4 ${styles.headline}`}>
