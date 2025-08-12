@@ -20,10 +20,11 @@ export default function Footer() {
         <div className="col-12 col-md-4 col-lg-4 text-center" id="contact-us">
           <div>
             <div className="d-flex align-items-center justify-content-center mb-1">
-              <a href="mailto:contact@omintel.com" className="text-white text-decoration-none">Email us at: contact@omintel.com</a>
+              <h5 className="text-white text-center fw-bold">Let’s Build Your Next Success Story</h5>
             </div>
             <div className="d-flex align-items-center justify-content-center">
-              <a href="tel:+97143796750" className="text-white text-decoration-none">(+971 4) 379 6750</a> 
+              <a href="tel:+97143796750" className="text-white text-decoration-none"> Email us : contact@omintel.com or Call + 9715xxxxxx— and see how Omintel can unlock your
+next competitive advantage</a> 
             </div>
           </div>
         </div>
