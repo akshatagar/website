@@ -201,7 +201,7 @@ export default function Hero({ partners }) {
 
   return (
     <div className="w-100 py-0 hero">
-      <div className=" container text-center" style={{paddingTop: "6rem", width: "100vw"}}>
+      <div className="container text-center w-100" style={{paddingTop: "6rem"}}>
         <div className="position-relative overflow-hidden" style={{
           minHeight: "75vh",
           display: "flex",
@@ -218,13 +218,19 @@ export default function Hero({ partners }) {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            zIndex: "-1",
+            zIndex: "0",
             top: "0",
             left: "0"
           }}
           >
             <source src="/backvid.mp4" type="video/mp4" />
           </video>
+          
+          <div className="position-absolute w-100 h-100" style={{
+            background: "background: rgba(0, 30, 60, 0.6)",
+            zIndex: "0"
+          }}></div>
+          
           <div
             className={`${styles.textContainer} col-lg-10 mx-auto px-lg-5 py-5`}>
             <h1 className={`display-5 fw-bold mb-4 ${styles.headline}`}>
@@ -237,6 +243,7 @@ export default function Hero({ partners }) {
         <span className="fw-semibold text-white"> tailored for GCC and African markets</span>.
             </p>
           </div>
+        </div>
         </div>
 
 
@@ -403,7 +410,6 @@ export default function Hero({ partners }) {
         </div>
       </div>
     </div>
-      </div>
-    </div>
+  </div>
   );
 }
