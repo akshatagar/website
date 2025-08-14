@@ -64,7 +64,7 @@
 .whySection::after {
   content: "";
   position: absolute;
-  bottom: 570px;
+  bottom: 1685px;
   left: 50%;
   width: 80px;
   height: 3px;
