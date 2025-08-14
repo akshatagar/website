@@ -201,7 +201,30 @@ export default function Hero({ partners }) {
 
   return (
     <div className="w-100 py-0 hero">
-      <div className=" container text-center" style={{paddingTop: "10rem"}}>
+      <div className=" container text-center" style={{paddingTop: "6rem", width: "100vw"}}>
+        <div className="position-relative overflow-hidden" style={{
+          minHeight: "75vh",
+          display: "flex",
+          alignItems: "center",
+          position: "relative"
+        }}>
+          <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="position-absolute"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            zIndex: "-1",
+            top: "0",
+            left: "0"
+          }}
+          >
+            <source src="/backvid.mp4" type="video/mp4" />
+          </video>
           <div
             className={`${styles.textContainer} col-lg-10 mx-auto px-lg-5 py-5`}>
             <h1 className={`display-5 fw-bold mb-4 ${styles.headline}`}>
@@ -214,6 +237,7 @@ export default function Hero({ partners }) {
         <span className="fw-semibold text-white"> tailored for GCC and African markets</span>.
             </p>
           </div>
+        </div>
 
 
            <div className={`${styles.divider} mx-auto mb-4`}></div>
@@ -312,8 +336,73 @@ export default function Hero({ partners }) {
                   </div>
                 ))}
               </div>
+          </div>        
+        </div>
+
+    <div className={`${styles.advantageSection} mt-5 py-5`}>
+      <div className="row justify-content-center">
+        <div className="col-lg-8 text-center">
+          <h2 className={`${styles.advantageHeader} mb-4`}>
+            The Omintel Advantage
+          </h2>
+          <p className={`${styles.advantageTagline} fs-3 mb-5`}>
+            One Partner. All the Right Solutions.
+          </p>
+      
+          <div className={`${styles.advantageList} row justify-content-center`}>
+            <div className="col-md-6 col-lg-4 mb-4">
+              <div className={`${styles.advantageCard} h-100 p-4`}>
+                <div className={styles.advantageIcon}>
+                  <i className="bi bi-stars text-white"></i>
+                </div>
+                <h4 className="mb-3">Curated Portfolio</h4>
+                <p>Only top-tier, proven SaaS vendors in Digital & AI</p>
+              </div>
+            </div>
+        
+            <div className="col-md-6 col-lg-4 mb-4">
+              <div className={`${styles.advantageCard} h-100 p-4`}>
+                <div className={styles.advantageIcon}>
+                  <i className="bi bi-globe2 text-white"></i>
+                </div>
+                <h4 className="mb-3">Market Localization</h4>
+                <p>Compliance-ready, culturally adapted, deployment-friendly</p>
+              </div>
+            </div>
+        
+            <div className="col-md-6 col-lg-4 mb-4">
+              <div className={`${styles.advantageCard} h-100 p-4`}>
+                <div className={styles.advantageIcon}>
+                  <i className="bi bi-people-fill text-white"></i>
+                </div>
+                <h4 className="mb-3">Consultative Engagement</h4>
+                <p>We start with your business problem, not a product pitch</p>
+              </div>
+            </div>
+        
+            <div className="col-md-6 col-lg-4 mb-4">
+              <div className={`${styles.advantageCard} h-100 p-4`}>
+                <div className={styles.advantageIcon}>
+                  <i className="bi bi-lightning-charge-fill text-white"></i>
+                </div>
+                <h4 className="mb-3">Faster Value Realization</h4>
+                <p>Pilots, sandboxes, and measurable KPIs from day one</p>
+              </div>
+            </div>
+        
+            <div className="col-md-6 col-lg-4 mb-4">
+              <div className={`${styles.advantageCard} h-100 p-4`}>
+                <div className={styles.advantageIcon}>
+                  <i className="bi bi-diagram-3-fill text-white"></i>
+                </div>
+                <h4 className="mb-3">Vendor Orchestration</h4>
+                <p>We manage contracts, delivery, and success metrics end-to-end</p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
       </div>
     </div>
   );

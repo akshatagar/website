@@ -402,4 +402,96 @@
       font-size: 0.7rem;
     }
   }
+
+  /* Advantage Section */
+.advantageSection {
+  background: rgba(13, 110, 253, 0.05);
+  backdrop-filter: blur(5px);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.advantageHeader {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffffff, #c6dcf3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  position: relative;
+}
+
+.advantageHeader::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #0d6efd, #a7d2ff);
+  border-radius: 4px;
+}
+
+.advantageTagline {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* Advantage Cards */
+.advantageCard {
+  background: rgba(255, 255, 255, 0.12); /* Lighter cards */
+  border: 1px solid rgba(255, 255, 255, 0.25); /* Brighter border */
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.advantageCard:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.advantageIcon {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.75rem;
+  /*color: #a7d2ff;*/
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.text-white-90 {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.text-white-80 {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.advantageCard:hover .advantageIcon {
+  background: rgba(13, 110, 253, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(167, 210, 255, 0.3);
+}
+
+.advantageCard h4 {
+  color: white;
+  font-weight: 600;
+}
+
+.advantageCard p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0;
+}
   
