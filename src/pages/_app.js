@@ -17,6 +17,7 @@ export default function MyApp({ Component, pageProps }) {
         <link rel="preload" as="image" href="/Logo_with_white.png" />
         <link rel="preload" as="image" href="/Proximus_logo1.png" />
         <link rel="preload" as="image" href="/white-logo.png" />
+        <link rel="preload" as="video" href="/backvid.mp4" />
         <meta
           name="description"
           content="Discover AI-powered business solutions and explore Omintel's partner network and intelligent automation services."
