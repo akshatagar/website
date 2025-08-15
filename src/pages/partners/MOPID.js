@@ -40,14 +40,72 @@ export default function MOPIDPage({ partner, idx }) {
       <div className="card p-4">
         {/* Carousel Logo */}
         <div className="mb-4">
-          <Image
-            src={partner.carouselLogo}
-            alt="MOPID Logo"
-            width={155}
-            height={45}
-            className="img-fluid"
-          />
+          <p
+            style={{
+              fontSize: "32px",
+              fontWeight: "bold",
+              fontFamily: "Arial, sans-serif",
+            }}
+          >
+            <span style={{ color: "black" }}>Experience </span>
+            <span style={{ color: "#F26D4D" }}>7 day hiring </span>
+            <span style={{ color: "black" }}>with </span>
+            <span style={{ color: "#F26D4D" }}>Mopid</span>
+          </p>
         </div>
+
+        <div className="d-flex justify-content-center ">
+          <div className="ratio ratio-16x9" style={{ width: "800px" }}>
+            <iframe
+              src="https://www.youtube.com/embed/6KiB2JjYOlk"
+              title="Mopid Agent | MOPID"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+
+        <ul className="mt-5 mb-4 list-unstyled">
+          <li className="d-flex align-items-start mb-3 fs-5">
+            <span className="me-2 text-primary">•</span>
+            Native connectors: SAP SuccessFactors, Oracle HCM, Workday,
+            Greenhouse, Lever.
+          </li>
+          <li className="d-flex align-items-start mb-3 fs-5">
+            <span className="me-2 text-success">➤</span>
+            Open REST / Webhook architecture for any ATS / HRIS.
+          </li>
+          <li className="d-flex align-items-start mb-3 fs-5">
+            <span className="me-2 text-warning">◆</span>
+            Create a job in a single line.
+          </li>
+          <li className="d-flex align-items-start mb-3 fs-5">
+            <span className="me-2 text-danger">★</span>
+            Reuse past JDs or drafts new ones via generative AI. Gets posted
+            automatically to 5000+ job boards.
+          </li>
+          <li className="d-flex align-items-start mb-3 fs-5">
+            <span className="me-2 text-info">✎</span>
+            Automated offer letter roll-out.
+          </li>
+          <li className="d-flex align-items-start mb-3 fs-5">
+            <span className="me-2 text-secondary">🤖</span>
+            AI communication
+          </li>
+          <li className="d-flex align-items-start mb-3 fs-5">
+            <span className="me-2 text-primary">🎤</span>
+            AI interviews
+          </li>
+          <li className="d-flex align-items-start mb-3 fs-5">
+            <span className="me-2 text-success">🔍</span>
+            AI screening
+          </li>
+          <li className="d-flex align-items-start mb-3 fs-5">
+            <span className="me-2 text-warning">⚡</span>
+            Hiring Agent
+          </li>
+        </ul>
 
         {/* Image button to toggle dropdown */}
         <div
@@ -73,9 +131,7 @@ export default function MOPIDPage({ partner, idx }) {
             />
           </button>
 
-        </div>
-
-          {/* Dropdown
+          {/* Dropdown */}
           {dropdownOpen && (
             <div
               className="bg-white border rounded mt-2"
@@ -90,38 +146,20 @@ export default function MOPIDPage({ partner, idx }) {
               <button
                 className="dropdown-item w-100 text-start px-3 py-2 border-bottom"
                 onClick={() => {
-                  setActiveCaseStudy("bfc");
+                  setActiveCaseStudy("apparel");
                   setDropdownOpen(false);
                 }}
               >
-                Bahrain Finance Case Study
+                Apparel Case Study
               </button>
               <button
                 className="dropdown-item w-100 text-start px-3 py-2 border-bottom"
                 onClick={() => {
-                  setActiveCaseStudy("bom");
+                  setActiveCaseStudy("sigmoid");
                   setDropdownOpen(false);
                 }}
               >
-                Bank of Maharashtra Case Study
-              </button>
-              <button
-                className="dropdown-item w-100 text-start px-3 py-2 border-bottom"
-                onClick={() => {
-                  setActiveCaseStudy("delhi_metro");
-                  setDropdownOpen(false);
-                }}
-              >
-                Delhi Metro Case Study
-              </button>
-              <button
-                className="dropdown-item w-100 text-start px-3 py-2 border-bottom"
-                onClick={() => {
-                  setActiveCaseStudy("gipl");
-                  setDropdownOpen(false);
-                }}
-              >
-                GIPL Case Study
+                Sigmoid Case Study
               </button>
               <button
                 className="dropdown-item w-100 text-start px-3 py-2 text-danger"
@@ -135,17 +173,20 @@ export default function MOPIDPage({ partner, idx }) {
             </div>
           )}
         </div>
-        
-        <div ref={caseStudyRef}>
-          {/* Iframes 
+
+        <div ref={caseStudyRef} style={{ width: "100%" }}>
           {activeCaseStudy && (
-            <img
-              className="img-fluid mb-3"
-              src={`/RouteMobilePage/${activeCaseStudy}.png`}
-              alt="carousel-graphic"
+            <embed
+              src={`/MOPIDPage/${activeCaseStudy}.pdf`}
+              type="application/pdf"
+              style={{
+                width: "100%",
+                height: "800px",
+                border: "1px solid #ccc",
+              }}
             />
           )}
-        </div> */}
+        </div>
 
         {/* Website Button */}
         <button

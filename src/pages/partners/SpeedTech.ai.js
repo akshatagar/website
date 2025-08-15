@@ -153,7 +153,7 @@ export default function SpeedTechPage({ partner, idx }) {
           )}
         </div>
 
-        <div ref={caseStudyRef}>
+        <div ref={caseStudyRef} style={{ width: "100%" }}>
         {/* Iframes */}
         {activeCaseStudy && (
           <iframe

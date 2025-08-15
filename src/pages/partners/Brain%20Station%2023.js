@@ -43,8 +43,8 @@ export default function MOPIDPage({ partner, idx }) {
           <Image
             src={partner.carouselLogo}
             alt="MOPID Logo"
-            width={155}
-            height={45}
+            width={200}
+            height={90}
             className="img-fluid"
           />
         </div>
@@ -73,9 +73,6 @@ export default function MOPIDPage({ partner, idx }) {
             />
           </button>
 
-        </div>
-
-          {/* Dropdown
           {dropdownOpen && (
             <div
               className="bg-white border rounded mt-2"
@@ -137,7 +134,6 @@ export default function MOPIDPage({ partner, idx }) {
         </div>
         
         <div ref={caseStudyRef}>
-          {/* Iframes 
           {activeCaseStudy && (
             <img
               className="img-fluid mb-3"
@@ -145,7 +141,7 @@ export default function MOPIDPage({ partner, idx }) {
               alt="carousel-graphic"
             />
           )}
-        </div> */}
+        </div> 
 
         {/* Website Button */}
         <button
