@@ -45,6 +45,33 @@
   }
 }
 
+.listSection {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  margin: 2rem 0;
+  padding: 2rem;
+}
+
+
+.whySection {
+  padding-bottom: 3rem;
+  padding-top: 2rem;
+}
+
+.whySection::after {
+  content: "";
+  position: absolute;
+  bottom: 1685px;
+  left: 50%;
+  width: 80px;
+  height: 3px;
+  transform: translateX(-50%);
+  background-color: #3498db;
+}
+
 .aboutTitle {
   font-size: 2rem;
   font-weight: 700;
@@ -99,4 +126,88 @@
   .aboutTitle {
     font-size: 2rem;
   }
+}
+
+
+.benefitSection {
+  backdrop-filter: blur(5px);
+}
+
+.sectionHeader {
+  padding-top: 4rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+  position: relative;
+}
+
+.sectionHeader::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #0d6efd, #a7d2ff);
+  border-radius: 4px;
+}
+
+.sectionTagline {
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* Solutions Grid */
+.solutionsGrid {
+  margin: 2rem 0;
+}
+
+.solutionCard {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 180px;
+  justify-content: center;
+}
+
+.solutionCard:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.solutionIcon {
+  width: 60px;
+  height: 60px;
+  background: rgba(13, 110, 253, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  color: #a7d2ff;
+  transition: all 0.3s ease;
+}
+
+.solutionCard:hover .solutionIcon {
+  background: rgba(13, 110, 253, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(167, 210, 255, 0.3);
+}
+
+.closingStatement {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }

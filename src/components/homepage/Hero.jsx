@@ -199,7 +199,7 @@ export default function Hero({ partners }) {
 
   return (
     <div className="w-100 py-0 hero">
-      <div style={{ backgroundColor: "black" }} className="pb-3">
+      <div style={{ backgroundColor: "#01070cff" }} className="pb-3">
         <div
           className="container text-center"
           style={{ paddingTop: "6rem", width: "100vw" }}

@@ -26,16 +26,18 @@ export default function AboutUs( { aboutUs } ) {
     />
   </div>
 
+  <h1 className={styles.whySection + " text-center text-white fw-bold"}>Why Vendors Choose Us</h1>
+
     {/* How we do it Section */}
 <div className="container">
-  <div className="row align-items-center justify-content-center">
+  <div className={"row align-items-center justify-content-center " + styles.listSection}>
     {/* Left: Heading */}
-    <div className="col-md-3 text-md-end text-center mb-4 mb-md-0">
-      <h3 className="text-white">How we do it?</h3>
+    <div className="col-md-4 text-md-end text-center mb-4 mb-md-0">
+      <h5 className="text-white">Global leaders trust Omintel to:</h5>
     </div>
 
     {/* Right: List */}
-    <div className="col-md-7">
+    <div className="col-md-6">
       <ul className={styles.processList}>
           {aboutUs["howWeDoIt"].map((item, index) => (
           <li key={index} className='mb-3'>{item}
@@ -45,6 +47,57 @@ export default function AboutUs( { aboutUs } ) {
     </div>
   </div>
 </div>
+
+<div className={`${styles.benefitSection} mt-5 py-5`}>
+  <div className="row justify-content-center">
+    <div className="col-lg-8 text-center">
+      <h2 className={`${styles.sectionHeader} mb-4`}>
+        What Clients Gain
+      </h2>
+      <p className={`${styles.sectionTagline} fs-3 mb-5 text-white`}>
+        With Omintel, you get faster deployment, lower risk and better ROI
+      </p>
+      
+      {/* Solutions Grid */}
+      <div className={`${styles.solutionsGrid} row justify-content-center`}>
+        {[
+          "Conversational AI",
+          "Intelligent Document Processing",
+          "CPAAS Solutions",
+          "AI Assisted Recruitment",
+          "Training Platforms",
+          "Audit Digitization",
+          "Workflow Automation",
+          "AI Enablement"
+        ].map((solution, index) => (
+          <div key={index} className="col-md-6 col-lg-4 mb-4">
+            <div className={`${styles.solutionCard} h-100 p-4`}>
+              <div className={styles.solutionIcon}>
+                <i className={`bi ${[
+                  'bi-chat-square-text',
+                  'bi-file-earmark-text',
+                  'bi-phone',
+                  'bi-people',
+                  'bi-laptop',
+                  'bi-clipboard-data',
+                  'bi-gear',
+                  'bi-cpu'
+                ][index]}`} />
+              </div>
+              <h4 className="text-white mb-0">{solution}</h4>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Closing Statement */}
+      <p className={`${styles.closingStatement} fs-4 mt-5 text-white-90`}>
+        We deliver global innovation, locally adapted — so you get results, not just technology.
+      </p>
+    </div>
+  </div>
+</div>
+
 </section>    
   )
 }
