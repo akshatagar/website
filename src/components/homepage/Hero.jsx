@@ -199,7 +199,7 @@ export default function Hero({ partners }) {
 
   return (
     <div className="w-100 py-0 hero">
-      <div style={{ backgroundColor: "#01070cff" }} className="pb-3">
+      <div style={{ backgroundColor: "#000203" }} className="pb-3">
         <div
           className="container text-center"
           style={{ paddingTop: "6rem", width: "100vw" }}
@@ -381,7 +381,7 @@ export default function Hero({ partners }) {
               <div className="col-md-6 col-lg-4 mb-4">
                 <div className={`${styles.advantageCard} h-100 p-4`}>
                   <div className={styles.advantageIcon}>
-                    <i className="bi bi-stars text-white"></i>
+                    <i class="fa-solid fa-layer-group"></i>
                   </div>
                   <h4 className="mb-3">Curated Portfolio</h4>
                   <p>Only top-tier, proven SaaS vendors in Digital & AI</p>
@@ -391,7 +391,7 @@ export default function Hero({ partners }) {
               <div className="col-md-6 col-lg-4 mb-4">
                 <div className={`${styles.advantageCard} h-100 p-4`}>
                   <div className={styles.advantageIcon}>
-                    <i className="bi bi-globe2 text-white"></i>
+                    <i class="fa-solid fa-globe"></i>
                   </div>
                   <h4 className="mb-3">Market Localization</h4>
                   <p>
@@ -403,7 +403,7 @@ export default function Hero({ partners }) {
               <div className="col-md-6 col-lg-4 mb-4">
                 <div className={`${styles.advantageCard} h-100 p-4`}>
                   <div className={styles.advantageIcon}>
-                    <i className="bi bi-people-fill text-white"></i>
+                    <i class="fa-solid fa-comments"></i>
                   </div>
                   <h4 className="mb-3">Consultative Engagement</h4>
                   <p>
@@ -415,7 +415,7 @@ export default function Hero({ partners }) {
               <div className="col-md-6 col-lg-4 mb-4">
                 <div className={`${styles.advantageCard} h-100 p-4`}>
                   <div className={styles.advantageIcon}>
-                    <i className="bi bi-lightning-charge-fill text-white"></i>
+                    <i class="fa-solid fa-rocket"></i>
                   </div>
                   <h4 className="mb-3">Faster Value Realization</h4>
                   <p>Pilots, sandboxes, and measurable KPIs from day one</p>
@@ -425,7 +425,7 @@ export default function Hero({ partners }) {
               <div className="col-md-6 col-lg-4 mb-4">
                 <div className={`${styles.advantageCard} h-100 p-4`}>
                   <div className={styles.advantageIcon}>
-                    <i className="bi bi-diagram-3-fill text-white"></i>
+                    <i class="fa-solid fa-diagram-project"></i>
                   </div>
                   <h4 className="mb-3">Vendor Orchestration</h4>
                   <p>

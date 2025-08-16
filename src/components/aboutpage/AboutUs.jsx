@@ -33,7 +33,7 @@ export default function AboutUs( { aboutUs } ) {
   <div className={"row align-items-center justify-content-center " + styles.listSection}>
     {/* Left: Heading */}
     <div className="col-md-4 text-md-end text-center mb-4 mb-md-0">
-      <h5 className="text-white">Global leaders trust Omintel to:</h5>
+      <h4 className="text-white">Global leaders trust Omintel to:</h4>
     </div>
 
     {/* Right: List */}
@@ -73,15 +73,15 @@ export default function AboutUs( { aboutUs } ) {
           <div key={index} className="col-md-6 col-lg-4 mb-4">
             <div className={`${styles.solutionCard} h-100 p-4`}>
               <div className={styles.solutionIcon}>
-                <i className={`bi ${[
-                  'bi-chat-square-text',
-                  'bi-file-earmark-text',
-                  'bi-phone',
-                  'bi-people',
-                  'bi-laptop',
-                  'bi-clipboard-data',
-                  'bi-gear',
-                  'bi-cpu'
+                <i className={`fas ${[
+                  'fa-comments text-primary',
+                  'fa-file-alt text-success',
+                  'fa-phone-volume text-info',
+                  'fa-users text-warning',
+                  'fa-chalkboard-teacher text-danger',
+                  'fa-chart-line text-secondary',
+                  'fa-cogs text-primary',
+                  'fa-robot text-success'
                 ][index]}`} />
               </div>
               <h4 className="text-white mb-0">{solution}</h4>
