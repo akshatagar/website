@@ -172,7 +172,7 @@ export default function MOPIDPage({ partner, idx }) {
               textAlign: "center",
             }}
             onClick={() =>
-              setActiveEmbed("/BrainStationPage/ekyc23_onepage.pdf")
+              setActiveEmbed("/BrainStationPage/eKYC23_onepage.pdf")
             }
           >
             eKYC23
