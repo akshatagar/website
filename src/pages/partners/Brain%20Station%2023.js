@@ -51,19 +51,22 @@ export default function MOPIDPage({ partner, idx }) {
         </div>
 
         {/* Products Header */}
-<h3 className="text-center mb-4 position-relative d-inline-block" style={{ fontWeight: "bold" }}>
-  Products
-  <span
-    style={{
-      display: "block",
-      width: "60px",
-      height: "4px",
-      backgroundColor: "#F26D4D",
-      margin: "8px auto 0",
-      borderRadius: "2px",
-    }}
-  ></span>
-</h3>
+        <h3
+          className="text-center mb-4 position-relative d-inline-block"
+          style={{ fontWeight: "bold" }}
+        >
+          Products
+          <span
+            style={{
+              display: "block",
+              width: "60px",
+              height: "4px",
+              backgroundColor: "#F26D4D",
+              margin: "8px auto 0",
+              borderRadius: "2px",
+            }}
+          ></span>
+        </h3>
 
         {/* Products Inline Boxes */}
         <div

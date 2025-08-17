@@ -11,7 +11,10 @@ export default function SpeedTechPage({ partner, idx }) {
 
   useEffect(() => {
     if (activeCaseStudy && caseStudyRef.current) {
-      caseStudyRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      caseStudyRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   }, [activeCaseStudy]);
 
@@ -50,8 +53,8 @@ export default function SpeedTechPage({ partner, idx }) {
 
         {/* Graphics Cards */}
         <div className="row justify-content-center g-4 mb-4">
-          {/* Card 1 */}
-          <div className="col-12 col-md-6">
+          {/* Left Card (Bigger) */}
+          <div className="col-12 col-lg-7">
             <div className="card h-100 border border-dark">
               <h2 className="text-center mt-3 fs-5">
                 <strong>RAIYA</strong> - Concierge and Telephony
@@ -61,29 +64,29 @@ export default function SpeedTechPage({ partner, idx }) {
                   className="img-fluid"
                   src="/SpeedTechPage/SpeedTechGraphic2.png"
                   alt="carousel-graphic"
-                  style={{ maxHeight: "300px" }}
+                  style={{ maxHeight: "400px" }}
                 />
               </div>
             </div>
           </div>
 
-          {/* Card 2 */}
-          <div className="col-12 col-md-6">
+          {/* Right Card (Smaller) */}
+          <div className="col-12 col-lg-5">
             <div className="card h-100 border border-dark">
-              <h2 className="text-center mt-3 fs-5">
+              <h2 className="text-center mt-3 fs-6">
                 <strong>RAIYA</strong> - Intelligent Document Processing
               </h2>
               <div className="card-body text-center">
                 <img
-                  className="img-fluid mb-3"
+                  className="img-fluid mt-3 mb-5"
                   src="/SpeedTechPage/SpeedTechGraphic.png"
                   alt="carousel-graphic"
-                  style={{ maxHeight: "300px" }}
+                  style={{ maxHeight: "200px" }}
                 />
                 <video
                   controls
-                  className="w-100"
-                  style={{ maxHeight: "250px" }}
+                  className="w-100 mt-4"
+                  style={{ maxHeight: "180px" }}
                 >
                   <source src="/SpeedTechPage/IDPVideo.mp4" type="video/mp4" />
                 </video>
@@ -93,13 +96,19 @@ export default function SpeedTechPage({ partner, idx }) {
         </div>
 
         {/* Image button to toggle dropdown */}
-        <div style={{ textAlign: "right", position: "relative", marginBottom: "10px" }}>
+        <div
+          style={{
+            textAlign: "right",
+            position: "relative",
+            marginBottom: "10px",
+          }}
+        >
           <button
             onClick={() => setDropdownOpen((prev) => !prev)}
             style={{
               background: "none",
               border: "none",
-              padding: 0
+              padding: 0,
             }}
           >
             <Image
@@ -154,22 +163,22 @@ export default function SpeedTechPage({ partner, idx }) {
         </div>
 
         <div ref={caseStudyRef} style={{ width: "100%" }}>
-        {/* Iframes */}
-        {activeCaseStudy && (
-          <iframe
-            src={`/SpeedTechPage/${activeCaseStudy}_case_study.html`}
-            width="100%"
-            height="800"
-            style={{ border: "1px solid #ccc" }}
-          />
-        )}
+          {/* Iframes */}
+          {activeCaseStudy && (
+            <iframe
+              src={`/SpeedTechPage/${activeCaseStudy}_case_study.html`}
+              width="100%"
+              height="800"
+              style={{ border: "1px solid #ccc" }}
+            />
+          )}
         </div>
 
         {/* Website Button */}
         <button
           type="button"
           className="btn btn-dark text-center mb-3"
-          style={{ width: "125px", margin: "0 auto", marginTop: "10px"}}
+          style={{ width: "125px", margin: "0 auto", marginTop: "10px" }}
           onClick={() =>
             window.open(partner.website, "_blank", "noopener,noreferrer")
           }
