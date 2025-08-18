@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Case Study — Ethereum Souq</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --card:#ffffff;
+      --border:#e5e7eb;
+      --muted:#6b7280;
+      --text:#111827;
+      --brand:#2b6dff;
+      --accent:#4cc9f0;
+      --shadow: 0 10px 24px rgba(0,0,0,.06);
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:#ffffff;
+      color:var(--text);
+      line-height:1.6;
+      padding:32px;
+    }
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    header{
+      display:flex;
+      align-items:center;
+      gap:20px;
+      padding:28px 32px;
+      border-bottom:1px solid var(--border);
+      background:#ffffff;
+    }
+    header img{ width:128px;height:128px;object-fit:contain; }
+    .titleblock{flex:1}
+    h1{margin:0;font-size:28px;letter-spacing:.2px}
+    .subtitle{margin-top:4px;color:var(--muted)}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(43,109,255,.08);
+      border:1px solid rgba(43,109,255,.25);
+      color:#1d4ed8;
+      padding:8px 12px;border-radius:999px;font-weight:600;font-size:12px;
+    }
+    .grid{
+      display:grid;gap:22px;padding:28px 32px;
+      grid-template-columns: 1.2fr .8fr;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      body{padding:16px}
+    }
+    section{
+      background:#ffffff;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:22px;
+    }
+    section h2{
+      margin:0 0 8px 0;font-size:18px;letter-spacing:.2px
+    }
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:10px}
+    .kpi{
+      background:#ffffff;
+      border:1px solid var(--border);
+      border-radius:14px;padding:16px;text-align:center
+    }
+    .kpi .value{font-size:26px;font-weight:800; color: white;}
+    .kpi .label{font-size:12px;color:#cff5ff; }
+    ul{margin:10px 0 0 18px}
+    li{margin:6px 0}
+    .twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .stack{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+    .pill{padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:#ffffff;font-size:13px}
+    .footer{
+      padding:22px 32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#ffffff;
+    }
+    .cta{
+      display:inline-flex;gap:10px;align-items:center;
+      background:linear-gradient(90deg, var(--brand), var(--accent));
+      padding:12px 16px;border-radius:12px;border:none;font-weight:700;text-decoration:none;
+      box-shadow:0 8px 16px rgba(43,109,255,.25);
+    }
+    .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+    .meta div{background:#ffffff;border:1px solid var(--border);border-radius:12px;padding:10px 12px;font-size:13px;color:var(--muted)}
+    .callout{border-left:4px solid var(--accent);padding-left:12px;margin-top:6px;color:#374151}
+    .small{font-size:12px;color:var(--muted)}
+    .hero{
+      padding:24px 32px;border-bottom:1px solid var(--border);
+      display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;background:#ffffff;
+    }
+    .hero h2{margin:0;font-size:22px}
+    /* New styles */
+    .fullwidth-section{
+      background:linear-gradient(90deg, var(--brand), var(--accent));
+      
+      padding:28px 32px;
+    }
+    .fullwidth-section h2{margin-top:0;color:white}
+    .fullwidth-section .kpi{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);}
+    .objectives-challenges{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+    }
+    @media (max-width: 900px){
+      .objectives-challenges{grid-template-columns:1fr;}
+    }
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="ethereum-souq-logo.png" alt="Ethereum Souq logo"/>
+      <div class="titleblock">
+        <h1>Ethereum Souq – Multi-Platform E-commerce & Digital Coupon Solution in Bahrain</h1>
+        <div class="subtitle">Built with scalability and user engagement in mind.</div>
+        <div class="meta">
+          <div><strong>Industry:</strong> E-commerce and Online Coupons</div>
+          <div><strong>Services:</strong> Development and Maintenance</div>
+          <div><strong>Client Location:</strong> Bahrain</div>
+        </div>
+      </div>
+      <span class="badge">Case Study</span>
+    </header>
+<section class="fullwidth-section">
+        <h2>Results at a Glance</h2>
+        <div class="kpis">
+          <div class="kpi"><div class="value">Enhanced</div><div class="label">User Experience</div></div>
+          <div class="kpi"><div class="value">Fully Scalable</div><div class="label">Platform</div></div>
+          <div class="kpi"><div class="value">Successful</div><div class="label">Market Penetration</div></div>
+          <div class="kpi"><div class="value">Improved</div><div class="label">Admin Efficiency</div></div>
+        </div>
+      </section>
+
+    <div class="hero">
+      <h2>Overview</h2>
+      <p class="callout">
+        This project involved the development of a comprehensive multi-platform application catering to Android, iOS, Huawei, and web users. The application provides an extensive range of features, including product Browse, shopping, and coupon services. A dedicated web-based admin portal and a digital store management portal were also created to handle administrative tasks and oversee inventory and orders.
+      </p>
+    </div>
+
+    <div class="hero">
+      
+        <div class="objectives-challenges"><div><h2>Business Objectives</h2>
+        <ul>
+          <li>Sell a wide variety of products, such as clothing, electronics, and makeup.</li>
+          <li>Enhance customer experience through intuitive design, fast navigation, and secure payment options.</li>
+          <li>Boost sales and customer engagement via personalized shopping experiences, loyalty programs, and discounts.</li>
+          <li>Build a platform that could scale as the business grew, handling a large volume of transactions while maintaining robust security standards.</li>
+        </ul>
+
+        </div><div><h2>Key Challenges</h2>
+        <ul>
+          <li>Developing a seamless experience across multiple platforms (Android, iOS, Huawei, and Web).</li>
+          <li>Scaling the backend to handle large volumes of traffic and transactions while maintaining optimal speed and security.</li>
+          <li>Integrating Tap and Tabby, Bahrain's preferred payment gateways.</li>
+          <li>Capturing and retaining user attention through engaging personalized shopping experiences and loyalty programs.</li>
+          <li>Managing real-time lucky draw events and integrating them with the coupon system.</li>
+          <li>Securing user data and transaction details by implementing advanced encryption protocols and multi-factor authentication (MFA).</li>
+        </ul></div></div>
+      
+
+      
+    </div>
+
+    <div class="grid">
+      <section>
+        <h2>Solution Architecture</h2>
+        <div class="twocol">
+          <div>
+            <ul>
+              <li><strong>Backend:</strong> PHP (Laravel) & WooCommerce.</li>
+              <li><strong>Database:</strong> MySQL.</li>
+              <li><strong>Mobile Framework:</strong> Flutter.</li>
+              <li><strong>Development Platforms:</strong> Web, Android, iOS, Huawei.</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><strong>Payment:</strong> Tap & Tabby integration.</li>
+              <li><strong>Security:</strong> Advanced encryption protocols, MFA.</li>
+              <li><strong>Methodology:</strong> Agile approach with weekly sprints.</li>
+              <li><strong>Content Management:</strong> CMS for product listings and promotions.</li>
+            </ul>
+          </div>
+        </div>
+
+        
+      </section>
+
+      <section>
+        <h2>Delivery Approach</h2>
+        <ul>
+          <li><strong>Agile methodology:</strong> Was employed throughout the project to ensure flexibility and adapt to evolving client needs.</li>
+          <li><strong>Sprints:</strong> Weekly sprints were used to deliver core functionalities and integrate features.</li>
+          <li><strong>Continuous communication:</strong> Daily stand-up meetings kept communication open between developers, designers, and the client.</li>
+          <li><strong>Continuous integration & testing:</strong> Features were developed incrementally, tested regularly, and refined based on client feedback.</li>
+          <li><strong>Security protocols:</strong> Encryption and multi-factor authentication were implemented from the start to protect user data and instill trust.</li>
+        </ul>
+      </section>
+    </div>
+<div class="fullwidth-section">
+  <h2 style="margin-top:14px">Key Features</h2>
+        <div class="stack">
+          <div class="pill">Personalized Recommendations</div>
+          <div class="pill">Secure Payment Gateways</div>
+          <div class="pill">Multi-platform shopping</div>
+          <div class="pill">Lucky Draw & Coupon Management</div>
+          <div class="pill">Wallet Features (Top-Up, Transfer, Cashout)</div>
+          <div class="pill">Admin analytics dashboard</div>
+          <div class="pill">Responsive Design</div>
+          <div class="pill">Advanced search & filtering</div>
+        </div>
+</div>
+    <div class="grid">
+      <section>
+        <h2>Impact</h2>
+        <ul>
+          <li>Enhanced user experience led to higher customer engagement and sales.</li>
+          <li>The platform is fully scalable, supporting high traffic and transaction volumes as Ethereum Souq grows.</li>
+          <li>Improved admin efficiency due to a secure admin panel that provided full control over inventory and user management.</li>
+          <li>Successful market penetration, establishing Ethereum Souq as a leading e-commerce and coupon service provider in Bahrain.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Engagement Snapshot</h2>
+        <ul>
+          <li><strong>Scope:</strong> iOS, Android, Huawei, and web apps, along with a dedicated admin portal and a digital store management portal.</li>
+          <li><strong>Team:</strong> Included developers, designers, and project managers working closely with the client.</li>
+          <li><strong>Timeline:</strong> A multi-phase delivery process with iterative releases, from discovery to launch and post-launch support.</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="footer fullwidth-section">
+      <div>
+        <div style="font-weight:700">Interested in an e-commerce solution?</div>
+        <div class="small">We help businesses build scalable e-commerce platforms with multi-platform support.</div>
+      </div>
+      <a class="cta" href="mailto:sales@brainstation-23.com">Talk to Brain Station 23</a>
+    </div>
+  </div>
+</body>
+</html>
+```

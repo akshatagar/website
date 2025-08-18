@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Case Study — Cross‑Border Remittance Platform (DVIVE)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --card:#ffffff;
+      --border:#e5e7eb;
+      --muted:#6b7280;
+      --text:#111827;
+      --brand:#2b6dff;
+      --accent:#4cc9f0;
+      --shadow: 0 10px 24px rgba(0,0,0,.06);
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:#ffffff;
+      color:var(--text);
+      line-height:1.6;
+      padding:32px;
+    }
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    header{
+      display:flex;
+      align-items:center;
+      gap:20px;
+      padding:28px 32px;
+      border-bottom:1px solid var(--border);
+      background:#ffffff;
+    }
+    header img{ width:128px;height:128px;object-fit:contain; }
+    .titleblock{flex:1}
+    h1{margin:0;font-size:28px;letter-spacing:.2px}
+    .subtitle{margin-top:4px;color:var(--muted)}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(43,109,255,.08);
+      border:1px solid rgba(43,109,255,.25);
+      color:#1d4ed8;
+      padding:8px 12px;border-radius:999px;font-weight:600;font-size:12px;
+    }
+    .grid{
+      display:grid;gap:22px;padding:28px 32px;
+      grid-template-columns: 1.2fr .8fr;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      body{padding:16px}
+    }
+    section{
+      background:#ffffff;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:22px;
+    }
+    section h2{
+      margin:0 0 8px 0;font-size:18px;letter-spacing:.2px
+    }
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:10px}
+    .kpi{
+      background:#ffffff;
+      border:1px solid var(--border);
+      border-radius:14px;padding:16px;text-align:center
+    }
+  .kpi .value{font-size:26px;font-weight:800; color: white;}
+    .kpi .label{font-size:12px;color:#cff5ff; }
+    ul{margin:10px 0 0 18px}
+    li{margin:6px 0}
+    .twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .stack{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+    .pill{padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:#ffffff;font-size:13px}
+    .footer{
+      padding:22px 32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#ffffff;
+    }
+    .cta{
+      display:inline-flex;gap:10px;align-items:center;
+      background:linear-gradient(90deg, var(--brand), var(--accent));
+      padding:12px 16px;border-radius:12px;border:none;font-weight:700;text-decoration:none;
+      box-shadow:0 8px 16px rgba(43,109,255,.25);
+    }
+    .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+    .meta div{background:#ffffff;border:1px solid var(--border);border-radius:12px;padding:10px 12px;font-size:13px;color:var(--muted)}
+    .callout{border-left:4px solid var(--accent);padding-left:12px;margin-top:6px;color:#374151}
+    .small{font-size:12px;color:var(--muted)}
+    .hero{
+      padding:24px 32px;border-bottom:1px solid var(--border);
+      display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;background:#ffffff;
+    }
+    .hero h2{margin:0;font-size:22px}
+    /* New styles */
+    .fullwidth-section{
+      background:linear-gradient(90deg, var(--brand), var(--accent));
+      
+      padding:28px 32px;
+    }
+    .fullwidth-section h2{margin-top:0;color:white}
+    .fullwidth-section .kpi{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);}
+    .objectives-challenges{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+    }
+    @media (max-width: 900px){
+      .objectives-challenges{grid-template-columns:1fr;}
+    }
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="dvive-logo.png" alt="DVIVE logo"/>
+      <div class="titleblock">
+        <h1>Cross‑Border Remittance Platform — DVIVE</h1>
+        <div class="subtitle">Building a secure, compliant, and real‑time remittance experience across markets</div>
+        <div class="meta">
+          <div><strong>Industry:</strong> FinTech · Remittance</div>
+          <div><strong>Services:</strong> Mobile Apps, Admin Panel, Compliance, Integrations</div>
+          <div><strong>Client Location:</strong> United Kingdom (Global)</div>
+        </div>
+      </div>
+      <span class="badge">Case Study</span>
+    </header>
+<section class="fullwidth-section">
+        <h2>Results at a Glance</h2>
+        <div class="kpis">
+          <div class="kpi"><div class="value">100%</div><div class="label">Regulatory compliance</div></div>
+          <div class="kpi"><div class="value">40%</div><div class="label">Faster processing</div></div>
+          <div class="kpi"><div class="value">99.9%</div><div class="label">Uptime achieved</div></div>
+          <div class="kpi"><div class="value">Real‑time</div><div class="label">Fraud & sanctions screening</div></div>
+        </div>
+      </section>
+
+    <div class="hero">
+      <h2>Overview</h2>
+      <p class="callout">
+        DVIVE is a cross‑border money transfer platform engineered for speed, compliance, and trust. It delivers native iOS/Android apps,
+        a powerful Angular admin, and a Spring Boot backend with real‑time data streaming for fraud & sanctions screening.
+      </p>
+    </div>
+
+    <div >
+      <div class="hero">
+        <div class="objectives-challenges">
+          <div>
+            <h2>Business Objectives</h2>
+              <ul>
+                <li>Real‑time transaction monitoring for fraud detection and sanctions screening.</li>
+                <li>End‑to‑end compliance with AML & KYC while keeping UX simple.</li>
+                <li>High availability and horizontal scalability for peak volumes.</li>
+                <li>Fast, low‑cost cross‑border transfers with transparent FX.</li>
+              </ul>
+          </div>
+          <div>
+            <h2>Key Challenges</h2>
+              <ul>
+                <li>Meeting multi‑jurisdictional compliance (AML/KYC, sanctions lists).</li>
+                <li>Instant fraud detection across every transaction.</li>
+                <li>Complexities of currency conversion and local rails integrations.</li>
+                <li>Balancing airtight security with frictionless onboarding (MFA, encryption).</li>
+                <li>Operating at scale with low latency and 99.9% uptime targets.</li>
+              </ul>
+          </div>
+        </div>
+        <div class="objectives-challenges">
+          
+           
+          </div>
+      </div>
+
+      
+    </div>
+
+    <div class="grid">
+      <section>
+        <h2>Solution Architecture</h2>
+        <div class="twocol">
+          <div>
+            <ul>
+              <li><strong>Frontend:</strong> Native Swift (iOS) & Kotlin (Android).</li>
+              <li><strong>Admin Panel:</strong> Angular for transaction monitoring & compliance ops.</li>
+              <li><strong>Backend:</strong> Spring Boot microservices with REST APIs.</li>
+              <li><strong>Data:</strong> PostgreSQL for relational storage.</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><strong>Streaming:</strong> Kafka + Debezium for CDC and real‑time screening.</li>
+              <li><strong>Security:</strong> MFA, end‑to‑end encryption, secure KYC flows.</li>
+              <li><strong>Orchestration:</strong> Kubernetes for scale & resilience.</li>
+              <li><strong>Testing/CI:</strong> Automated tests and CI/CD pipelines.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Delivery Approach</h2>
+        <ul>
+          <li><strong>Agile delivery</strong> with feature‑driven sprints and continuous stakeholder feedback.</li>
+          <li><strong>Compliance by design:</strong> controls and screening embedded from the first sprint.</li>
+          <li><strong>Security‑first UX:</strong> friction‑minimized MFA, encryption, secure storage.</li>
+          <li><strong>Observability:</strong> metrics, logging, and alerting wired into all services.</li>
+          <li><strong>Automation:</strong> CI/CD pipelines with automated testing gates.</li>
+        </ul>
+      </section>
+    </div>
+      <section class="fullwidth-section">
+        <h2 style="margin-top:14px">Key Features</h2>
+        <div class="stack">
+          <div class="pill">Real‑time fraud detection</div>
+          <div class="pill">Sanctions & PEP screening</div>
+          <div class="pill">Multi‑currency conversion</div>
+          <div class="pill">Secure onboarding (KYC/MFA)</div>
+          <div class="pill">Encrypted transactions</div>
+          <div class="pill">Alerts & case management</div>
+          <div class="pill">Admin analytics dashboard</div>
+          <div class="pill">Global rails integrations</div>
+          <div class="pill">Scalable microservices</div>
+        </div>
+      </section>
+      <div class="grid">
+      
+    </div>
+
+    <div class="grid">
+      <section>
+        <h2>Impact</h2>
+        <ul>
+          <li>Accelerated transfers and improved customer satisfaction scores.</li>
+          <li>Auditable compliance posture that satisfies international regulators.</li>
+          <li>Lower fraud losses due to immediate anomaly detection.</li>
+          <li>Operational efficiency via centralized monitoring and case handling.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Engagement Snapshot</h2>
+        <ul>
+          <li><strong>Scope:</strong> iOS & Android apps, Admin portal, API/microservices, DevOps/SRE.</li>
+          <li><strong>Team:</strong> Product, BA, iOS, Android, Backend, QA, DevOps.</li>
+          <li><strong>Timeline:</strong> Multi‑phase delivery with iterative releases.</li>
+        </ul>
+        <p class="small">*Metrics reflect staging & production observability during pilot and early rollout.</p>
+      </section>
+    </div>
+
+    <div class="footer fullwidth-section">
+      <div>
+        <div style="font-weight:700">Interested in a similar build?</div>
+        <div class="small">We help fintechs ship compliant, scalable money‑movement platforms.</div>
+      </div>
+      <a class="cta" href="mailto:sales@brainstation-23.com">Talk to Brain Station 23</a>
+    </div>
+  </div>
+</body>
+</html>
