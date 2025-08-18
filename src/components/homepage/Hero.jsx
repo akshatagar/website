@@ -203,7 +203,7 @@ export default function Hero({ partners }) {
         <div
           className="container text-center"
           style={{ paddingTop: "6rem", width: "100vw" }}
-        >
+        >          
           <div
             className="position-relative overflow-hidden"
             style={{
@@ -258,10 +258,15 @@ export default function Hero({ partners }) {
       </div>
 
       <div className="row justify-content-center mt-5">
+          <div className={`${styles.mainHeaderContainer} mb-4`}>
+            <h3 className={`${styles.listHeader} display-5 fw-bold`}>
+              <span>We Solve The Digital Execution Gap.</span>
+            </h3>
+          </div>
         <div className={`col-lg-7 ${styles.listContainer}`}>
           <div className={`${styles.listHeaderContainer} mb-4`}>
             <h3 className={`${styles.listHeader} display-5 fw-bold`}>
-              <span>We Solve The Digital Execution Gap</span>
+              <span>The Gap?</span>
             </h3>
             <div className={`${styles.prominentDivider} mx-auto`}></div>
           </div>
@@ -303,6 +308,57 @@ export default function Hero({ partners }) {
         </div>
       </div>
 
+    
+<div className={`${styles.benefitSection} mt-5 py-5`}>
+  <div className="row justify-content-center">
+    <div className="col-lg-8 text-center">
+      <h2 className={`${styles.sectionHeader} mb-4`}>
+        What Clients Gain
+      </h2>
+      <p className={`${styles.sectionTagline} fs-3 mb-5 text-white`}>
+        With Omintel, you get faster deployment, lower risk and better ROI
+      </p>
+      
+      {/* Solutions Grid */}
+      <div className={`${styles.solutionsGrid} row justify-content-center`}>
+        {[
+          "Conversational AI",
+          "Intelligent Document Processing",
+          "CPAAS Solutions",
+          "AI Assisted Recruitment",
+          "Training Platforms",
+          "Audit Digitization",
+          "Workflow Automation",
+          "AI Enablement"
+        ].map((solution, index) => (
+          <div key={index} className="col-md-6 col-lg-4 mb-4">
+            <div className={`${styles.solutionCard} h-100 p-4`}>
+              <div className={styles.solutionIcon}>
+                <i className={`fas ${[
+                  'fa-comments text-primary',
+                  'fa-file-alt text-success',
+                  'fa-phone-volume text-info',
+                  'fa-users text-warning',
+                  'fa-chalkboard-teacher text-danger',
+                  'fa-chart-line text-secondary',
+                  'fa-cogs text-primary',
+                  'fa-robot text-success'
+                ][index]}`} />
+              </div>
+              <h4 className="text-white mb-0">{solution}</h4>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Closing Statement */}
+      <p className={`${styles.closingStatement} fs-4 mt-5 text-white-90`}>
+        We deliver global innovation, locally adapted — so you get results, not just technology.
+      </p>
+    </div>
+  </div>
+</div>
+
       <div className="row justify-content-center mt-5">
         <div className={"col-lg-7 mb-4 " + styles.diagramContainer}>
           <div className={styles.interactiveDiagram}>
@@ -322,6 +378,9 @@ export default function Hero({ partners }) {
                 height={120}
                 priority={true}
               />
+              <span style={{
+                textWrap: "nowrap"
+              }}>Omintel Ventures</span>
             </div>
 
             {nodes.map((node) => (

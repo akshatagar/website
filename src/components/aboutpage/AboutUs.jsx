@@ -48,54 +48,48 @@ export default function AboutUs( { aboutUs } ) {
   </div>
 </div>
 
-<div className={`${styles.benefitSection} mt-5 py-5`}>
-  <div className="row justify-content-center">
-    <div className="col-lg-8 text-center">
-      <h2 className={`${styles.sectionHeader} mb-4`}>
-        What Clients Gain
-      </h2>
-      <p className={`${styles.sectionTagline} fs-3 mb-5 text-white`}>
-        With Omintel, you get faster deployment, lower risk and better ROI
-      </p>
-      
-      {/* Solutions Grid */}
-      <div className={`${styles.solutionsGrid} row justify-content-center`}>
-        {[
-          "Conversational AI",
-          "Intelligent Document Processing",
-          "CPAAS Solutions",
-          "AI Assisted Recruitment",
-          "Training Platforms",
-          "Audit Digitization",
-          "Workflow Automation",
-          "AI Enablement"
-        ].map((solution, index) => (
-          <div key={index} className="col-md-6 col-lg-4 mb-4">
-            <div className={`${styles.solutionCard} h-100 p-4`}>
-              <div className={styles.solutionIcon}>
-                <i className={`fas ${[
-                  'fa-comments text-primary',
-                  'fa-file-alt text-success',
-                  'fa-phone-volume text-info',
-                  'fa-users text-warning',
-                  'fa-chalkboard-teacher text-danger',
-                  'fa-chart-line text-secondary',
-                  'fa-cogs text-primary',
-                  'fa-robot text-success'
-                ][index]}`} />
-              </div>
-              <h4 className="text-white mb-0">{solution}</h4>
-            </div>
-          </div>
-        ))}
+<div className= "justify-content-center d-flex my-5">
+<div className={`${styles.aboutSection} py-5 position-relative rounded-4`}>
+  {/* Subtle Grid Pattern Background */}
+  <div className={`${styles.backgroundPattern} position-absolute`}></div>
+  
+  <div className="row justify-content-center position-relative">
+    <div className="col-lg-8">
+      {/* Section Header */}
+      <div className="text-center mb-5">
+        <h2 className={`${styles.sectionHeader} mb-3`}>Why Omintel?</h2>
+        <div className={`${styles.prominentDivider} mx-auto`}></div>
+      </div>
+
+      {/* Content Blocks */}
+      <div className={`${styles.contentCard} mb-4 p-4 p-lg-5`}>
+        <p className={`${styles.paragraph} fs-4`}>
+          AI has transformed the way every business leader makes decisions. Technology is no longer the preserve of IT experts—today, every manager has the tools to engage with digital transformation.
+        </p>
+      </div>
+
+      <div className={`${styles.contentCard} mb-4 p-4 p-lg-5`}>
+        <p className={`${styles.paragraph} fs-4`}>
+          Yet in this new reality, the challenge is no longer access to technology, but clarity. With countless solutions, competing voices, and rapid shifts, finding the right fit for your business problem has never been harder.
+        </p>
+        </div>
+
+      {/* Core Value Highlight */}
+      <div className={`${styles.coreValueCard} p-4 p-lg-5 mb-4`}>
+        <p className={`${styles.paragraph} fs-4 mb-0`}>
+          Omintel was founded to cut through this noise. We bring <span className="fw-bold text-white">diverse solution possibilities into one place</span>—a trusted platform that combines a <span className="fw-bold text-white">Knowledge Hub</span> of current thinking with a <span className="fw-bold text-white">curated portfolio of global SaaS and AI vendors</span>.
+        </p>
       </div>
 
       {/* Closing Statement */}
-      <p className={`${styles.closingStatement} fs-4 mt-5 text-white-90`}>
-        We deliver global innovation, locally adapted — so you get results, not just technology.
-      </p>
+      <div className="text-center mt-5 pt-3">
+        <p className={`${styles.closingStatement} display-6`}>
+          At Omintel, we connect <span className={styles.gradientText}>innovation</span> with <span className={styles.gradientText}>impact</span>.
+        </p>
+      </div>
     </div>
   </div>
+</div>
 </div>
 
 </section>    
