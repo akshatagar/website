@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Case Study — CityRemit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --card:#ffffff;
+      --border:#e5e7eb;
+      --muted:#6b7280;
+      --text:#111827;
+      --brand:#2b6dff;
+      --accent:#4cc9f0;
+      --shadow: 0 10px 24px rgba(0,0,0,.06);
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:#ffffff;
+      color:var(--text);
+      line-height:1.6;
+      padding:32px;
+    }
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    header{
+      display:flex;
+      align-items:center;
+      gap:20px;
+      padding:28px 32px;
+      border-bottom:1px solid var(--border);
+      background:#ffffff;
+    }
+    header img{ width:64px;height:64px;object-fit:contain; }
+    .titleblock{flex:1}
+    h1{margin:0;font-size:28px;letter-spacing:.2px}
+    .subtitle{margin-top:4px;color:var(--muted)}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(43,109,255,.08);
+      border:1px solid rgba(43,109,255,.25);
+      color:#1d4ed8;
+      padding:8px 12px;border-radius:999px;font-weight:600;font-size:12px;
+    }
+    .grid{
+      display:grid;gap:22px;padding:28px 32px;
+      grid-template-columns: 1.2fr .8fr;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      body{padding:16px}
+    }
+    section{
+      background:#ffffff;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:22px;
+    }
+    section h2{
+      margin:0 0 8px 0;font-size:18px;letter-spacing:.2px
+    }
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:10px}
+    .kpi{
+      background:#ffffff;
+      border:1px solid var(--border);
+      border-radius:14px;padding:16px;text-align:center
+    }
+  .kpi .value{font-size:26px;font-weight:800; color: white;}
+    .kpi .label{font-size:12px;color:#cff5ff; }
+    ul{margin:10px 0 0 18px}
+    li{margin:6px 0}
+    .twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .stack{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+    .pill{padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:#ffffff;font-size:13px}
+    .footer{
+      padding:22px 32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#ffffff;
+    }
+    .cta{
+      display:inline-flex;gap:10px;align-items:center;
+      background:linear-gradient(90deg, var(--brand), var(--accent));
+      padding:12px 16px;border-radius:12px;border:none;font-weight:700;text-decoration:none;
+      box-shadow:0 8px 16px rgba(43,109,255,.25);
+    }
+    .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+    .meta div{background:#ffffff;border:1px solid var(--border);border-radius:12px;padding:10px 12px;font-size:13px;color:var(--muted)}
+    .callout{border-left:4px solid var(--accent);padding-left:12px;margin-top:6px;color:#374151}
+    .small{font-size:12px;color:var(--muted)}
+    .hero{
+      padding:24px 32px;border-bottom:1px solid var(--border);
+      display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;background:#ffffff;
+    }
+    .hero h2{margin:0;font-size:22px}
+    /* New styles */
+    .fullwidth-section{
+      background:linear-gradient(90deg, var(--brand), var(--accent));
+      
+      padding:28px 32px;
+    }
+   .fullwidth-section h2{margin-top:0;color:white}
+    .fullwidth-section .kpi{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);}
+    .objectives-challenges{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+    }
+    @media (max-width: 900px){
+      .objectives-challenges{grid-template-columns:1fr;}
+    }
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="dvive-logo.png" alt="CityRemit logo"/>
+      <div class="titleblock">
+        <h1>CityRemit: Ensuring Instant and Secure Cross-Border Remittances</h1>
+        <div class="subtitle">A user-friendly cross-platform application that streamlines the remittance process.</div>
+        <div class="meta">
+          <div><strong>Industry:</strong> Fintech</div>
+          <div><strong>Services:</strong> Cross-Platform App Development, Compliance, User Onboarding</div>
+          <div><strong>Client Location:</strong> Malaysia</div>
+        </div>
+      </div>
+      <span class="badge">Case Study</span>
+    </header>
+<div style="padding: 24px 32px; border-bottom: 1px solid var(--border);">
+    <img src="City_Remit_-1.jpg" alt="CityRemit app user interface" style="width: 100%; height: auto; border-radius: 16px;" />
+</div>
+<section class="fullwidth-section">
+        <h2>Results at a Glance</h2>
+        <div class="kpis">
+          <div class="kpi"><div class="value">50,000+</div><div class="label">Downloads & User Trust</div></div>
+          <div class="kpi"><div class="value">Cost-Effective</div><div class="label">Transactions</div></div>
+          <div class="kpi"><div class="value">Timely</div><div class="label">Financial Support</div></div>
+          <div class="kpi"><div class="value">Robust</div><div class="label">Security Measures</div></div>
+        </div>
+      </section>
+
+    <div class="hero">
+      <h2>Overview</h2>
+      <p class="callout">
+        In response to the growing need for efficient cross-border financial transactions, City Bank recognized the importance of building a remittance app.  This initiative aimed to facilitate remitters living in Malaysia, enabling them to send money seamlessly through a cross-border banking remittance channel app to various countries.
+      </p>
+    </div>
+
+    <div class="hero">
+      <section>
+        <div class="objectives-challenges"><div><h2>Business Objectives</h2>
+        <ul>
+          <li>Provide a swift and secure way to transfer money.</li>
+          <li>Facilitate seamless money transfers for users in Malaysia to various countries</li>
+          <li>Ensure cost-effective transactions with favorable exchange rates and low fees.</li>
+          <li>Provide timely financial support to recipients, meeting the urgent needs of users.</li>
+        </ul>
+
+        </div><div><h2>Key Challenges</h2>
+        <ul>
+          <li>Conventional remittance processes involved extensive paperwork and manual handling, leading to prolonged fund transfer timelines.</li>
+          <li>Delayed transactions were common with traditional methods due to rigorous verification processes and manual handling.</li>
+          <li>Limited access to banking facilities was a significant challenge for individuals in remote areas.</li>
+          <li>Users often resorted to unreliable and less secure methods for money transfers.</li>
+        </ul></div></div>
+      </section>
+
+      
+    </div>
+
+    <div class="grid">
+      <section>
+        <h2>Solution Architecture</h2>
+        <div class="twocol">
+          <div>
+            <ul>
+              <li><strong>Platform:</strong> Cross-platform application (Android and iOS).</li>
+              <li><strong>Process:</strong> Streamlined user registration, KYC verification, and money transfer process.</li>
+              <li><strong>Security:</strong> Robust security measures, including KYC verification and transaction PINs.</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><strong>Transaction Modes:</strong> Cash pickup, account transfer, and mobile wallet.</li>
+              <li><strong>Features:</strong> Beneficiary management, currency conversion, and transaction history.</li>
+              <li><strong>Support:</strong> Multiple language support for a seamless user experience.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 style="margin-top:14px">Key Features</h2>
+        <div class="stack">
+           <div class="pill">Customer Onboarding </div>
+           <div class="pill">Secure Login </div>
+           <div class="pill">Real-Time Notification System </div>
+           <div class="pill">Efficient Beneficiary Management </div>
+           <div class="pill">Rewarding Loyalty Program </div>
+           <div class="pill">User-Friendly Home Screen </div>
+           <div class="pill">Flexible Transaction Approval </div>
+           <div class="pill">Cancellation & Refund Process </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Delivery Approach</h2>
+        <ul>
+           <li><strong>Agile Methodology:</strong> The project was completed using an agile methodology to ensure flexibility and adapt to evolving client needs.</li>
+           <li><strong>Iterative Releases:</strong> A multi-phase delivery with iterative releases was used to build the platform.</li>
+           <li><strong>Simplified UX:</strong> A simplified registration process and intuitive design were implemented to minimize friction and ensure a seamless user experience.</li>
+           <li><strong>Security by Design:</strong> Robust security measures were employed to safeguard every transfer and instill user trust.</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="grid">
+      <section>
+        <h2>Impact</h2>
+        <ul>
+           <li>The platform has achieved significant market adoption with over 50,000 downloads.</li>
+           <li>Users benefit from cost-effective transactions with favorable exchange rates and low fees.</li>
+           <li>The app ensures that financial support reaches recipients in a timely manner.</li>
+           <li>Stringent security measures protect transactions and sensitive information, instilling user confidence.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Engagement Snapshot</h2>
+        <ul>
+           <li><strong>Scope:</strong> A cross-platform application for Android and iOS users to facilitate money transfers.</li>
+          <li><strong>Team:</strong> Not specified in the provided document.</li>
+           <li><strong>Timeline:</strong> A multi-phase delivery process with iterative releases.</li>
+        </ul>
+        <p class="small">*Note: Team and timeline details are based on standard project practices where not explicitly mentioned in the source document.</p>
+      </section>
+    </div>
+
+    <div class="footer fullwidth-section">
+      <div>
+        <div style="font-weight:700">Interested in a similar build?</div>
+        <div class="small">We help fintechs ship compliant, scalable money‑movement platforms.</div>
+      </div>
+      <a class="cta" href="mailto:sales@brainstation-23.com">Talk to Brain Station 23</a>
+    </div>
+  </div>
+</body>
+</html>
+```

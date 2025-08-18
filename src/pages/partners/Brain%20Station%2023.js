@@ -175,7 +175,7 @@ export default function MOPIDPage({ partner, idx }) {
               setActiveEmbed("/BrainStationPage/eKYC23_onepage.pdf")
             }
           >
-            eKYC23
+            eKYC 23
           </div>
         </div>
 
@@ -217,20 +217,29 @@ export default function MOPIDPage({ partner, idx }) {
               <button
                 className="dropdown-item w-100 text-start px-3 py-2 border-bottom"
                 onClick={() => {
-                  setActiveEmbed("/BrainStationPage/dvive.pdf");
+                  setActiveEmbed("/BrainStationPage/dvive.html");
                   setDropdownOpen(false);
                 }}
               >
-                DVIVE Case Study
+                Cross-border remittance solution - UK
               </button>
               <button
                 className="dropdown-item w-100 text-start px-3 py-2"
                 onClick={() => {
-                  setActiveEmbed("/BrainStationPage/ethereum_souq.pdf");
+                  setActiveEmbed("/BrainStationPage/ethereum_souq.html");
                   setDropdownOpen(false);
                 }}
               >
-                Ethereum Souq Case Study
+                E-commerce and Digital coupon solution - Bahrain
+              </button>
+              <button
+                className="dropdown-item w-100 text-start px-3 py-2"
+                onClick={() => {
+                  setActiveEmbed("/BrainStationPage/city_remit.html");
+                  setDropdownOpen(false);
+                }}
+              >
+                Instant cross border remittance solution - Malaysia
               </button>
               <button
                 className="dropdown-item w-100 text-start px-3 py-2 text-danger"
@@ -245,12 +254,12 @@ export default function MOPIDPage({ partner, idx }) {
           )}
         </div>
 
-        {/* Embed PDF Display */}
-        <div ref={embedRef}>
+        {/* Embed Display */}
+        <div ref={embedRef} style={{ width: "100%" }}>
+          {/* Iframes */}
           {activeEmbed && (
-            <embed
+            <iframe
               src={activeEmbed}
-              type="application/pdf"
               width="100%"
               height="800"
               style={{ border: "1px solid #ccc" }}
