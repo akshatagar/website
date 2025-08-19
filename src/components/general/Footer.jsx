@@ -23,7 +23,7 @@ export default function Footer() {
               <h5 className="text-white text-center fw-bold">Let’s Build Your Next Success Story</h5>
             </div>
             <div className="d-flex align-items-center justify-content-center">
-              <a href="tel:+97143796750" className="text-white text-decoration-none"> Email us : contact@omintel.com or Call + 9715xxxxxx— and see how Omintel can unlock your
+              <a href="tel:+97143796750" className="text-white text-decoration-none"> Email us : contact@omintel.com or Call + 971504277918— and see how Omintel can unlock your
 next competitive advantage</a> 
             </div>
           </div>

@@ -26,29 +26,7 @@ export default function AboutUs( { aboutUs } ) {
     />
   </div>
 
-  <h1 className={styles.whySection + " text-center text-white fw-bold"}>Why Vendors Choose Us</h1>
-
-    {/* How we do it Section */}
-<div className="container">
-  <div className={"row align-items-center justify-content-center " + styles.listSection}>
-    {/* Left: Heading */}
-    <div className="col-md-4 text-md-end text-center mb-4 mb-md-0">
-      <h4 className="text-white">Global leaders trust Omintel to:</h4>
-    </div>
-
-    {/* Right: List */}
-    <div className="col-md-6">
-      <ul className={styles.processList}>
-          {aboutUs["howWeDoIt"].map((item, index) => (
-          <li key={index} className='mb-3'>{item}
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div>
-</div>
-
-<div className= "justify-content-center d-flex my-5">
+  <div className= "justify-content-center d-flex my-5">
 <div className={`${styles.aboutSection} py-5 position-relative rounded-4`}>
   {/* Subtle Grid Pattern Background */}
   <div className={`${styles.backgroundPattern} position-absolute`}></div>
@@ -90,6 +68,28 @@ export default function AboutUs( { aboutUs } ) {
     </div>
   </div>
 </div>
+</div>
+
+  <h1 className={styles.whySection + " text-center text-white fw-bold"}>Why Vendors Choose Us</h1>
+
+    {/* How we do it Section */}
+<div className="container">
+  <div className={"row align-items-center justify-content-center " + styles.listSection}>
+    {/* Left: Heading */}
+    <div className="col-md-4 text-md-end text-center mb-4 mb-md-0">
+      <h4 className="text-white">Global leaders trust Omintel to:</h4>
+    </div>
+
+    {/* Right: List */}
+    <div className="col-md-6">
+      <ul className={styles.processList}>
+          {aboutUs["howWeDoIt"].map((item, index) => (
+          <li key={index} className='mb-3'>{item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
 </div>
 
 </section>    

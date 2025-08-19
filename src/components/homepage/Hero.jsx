@@ -70,7 +70,7 @@ export default function Hero({ partners }) {
       left: `calc(${
         Math.cos(i * interval * (Math.PI / 180) + Math.PI / 4) * 38
       }% + 50%)`,
-      size: "55px",
+      size: "70px",
       hue: partners[i].logoHue,
     });
     //25.004
@@ -374,13 +374,13 @@ export default function Hero({ partners }) {
                 src="/Logo_with_white.png"
                 alt="AI Core"
                 className="img-fluid"
-                width={120}
-                height={120}
+                width={200}
+                height={200}
                 priority={true}
               />
-              <span style={{
-                textWrap: "nowrap"
-              }}>Omintel Ventures</span>
+              <span className={styles.satelliteLabel}>Omintel Ventures</span>
+              <br/>
+              <span className={styles.satelliteLabel}>AI first solutions</span>
             </div>
 
             {nodes.map((node) => (
