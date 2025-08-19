@@ -368,7 +368,6 @@ export default function Hero({ partners }) {
                 isDiagramOpen ? styles.clicked : ""
               }`}
               onClick={handleCentralClick}
-              style={{ cursor: "pointer" }}
             >
               <Image
                 src="/Logo_with_white.png"
