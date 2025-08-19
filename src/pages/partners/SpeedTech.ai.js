@@ -138,7 +138,7 @@ export default function SpeedTechPage({ partner, idx }) {
                   setDropdownOpen(false);
                 }}
               >
-                Client 1 Case Study
+                RAIYA IDP - Invoice Processing
               </button>
               <button
                 className="dropdown-item w-100 text-start px-3 py-2 border-bottom"
@@ -147,7 +147,7 @@ export default function SpeedTechPage({ partner, idx }) {
                   setDropdownOpen(false);
                 }}
               >
-                Client 2 Case Study
+                RAIYA IDP - Oil Refinery RFP related data processing
               </button>
               <button
                 className="dropdown-item w-100 text-start px-3 py-2 text-danger"
